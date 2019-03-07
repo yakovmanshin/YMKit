@@ -85,9 +85,9 @@ extension UIColor {
         }
         
         if hexString.count == 3 {
-            let r = hexString[hexString.startIndex...hexString.index(hexString.startIndex, offsetBy: 1)]
-            let g = hexString[hexString.index(hexString.startIndex, offsetBy: 1)...hexString.index(hexString.startIndex, offsetBy: 2)]
-            let b = hexString[hexString.index(hexString.startIndex, offsetBy: 2)...hexString.index(hexString.startIndex, offsetBy: 3)]
+            let r = hexString[..<hexString.index(hexString.startIndex, offsetBy: 1)]
+            let g = hexString[hexString.index(hexString.startIndex, offsetBy: 1)..<hexString.index(hexString.startIndex, offsetBy: 2)]
+            let b = hexString[hexString.index(hexString.startIndex, offsetBy: 2)...]
             
             hexString = [r, r, g, g, b, b].map({ String($0) }).joined()
         }
