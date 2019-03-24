@@ -1,12 +1,11 @@
 //
-//  UIColor+Extension.swift
+//  UIColor+Extensions.swift
 //  YMKit
 //
 //  Created by Yakov Manshin on 1/12/19.
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // RGB

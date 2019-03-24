@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 public struct YMFormatter {
     
     // No instances of YMFormatter can be initialized.

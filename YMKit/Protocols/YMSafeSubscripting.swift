@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 /// Adopt this protocol to prevent out-of-bounds-class errors in collections.
 public protocol YMSafeSubscripting: Collection {
     

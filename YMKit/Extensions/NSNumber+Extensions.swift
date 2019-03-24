@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 // PRICE STRINGS
 
 extension NSNumber {

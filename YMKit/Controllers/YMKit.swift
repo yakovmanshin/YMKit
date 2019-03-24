@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 final public class YMKit {
     
     // No instances of YMKit can be initialized.
