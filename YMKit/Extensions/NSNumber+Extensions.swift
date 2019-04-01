@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// PRICE STRINGS
+// MARK: - PRICE STRINGS
 
 extension NSNumber {
     
@@ -63,6 +63,8 @@ extension NSNumber {
     public func getPriceString(withCurrencySymbol currencySymbol: String = "", fixedFractionDigits: Int? = nil) -> String? {
         return self.getPriceString(currencyCode: nil, currencySymbol: currencySymbol, fixedFractionDigits: fixedFractionDigits)
     }
+    
+    // MARK: - DEPRECATED
     
     /// Convert NSNumber values to price strings in specified locale and with specified number of fraction digits.
     @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "getPriceString(in:fixedFractionDigits:)")

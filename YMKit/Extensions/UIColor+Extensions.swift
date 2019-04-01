@@ -8,7 +8,7 @@
 
 import UIKit
 
-// RGB
+// MARK: - RGB
 
 extension UIColor {
     
@@ -46,7 +46,7 @@ extension UIColor {
     
 }
 
-// HEX
+// MARK: - HEX
 
 extension UIColor {
     

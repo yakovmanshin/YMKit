@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// NETWORKING
+// MARK: - NETWORKING
 
 extension Int {
     
@@ -22,7 +22,7 @@ extension Int {
     
 }
 
-// PRICE STRINGS
+// MARK: - PRICE STRINGS
 
 extension Int {
     
@@ -40,6 +40,8 @@ extension Int {
     public func getPriceString(withCurrencySymbol currencySymbol: String = "", fixedFractionDigits: Int? = nil) -> String? {
         return NSNumber(value: self).getPriceString(withCurrencySymbol: currencySymbol, fixedFractionDigits: fixedFractionDigits)
     }
+    
+    // MARK: - DEPRECATED
     
     /// Convert Int values to price strings in specified locale and with specified number of fraction digits.
     @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "getPriceString(in:fixedFractionDigits:)")

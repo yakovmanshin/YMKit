@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// DATE COMPONENTS
+// MARK: - DATE COMPONENTS
 
 extension Date {
     
@@ -37,11 +37,11 @@ extension Date {
     
 }
 
-// DATE FORMATTERS
+// MARK: - DATE FORMATTERS
 
 extension Date {
     
-    // CUSTOM FORMAT
+    // MARK: - CUSTOM FORMAT
     
     public init?(fromString dateTimeString: String, withFormat formatString: String) {
         let dateFormatter = DateFormatter()
@@ -58,7 +58,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    // API STRING
+    // MARK: - API STRING
     
     /// Initialize dates from strings styled as yyyy-MM-dd (e.g. 1984-01-24).
     public init?(fromAPIString apiString: String) {
@@ -75,7 +75,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    // RFC 3339 STRING
+    // MARK: - RFC 3339 STRING
     
     /**
      Initialize dates from RFC 3339-compliant strings.
@@ -100,7 +100,7 @@ extension Date {
         return self.getDateTimeString(withFormat: colonInTimeZone ? "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     }
     
-    // ISO8601 STRING
+    // MARK: - ISO8601 STRING
     
     @available(iOS, introduced: 10)
     public init?(fromISO8601String iso8601String: String, formatOptions: ISO8601DateFormatter.Options = []) {
@@ -124,7 +124,7 @@ extension Date {
     
 }
 
-// DATE AND TIME STRINGS
+// MARK: - DATE AND TIME STRINGS
 
 extension Date {
     
@@ -155,7 +155,7 @@ extension Date {
     
 }
     
-// AGE CALCULATION
+// MARK: - AGE CALCULATION
 
 extension Date {
     

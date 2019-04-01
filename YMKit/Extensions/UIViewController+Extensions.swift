@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - INITIALIZATION
+
 extension UIViewController {
     
     fileprivate static func instantiate<T: UIViewController>(_ viewController: T.Type, from storyboardName: String) -> T {
@@ -29,6 +31,8 @@ extension UIViewController {
     }
     
 }
+
+// MARK: - ALERTS
 
 extension UIViewController {
     
