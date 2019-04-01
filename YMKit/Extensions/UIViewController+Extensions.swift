@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - INITIALIZATION
+
 extension UIViewController {
     
     fileprivate static func instantiate<T: UIViewController>(_ viewController: T.Type, from storyboardName: String) -> T {
@@ -27,6 +29,12 @@ extension UIViewController {
     @objc open func dismissVC() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+}
+
+// MARK: - ALERTS
+
+extension UIViewController {
     
     /**
      Display an alert with the specified title, message, and up to two options.

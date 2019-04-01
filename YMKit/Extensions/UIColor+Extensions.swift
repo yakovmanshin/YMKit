@@ -8,16 +8,17 @@
 
 import UIKit
 
-// RGB
+// MARK: - RGB
 
 extension UIColor {
     
     /**
      Initialize a UIColor with RGB values.
-     - parameter redInput: The amount of red; from 0 to 255
-     - parameter blueInput: The amount of blue; from 0 to 255
-     - parameter greenInput: The amount of green; from 0 to 255
-     - parameter alpha: Alpha value for the color; default is 1.0
+     - Parameters:
+        - redInput: The amount of red; from 0 to 255
+        - blueInput: The amount of blue; from 0 to 255
+        - greenInput: The amount of green; from 0 to 255
+        - alpha: Alpha value for the color; default is 1.0
     */
     public convenience init(red redInput: Int, green greenInput: Int, blue blueInput: Int, alpha alphaInput: CGFloat = 1) {
         var red: Int
@@ -46,7 +47,7 @@ extension UIColor {
     
 }
 
-// HEX
+// MARK: - HEX
 
 extension UIColor {
     
