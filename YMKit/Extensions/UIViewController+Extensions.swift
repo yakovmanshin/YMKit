@@ -28,6 +28,10 @@ extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension UIViewController {
+    
     /**
      Display an alert with the specified title, message, and up to two options.
      + The primary option is displayed only when both `primaryOptionLabel` and `primaryOptionAction` are set.
