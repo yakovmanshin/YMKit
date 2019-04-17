@@ -16,4 +16,12 @@ final public class YMKit {
         return Bundle(for: YMKit.self).infoDictionary?["CFBundleShortVersionString"] as! String
     }
     
+    public class var appVersion: String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    }
+    
+    public class var appBuild: String {
+        return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    }
+    
 }

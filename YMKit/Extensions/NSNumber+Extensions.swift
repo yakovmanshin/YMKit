@@ -24,6 +24,7 @@ extension NSNumber {
     public func getPriceString(in locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil, fixedFractionDigits: Int? = nil, maxSignificantDigits: Int = 3) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
+        numberFormatter.usesGroupingSeparator = true
         
         numberFormatter.locale = locale
         
