@@ -24,3 +24,19 @@ extension String {
     }
     
 }
+
+// MARK: - COMPARISON
+
+extension String {
+    
+    /**
+     Creates a string suitable for comparison by removing insignificant distinctions from the string.
+     + To specify more options, call `folding(options:locale:)` on the string instead.
+     + For the full list of options, see `NSString.CompareOptions`.
+     - Returns: A string created by calling `folding(options:locale:)` with options `caseInsensitive`, `diacriticInsensitive`, and `numeric` on the string.
+    */
+    public var suitableForComparison: String {
+        return self.folding(options: [.caseInsensitive, .diacriticInsensitive, .numeric], locale: .current)
+    }
+    
+}

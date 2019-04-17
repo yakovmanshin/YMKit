@@ -1,5 +1,5 @@
-# YMKit
-**YMKit** is a collection of helpful tools for iOS app development. It extends built-in types, such as `Date` or `UIColor`, with helpful additional methods, as well as introduces new types, such as `YMFormatter` for advanced functionality.
+# YMKit [![Build Status](https://travis-ci.com/yakovmanshin/YMKit.svg?branch=master)](https://travis-ci.com/yakovmanshin/YMKit)
+**YMKit** is a collection of tools for quicker and easier development of iOS apps. It extends built-in types, such as `Date` or `UIColor`, with helpful additional methods, as well as introduces new types, such as `YMFormatter` for advanced functionality.
 
 ## Install
 Use [CocoaPods](https://fwd2.net/cocoapods) to install **YMKit**. If you’ve never used it before, watch this detailed (and funny) [video from Google](https://fwd2.net/cocoapods-tutorial) on how to install and use CocoaPods.
@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 ## Use
-To use **YMKit**, you’ll need to import the framework 
+To use **YMKit**, you’ll need to import the framework
 
 ## Documentation
-Most variables and methods are documented in code. A short reference list will be added in the following weeks. 
+Most variables and methods are documented in code. A short reference list will be added in the following weeks.
 
 ### `YMKit`
 ```swift
