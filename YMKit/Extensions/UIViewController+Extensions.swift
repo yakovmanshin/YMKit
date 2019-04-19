@@ -26,6 +26,7 @@ extension UIViewController {
     }
     
     /// Dismiss the current view controller.
+    @inline(__always)
     @objc open func dismissVC() {
         self.dismiss(animated: true, completion: nil)
     }

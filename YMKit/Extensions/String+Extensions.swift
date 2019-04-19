@@ -11,6 +11,7 @@
 extension String {
     
     /// Substitute the specified key with the corresponding localized string.
+    @inline(__always)
     public var localized: String {
         return NSLocalizedString(self, comment: self)
     }
@@ -19,6 +20,7 @@ extension String {
      Substitute the specified key with the corresponding localized string, substituting additional parameters.
      + The number and types of parameters in function call must match the number and types of parameters in the localized string, or a runtime error will occur.
     */
+    @inline(__always)
     public func localized(withParameters parameters: CVarArg...) -> String {
         return String(format: self.localized, arguments: parameters)
     }
@@ -35,6 +37,7 @@ extension String {
      + For the full list of options, see `NSString.CompareOptions`.
      - Returns: A string created by calling `folding(options:locale:)` with options `caseInsensitive`, `diacriticInsensitive`, and `numeric` on the string.
     */
+    @inline(__always)
     public var suitableForComparison: String {
         return self.folding(options: [.caseInsensitive, .diacriticInsensitive, .numeric], locale: .current)
     }
