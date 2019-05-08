@@ -27,3 +27,29 @@ final public class YMKit {
     }
     
 }
+
+extension YMKit {
+    public struct __DeviceInfo {
+        
+        public static var model: String {
+            return UIDevice.current.model
+        }
+        
+        public static var name: String {
+            return UIDevice.current.name
+        }
+        
+        public struct OS {
+            
+            public static var name: String {
+                return UIDevice.current.systemName
+            }
+            
+            public static var version: String {
+                return UIDevice.current.systemVersion
+            }
+            
+        }
+        
+    }
+}
