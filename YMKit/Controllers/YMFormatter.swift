@@ -12,7 +12,7 @@ public struct YMFormatter {
     private init() { }
     
     /**
-     Compose person name components into a single string with specified style.
+     Compose person name components into a single string with the specified style.
      + Even though all parameters have default values, you’re highly advised to specify at least one name component; otherwise, you’ll get an empty string.
      - Parameters:
         - style: See `PersonNameComponentsFormatter.Style`
@@ -39,6 +39,14 @@ public struct YMFormatter {
         return nameFormatter.string(from: nameComponents)
     }
     
+    /**
+     Compose a person’s first name and last name into a single string with the specified style.
+     + Although both `firstName` and `lastName` are optional, specify at least one of arguments; otherwise, you’ll get an empty string.
+     - Parameters:
+        - style: See `PersonNameComponentsFormatter.Style`
+        - firstName: Johnatan
+        - lastName: Appleseed
+    */
     @available(iOS, introduced: 9)
     public static func getPersonNameString(withStyle style: PersonNameComponentsFormatter.Style = .default, firstName: String? = nil, lastName: String? = nil) -> String {
         return getPersonNameString(withStyle: style, prefix: nil, firstName: firstName, middleName: nil, nickname: nil, lastName: lastName, suffix: nil)

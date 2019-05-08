@@ -13,7 +13,7 @@ import UIKit
 extension UIColor {
     
     /**
-     Initialize a UIColor with RGB values.
+     Initialize a `UIColor` value with RGB values.
      - Parameters:
         - redInput: The amount of red; from 0 to 255
         - blueInput: The amount of blue; from 0 to 255
@@ -52,7 +52,7 @@ extension UIColor {
 extension UIColor {
     
     /**
-     Initialize values of UIColor from hexadecimal numbers (e.g. 0xFF4600).
+     Initialize values of `UIColor` from hexadecimal numbers (e.g. `0xFF4600`).
      + Three-digit numbers (e.g. `0xFFF`) aren’t supported in this version. Use `init(hexString:)`.
      - Parameters:
         - hex: Hexadecimal color number (from `0x000000` to `0xFFFFFF`)
@@ -68,7 +68,7 @@ extension UIColor {
     
     ///
     /**
-     Initialize values of UIColor from hexadecimal color codes.
+     Initialize values of `UIColor` from hexadecimal color codes.
      + The following formats are supported: `ff4600`, `#aeaeae`, `eee`, and `#123`.
      - parameter hexStringInput: String with hexadecimal color code
     */
