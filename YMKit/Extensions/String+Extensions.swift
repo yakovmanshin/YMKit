@@ -27,6 +27,28 @@ extension String {
     
 }
 
+// MARK: - TRANSFORMATION
+
+extension String {
+    
+    /**
+     Returns a new string by applying a sequence of transforms to the string.
+     + Transforms are applied in the order they’re specified in.
+     + For the list of available transforms, see `StringTransform`.
+    */
+    @available(iOS 9, *)
+    public func applyingTransformChain(_ transformChain: [StringTransform]) -> String? {
+        var transformedString: String? = self
+        
+        for transform in transformChain {
+            transformedString = transformedString?.applyingTransform(transform, reverse: false)
+        }
+        
+        return transformedString
+    }
+    
+}
+
 // MARK: - COMPARISON
 
 extension String {
