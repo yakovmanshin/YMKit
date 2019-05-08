@@ -22,7 +22,7 @@ public protocol YMSafeSubscripting: Collection {
 
 extension YMSafeSubscripting {
     
-    public subscript (safe index: Index) -> Element? {
+    public subscript(safe index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
     
