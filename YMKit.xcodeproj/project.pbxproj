@@ -13,6 +13,7 @@
 		66600ED921ECB29000236A30 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600ED821ECB29000236A30 /* Int+Extensions.swift */; };
 		66600EDB21ECC55600236A30 /* YMFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600EDA21ECC55600236A30 /* YMFormatter.swift */; };
 		666E78292274B9AC00CFF08A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666E78282274B9AC00CFF08A /* UIView+Extensions.swift */; };
+		66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */; };
 		66A265FC229ABE63009C2DE7 /* YMErrorStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */; };
 		66B63FFD21EA7D2B005DA4B0 /* YMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B63FFB21EA7D2B005DA4B0 /* YMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */; };
@@ -30,6 +31,7 @@
 		66600EDA21ECC55600236A30 /* YMFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatter.swift; sourceTree = "<group>"; };
 		66600EE121EE58FC00236A30 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		666E78282274B9AC00CFF08A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMErrorStringConvertible.swift; sourceTree = "<group>"; };
 		66B63FF821EA7D2B005DA4B0 /* YMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B63FFB21EA7D2B005DA4B0 /* YMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMKit.h; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */,
 				66B6400421EA7D52005DA4B0 /* String+Extensions.swift */,
 				66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */,
+				66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */,
 				66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */,
 				666E78282274B9AC00CFF08A /* UIView+Extensions.swift */,
 			);
@@ -209,6 +212,7 @@
 				66B6400921EA7D53005DA4B0 /* String+Extensions.swift in Sources */,
 				660F4CC2222EE919007C4C4C /* YMKit.swift in Sources */,
 				66B6400C21EA7D53005DA4B0 /* UIViewController+Extensions.swift in Sources */,
+				66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */,
 				66600ED921ECB29000236A30 /* Int+Extensions.swift in Sources */,
 				66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */,
 				66600EDB21ECC55600236A30 /* YMFormatter.swift in Sources */,
