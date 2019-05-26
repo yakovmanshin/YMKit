@@ -18,7 +18,7 @@ extension UIImageView {
         - height: Height of the image in the initialized `UIImageView`
         - tintColor: Tint color of the image in the initialized `UIImageView`
     */
-    convenience init(withImageNamed imageName: String, width: CGFloat? = nil, height: CGFloat? = nil, tintColor: UIColor? = nil) {
+    public convenience init(withImageNamed imageName: String, width: CGFloat? = nil, height: CGFloat? = nil, tintColor: UIColor? = nil) {
         let image = UIImage(named: imageName)
         
         self.init(image: image)
@@ -38,7 +38,7 @@ extension UIImageView {
         - height: Height of the image in the initialized `UIImageView`
         - tintColor: Tint color of the image in the initialized `UIImageView`
      */
-    convenience init(withImageNamed imageName: String, width: Int? = nil, height: Int? = nil, tintColor: UIColor? = nil) {
+    public convenience init(withImageNamed imageName: String, width: Int? = nil, height: Int? = nil, tintColor: UIColor? = nil) {
         var cgWidth: CGFloat? = nil
         var cgHeight: CGFloat? = nil
         
