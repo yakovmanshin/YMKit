@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol YMErrorStringConvertible: Error {
+/// This protocol ensures that `Error` values always have adequare string representations.
+public protocol YMErrorStringConvertible: Error {
     var stringValue: String { get }
 }
