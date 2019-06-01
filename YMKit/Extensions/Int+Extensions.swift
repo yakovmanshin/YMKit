@@ -22,6 +22,19 @@ extension Int {
     
 }
 
+// MARK: - PLAIN STRINGS
+
+extension Int {
+    
+    /**
+     Get the `String` representation of the number.
+    */
+    public var stringValue: String {
+        return String(self)
+    }
+    
+}
+
 // MARK: - PRICE STRINGS
 
 extension Int {
