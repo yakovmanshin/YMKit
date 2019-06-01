@@ -52,7 +52,7 @@ extension UIColor {
 extension UIColor {
     
     /**
-     Initialize values of `UIColor` from hexadecimal numbers (e.g. `0xFF4600`).
+     Initialize values of `UIColor` from hexadecimal numbers (e.g. `0xED2C61`).
      + Three-digit numbers (e.g. `0xFFF`) aren’t supported in this version. Use `init(hexString:)`.
      - Parameters:
         - hex: Hexadecimal color number (from `0x000000` to `0xFFFFFF`)
@@ -69,7 +69,7 @@ extension UIColor {
     ///
     /**
      Initialize values of `UIColor` from hexadecimal color codes.
-     + The following formats are supported: `ff4600`, `#aeaeae`, `eee`, and `#123`.
+     + The following formats are supported: `ed2c61`, `#aeaeae`, `eee`, and `#123`.
      - parameter hexStringInput: String with hexadecimal color code
     */
     public convenience init?(hexString hexStringInput: String) {
