@@ -43,6 +43,16 @@ extension Date {
     
     // MARK: - CUSTOM FORMAT
     
+    /// Initialize a `Date` value from a strings in the specified format.
+    public init?(string dateTimeString: String, format formatString: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = formatString
+        guard let date = dateFormatter.date(from: dateTimeString) else { return nil }
+        self = date
+    }
+    
+    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(dateTimeString:format:)")
     public init?(fromString dateTimeString: String, withFormat formatString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -51,6 +61,7 @@ extension Date {
         self = date
     }
     
+    /// Convert the `Date` value to a string in the specified format.
     public func getDateTimeString(withFormat formatString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -60,7 +71,15 @@ extension Date {
     
     // MARK: - API STRING
     
-    /// Initialize dates from strings styled as yyyy-MM-dd (e.g. 1984-01-24).
+    /// Initialize a `Date` value from a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
+    public init?(apiString: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: apiString) else { return nil }
+        self = date
+    }
+    
+    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(apiString:)")
     public init?(fromAPIString apiString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -68,7 +87,7 @@ extension Date {
         self = date
     }
     
-    /// Convert dates to strings styled as yyyy-MM-dd (e.g. 1984-01-24).
+    /// Convert the `Date` value to a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
     public var apiDateString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -86,7 +105,7 @@ extension Date {
         - colonInTimeZone: Set to `true` to accept colons in time zone
     */
     public init?(fromRFC3339String rfc3339String: String, withColonInTimeZone colonInTimeZone: Bool) {
-        self.init(fromString: rfc3339String, withFormat: colonInTimeZone ? "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+        self.init(string: rfc3339String, format: colonInTimeZone ? "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     }
     
     /**
