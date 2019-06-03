@@ -52,15 +52,6 @@ extension Date {
         self = date
     }
     
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(dateTimeString:format:)")
-    public init?(fromString dateTimeString: String, withFormat formatString: String) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = formatString
-        guard let date = dateFormatter.date(from: dateTimeString) else { return nil }
-        self = date
-    }
-    
     /// Convert the `Date` value to a string in the specified format.
     public func getDateTimeString(withFormat formatString: String) -> String {
         let dateFormatter = DateFormatter()
@@ -73,14 +64,6 @@ extension Date {
     
     /// Initialize a `Date` value from a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
     public init?(apiString: String) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let date = dateFormatter.date(from: apiString) else { return nil }
-        self = date
-    }
-    
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(apiString:)")
-    public init?(fromAPIString apiString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         guard let date = dateFormatter.date(from: apiString) else { return nil }

@@ -52,10 +52,4 @@ public struct YMFormatter {
         return getPersonNameString(withStyle: style, prefix: nil, firstName: firstName, middleName: nil, nickname: nil, lastName: lastName, suffix: nil)
     }
     
-    @available(iOS, introduced: 9)
-    @available(swift, deprecated: 4, obsoleted: 4.3, renamed: "getPersonNameString(withStyle:prefix:firstName:middleName:nickname:lastName:suffix:)")
-    public static func getPersonNameString(withStyle style: PersonNameComponentsFormatter.Style = .default, fromPrefix prefix: String? = nil, firstName: String? = nil, middleName: String? = nil, nickname: String? = nil, lastName: String? = nil, suffix: String? = nil) -> String {
-       return getPersonNameString(withStyle: style, prefix: prefix, firstName: firstName, middleName: middleName, nickname: nickname, lastName: lastName, suffix: suffix)
-    }
-    
 }
