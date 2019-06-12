@@ -6,19 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// MARK: - PLAIN STRINGS
-
-extension Double {
-    
-    /**
-     Get the `String` representation of the number.
-     */
-    public var stringValue: String {
-        return String(self)
-    }
-    
-}
-
 // MARK: - PRICE STRINGS
 
 extension Double {
