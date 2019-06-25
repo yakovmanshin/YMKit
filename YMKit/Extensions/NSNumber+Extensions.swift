@@ -95,7 +95,7 @@ extension NSNumber {
         - fixedFractionDigits: if specified, `usesSignificantDigits` is disabled, and prices are formatted with the specified number of fraction digits
         - maxSignificantDigits: maximum number of significant digits; default is 3
     */
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, message: "Use getPriceString(significantDigits:minSignificantDigits:maxSignificantDigits:fixedFractionDigits:minFractionDigits:maxFractionDigits:groupingSeparator:locale:currencyCode:currencySymbol:)")
+    @available(*, deprecated, message: "Use getPriceString(significantDigits:minSignificantDigits:maxSignificantDigits:fixedFractionDigits:minFractionDigits:maxFractionDigits:groupingSeparator:locale:currencyCode:currencySymbol:)")
     public func getPriceString(in locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil, fixedFractionDigits: Int? = nil, maxSignificantDigits: Int = 3) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
@@ -126,25 +126,25 @@ extension NSNumber {
     }
     
     /// Convert `NSNumber` values to price strings in specified locale and with optionally specified number of fraction digits.
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, message: "Use getBasicPriceString(minFractionDigits:maxFractionDigits:locale:currencyCode:currencySymbol:), getPriceStringWithFixedFractionDigits(numberOfFractionDigits:locale:currencyCode:currencySymbol:), or getPriceStringUsingSignificantDigits(min:max:locale:currencyCode:currencySymbol:), depending on your needs")
+    @available(*, deprecated, message: "Use getBasicPriceString(minFractionDigits:maxFractionDigits:locale:currencyCode:currencySymbol:), getPriceStringWithFixedFractionDigits(numberOfFractionDigits:locale:currencyCode:currencySymbol:), or getPriceStringUsingSignificantDigits(min:max:locale:currencyCode:currencySymbol:), depending on your needs")
     public func getPriceString(in locale: Locale = .current, fixedFractionDigits: Int? = nil) -> String? {
         return self.getPriceString(in: locale, currencyCode: nil, currencySymbol: nil, fixedFractionDigits: fixedFractionDigits)
     }
     
     /// Convert `NSNumber` values to price strings with specified currency code and optionally specified number of fraction digits.
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, message: "Use getBasicPriceString(minFractionDigits:maxFractionDigits:locale:currencyCode:currencySymbol:), getPriceStringWithFixedFractionDigits(numberOfFractionDigits:locale:currencyCode:currencySymbol:), or getPriceStringUsingSignificantDigits(min:max:locale:currencyCode:currencySymbol:), depending on your needs")
+    @available(*, deprecated, message: "Use getBasicPriceString(minFractionDigits:maxFractionDigits:locale:currencyCode:currencySymbol:), getPriceStringWithFixedFractionDigits(numberOfFractionDigits:locale:currencyCode:currencySymbol:), or getPriceStringUsingSignificantDigits(min:max:locale:currencyCode:currencySymbol:), depending on your needs")
     public func getPriceString(currencyCode: String? = nil, fixedFractionDigits: Int? = nil) -> String? {
         return self.getPriceString(currencyCode: currencyCode, currencySymbol: nil, fixedFractionDigits: fixedFractionDigits)
     }
     
     /// Convert `NSNumber` values to price strings with specified currency symbol and optionally specified number of fraction digits.
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, message: "Use getBasicPriceString(minFractionDigits:maxFractionDigits:locale:currencyCode:currencySymbol:), getPriceStringWithFixedFractionDigits(numberOfFractionDigits:locale:currencyCode:currencySymbol:), or getPriceStringUsingSignificantDigits(min:max:locale:currencyCode:currencySymbol:), depending on your needs")
+    @available(*, deprecated, message: "Use getBasicPriceString(minFractionDigits:maxFractionDigits:locale:currencyCode:currencySymbol:), getPriceStringWithFixedFractionDigits(numberOfFractionDigits:locale:currencyCode:currencySymbol:), or getPriceStringUsingSignificantDigits(min:max:locale:currencyCode:currencySymbol:), depending on your needs")
     public func getPriceString(withCurrencySymbol currencySymbol: String = "", fixedFractionDigits: Int? = nil) -> String? {
         return self.getPriceString(currencyCode: nil, currencySymbol: currencySymbol, fixedFractionDigits: fixedFractionDigits)
     }
     
     /// Convert NSNumber values to price strings in specified locale and with specified number of fraction digits.
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "getPriceString(in:fixedFractionDigits:)")
+    @available(*, deprecated, renamed: "getPriceString(in:fixedFractionDigits:)")
     public func getPriceString(in locale: Locale = .current, numberOfFractionDigits: Int? = nil) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
@@ -155,7 +155,7 @@ extension NSNumber {
     }
     
     /// Convert NSNumber values to price strings with specified currency code and number of fraction digits.
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "getPriceString(currencyCode:fixedFractionDigits:)")
+    @available(*, deprecated, renamed: "getPriceString(currencyCode:fixedFractionDigits:)")
     public func getPriceString(currencyCode: String? = nil, numberOfFractionDigits: Int? = nil) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
@@ -167,7 +167,7 @@ extension NSNumber {
     }
     
     /// Convert NSNumber values to price strings with specified currency symbol and number of fraction digits.
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "getPriceString(withCurrencySymbol:fixedFractionDigits:)")
+    @available(*, deprecated, renamed: "getPriceString(withCurrencySymbol:fixedFractionDigits:)")
     public func getPriceString(withCurrencySymbol currencySymbol: String = "", numberOfFractionDigits: Int? = nil) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency

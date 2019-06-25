@@ -53,7 +53,7 @@ extension UIImageView {
         self.init(imageName: imageName, width: cgWidth, height: cgHeight, tintColor: tintColor)
     }
     
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(imageName:width:height:tintColor:)")
+    @available(*, deprecated, renamed: "init(imageName:width:height:tintColor:)")
     public convenience init(withImageNamed imageName: String, width: CGFloat? = nil, height: CGFloat? = nil, tintColor: UIColor? = nil) {
         let image = UIImage(named: imageName)
         
@@ -66,7 +66,7 @@ extension UIImageView {
         self.frame = CGRect(x: 0, y: 0, width: width ?? image?.size.width ?? 0.0, height: height ?? image?.size.height ?? 0)
     }
     
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(imageName:intWidth:intHeight:tintColor:)")
+    @available(*, deprecated, renamed: "init(imageName:intWidth:intHeight:tintColor:)")
     public convenience init(withImageNamed imageName: String, width: Int? = nil, height: Int? = nil, tintColor: UIColor? = nil) {
         var cgWidth: CGFloat? = nil
         var cgHeight: CGFloat? = nil

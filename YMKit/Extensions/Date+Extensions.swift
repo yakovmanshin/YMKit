@@ -52,7 +52,7 @@ extension Date {
         self = date
     }
     
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(dateTimeString:format:)")
+    @available(*, deprecated, renamed: "init(dateTimeString:format:)")
     public init?(fromString dateTimeString: String, withFormat formatString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -79,7 +79,7 @@ extension Date {
         self = date
     }
     
-    @available(swift, deprecated: 5.0, obsoleted: 5.1, renamed: "init(apiString:)")
+    @available(*, deprecated, renamed: "init(apiString:)")
     public init?(fromAPIString apiString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
