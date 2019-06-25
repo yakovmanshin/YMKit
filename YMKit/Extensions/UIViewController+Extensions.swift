@@ -21,13 +21,13 @@ extension UIViewController {
      + Make sure storyboard name is correct; otherwise, runtime error will occur.
      - parameter storyboardName: Name of the storyboard that contains the view controller
     */
-    open class func instantiate(from storyboardName: String) -> Self {
+    public class func instantiate(from storyboardName: String) -> Self {
         return UIViewController.instantiate(self, from: storyboardName)
     }
     
     /// Dismiss the current view controller.
     @inline(__always)
-    @objc open func dismissVC() {
+    @objc public func dismissVC() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -49,7 +49,7 @@ extension UIViewController {
         - primaryOptionStyle: See `UIAlertAction.Style`; default is `default`
         - primaryOptionAction: Block of code to execute when the primary option is seleected; default is `void`
     */
-    open func displayAlert(titled title: String, saying message: String? = nil, cancelOptionLabel: String = "OK", cancelOptionAction: ((UIAlertAction) -> Void)? = nil, primaryOptionLabel: String? = nil, primaryOptionStyle: UIAlertAction.Style = .default, primaryOptionAction: ((UIAlertAction) -> Void)? = nil) {
+    public func displayAlert(titled title: String, saying message: String? = nil, cancelOptionLabel: String = "OK", cancelOptionAction: ((UIAlertAction) -> Void)? = nil, primaryOptionLabel: String? = nil, primaryOptionStyle: UIAlertAction.Style = .default, primaryOptionAction: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAlertAction = UIAlertAction(title: cancelOptionLabel, style: .cancel, handler: cancelOptionAction)
@@ -70,7 +70,7 @@ extension UIViewController {
         - message: Message of the alert
         - postAlertAction: Block of code to execute when the alert is dismissed; not required
      */
-    open func displayInfoAlert(titled title: String, saying message: String? = nil, triggering postAlertAction: ((UIAlertAction) -> Void)? = nil) {
+    public func displayInfoAlert(titled title: String, saying message: String? = nil, triggering postAlertAction: ((UIAlertAction) -> Void)? = nil) {
         displayAlert(titled: title, saying: message, cancelOptionAction: postAlertAction)
     }
     
