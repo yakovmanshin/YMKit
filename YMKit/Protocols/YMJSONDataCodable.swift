@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 // MARK: - YMJSONDataCodable
 
 public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
@@ -84,6 +82,7 @@ extension YMJSONDataEncodable {
         do {
             return try self.getJSONData()
         } catch {
+            print(error)
             return nil
         }
     }
