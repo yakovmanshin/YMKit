@@ -16,15 +16,20 @@ public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
 
 public protocol YMJSONDataDecodable: Decodable {
     
+    init(throwingJSONData jsonData: Data) throws
     init?(jsonData: Data)
     
 }
 
 extension YMJSONDataDecodable {
     
+    public init(throwingJSONData jsonData: Data) throws {
+        self = try Self.initialize(from: jsonData)
+    }
+    
     public init?(jsonData: Data) {
         do {
-            self = try Self.initialize(from: jsonData)
+            self = try Self.init(throwingJSONData: jsonData)
         } catch {
             print(error)
             return nil
