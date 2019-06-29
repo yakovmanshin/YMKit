@@ -63,6 +63,7 @@ extension Date {
     // MARK: - API STRING
     
     /// Initialize a `Date` value from a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
+    @available(*, deprecated, renamed: "init(ymdString:)")
     public init?(apiString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -71,7 +72,28 @@ extension Date {
     }
     
     /// Convert the `Date` value to a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
+    @available(*, deprecated, renamed: "ymdString")
     public var apiDateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: self)
+    }
+    
+    // MARK: - YYYY-MM-DD STRING
+    
+    /// Initialize a `Date` value from a year-month-day `String`, formatted as`yyyy-MM-dd` (e.g. `1984-01-24`).
+    /// - Parameter ymdString: Date formatted as `yyyy-MM-dd`.
+    public init?(ymdString: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        guard let date = dateFormatter.date(from: ymdString) else { return nil }
+        
+        self = date
+    }
+    
+    /// Convert the `Date` value to a `String` formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
+    public var ymdString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: self)
