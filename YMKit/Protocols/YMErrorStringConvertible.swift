@@ -6,9 +6,8 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 /// This protocol ensures that `Error` values always have adequare string representations.
+@available(*, unavailable, renamed: "YMStringRepresentable")
 public protocol YMErrorStringConvertible: Error {
     var stringValue: String { get }
 }

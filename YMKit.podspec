@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name = "YMKit"
-  spec.version = "0.17"
+  spec.version = "1.0"
   spec.summary = "YMKit is a collection of tools for quicker and easier development of iOS apps."
   spec.homepage = "https://ym.dev/kit"
   spec.license = "Apache License, version 2"
@@ -10,7 +10,10 @@ Pod::Spec.new do |spec|
   spec.module_name = "YMKit"
   spec.swift_version = "5.0"
   spec.platform = :ios, "8.0"
-  spec.source = { :git => "https://github.com/yakovmanshin/YMKit.git", :tag => "v#{spec.version}" }
+  spec.source = {
+      :git => "https://github.com/yakovmanshin/YMKit.git",
+      :tag => "v#{spec.version}"
+  }
   spec.source_files = "YMKit/**/*.{h,m,swift}"
 
 end

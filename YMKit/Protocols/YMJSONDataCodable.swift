@@ -6,8 +6,6 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-import Foundation
-
 // MARK: - YMJSONDataCodable
 
 public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
@@ -16,15 +14,31 @@ public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
 
 public protocol YMJSONDataDecodable: Decodable {
     
+    /// Initializes a value from JSON `Data` using `JSONDecoder`.
+    ///
+    /// + If something goes wrong, the method `throws`.
+    ///
+    /// - Parameter jsonData: *Required.* JSON `Data`.
+    init(throwingJSONData jsonData: Data) throws
+    
+    /// Initializes a value from JSON `Data` using `JSONDecoder`.
+    ///
+    /// + If something goes wrong, `nil` is returned.
+    ///
+    /// - Parameter jsonData: *Required.* JSON `Data`.
     init?(jsonData: Data)
     
 }
 
 extension YMJSONDataDecodable {
     
+    public init(throwingJSONData jsonData: Data) throws {
+        self = try Self.initialize(from: jsonData)
+    }
+    
     public init?(jsonData: Data) {
         do {
-            self = try Self.initialize(from: jsonData)
+            self = try Self.init(throwingJSONData: jsonData)
         } catch {
             print(error)
             return nil
@@ -46,22 +60,31 @@ extension YMJSONDataDecodable {
 
 public protocol YMJSONDataEncodable: Encodable {
     
-    var jsonData: Data { get }
+    /// Encodes the value to JSON `Data` using `JSONEncoder`.
+    ///
+    /// + If something goes wrong, the method `throws`.
+    func getJSONData() throws -> Data
+    
+    /// Encodes the value to optional JSON `Data` using `JSONEncoder`.
+    ///
+    /// + If something goes wrong, `nil` is returned.
+    var jsonData: Data? { get }
     
 }
 
 extension YMJSONDataEncodable {
     
+    public func getJSONData() throws -> Data {
+        return try JSONEncoder().encode(self)
+    }
+    
     public var jsonData: Data? {
         do {
             return try self.getJSONData()
         } catch {
+            print(error)
             return nil
         }
-    }
-    
-    private func getJSONData() throws -> Data {
-        return try JSONEncoder().encode(self)
     }
     
     @available(*, unavailable)
