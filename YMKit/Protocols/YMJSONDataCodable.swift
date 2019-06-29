@@ -51,11 +51,16 @@ extension YMJSONDataDecodable {
 
 public protocol YMJSONDataEncodable: Encodable {
     
+    func getJSONData() throws -> Data
     var jsonData: Data? { get }
     
 }
 
 extension YMJSONDataEncodable {
+    
+    public func getJSONData() throws -> Data {
+        return try JSONEncoder().encode(self)
+    }
     
     public var jsonData: Data? {
         do {
@@ -63,10 +68,6 @@ extension YMJSONDataEncodable {
         } catch {
             return nil
         }
-    }
-    
-    private func getJSONData() throws -> Data {
-        return try JSONEncoder().encode(self)
     }
     
     @available(*, unavailable)
