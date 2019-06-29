@@ -16,7 +16,18 @@ public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
 
 public protocol YMJSONDataDecodable: Decodable {
     
+    /// Initializes a value from JSON `Data` using `JSONDecoder`.
+    ///
+    /// + If something goes wrong, the method `throws`.
+    ///
+    /// - Parameter jsonData: *Required.* JSON `Data`.
     init(throwingJSONData jsonData: Data) throws
+    
+    /// Initializes a value from JSON `Data` using `JSONDecoder`.
+    ///
+    /// + If something goes wrong, `nil` is returned.
+    ///
+    /// - Parameter jsonData: *Required.* JSON `Data`.
     init?(jsonData: Data)
     
 }
@@ -51,7 +62,14 @@ extension YMJSONDataDecodable {
 
 public protocol YMJSONDataEncodable: Encodable {
     
+    /// Encodes the value to JSON `Data` using `JSONEncoder`.
+    ///
+    /// + If something goes wrong, the method `throws`.
     func getJSONData() throws -> Data
+    
+    /// Encodes the value to optional JSON `Data` using `JSONEncoder`.
+    ///
+    /// + If something goes wrong, `nil` is returned.
     var jsonData: Data? { get }
     
 }
