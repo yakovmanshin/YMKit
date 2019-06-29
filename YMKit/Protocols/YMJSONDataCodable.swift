@@ -46,7 +46,7 @@ extension YMJSONDataDecodable {
 
 public protocol YMJSONDataEncodable: Encodable {
     
-    var jsonData: Data { get }
+    var jsonData: Data? { get }
     
 }
 
