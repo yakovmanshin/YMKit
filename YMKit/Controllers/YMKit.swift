@@ -17,15 +17,33 @@ final public class YMKit {
     }
     
     /// Returns the number of the currently installed version of the main app (the one you’re embedding YMKit into).
+    @available(*, unavailable, renamed: "AppInfo.version")
     public class var appVersion: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
     
     /// Returns the number of the currently installed build of the main app (the one you’re embedding YMKit into).
+    @available(*, unavailable, renamed: "AppInfo.build")
     public class var appBuild: String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     }
     
+}
+
+extension YMKit {
+    public struct AppInfo {
+        
+        private init() { }
+        
+        public static var build: String? {
+            return Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        }
+        
+        public static var version: String? {
+            return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        }
+        
+    }
 }
 
 extension YMKit {
