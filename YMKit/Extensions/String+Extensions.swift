@@ -65,3 +65,35 @@ extension String {
     }
     
 }
+
+// MARK: - MATCHING AGAINST REGULAR EXPRESSIONS
+
+extension String {
+    
+    /// Indicates whether the string fully matches (i.e. has exactly one match with) the specified regular expression.
+    ///
+    /// - Parameter regularExpression: *Required.* Regular expression to match the string against.
+    ///
+    /// - Returns: `Bool`. Matching result.
+    @inlinable
+    public func matchesRegularExpression(_ regularExpression: NSRegularExpression) -> Bool {
+        return regularExpression.numberOfMatches(in: self, options: [], range: NSRange(location: 0, length: self.count)) == 1
+    }
+    
+    /// Indicates whether the string fully matches (i.e. has exactly one match with) a regular expression initialized with the specified pattern with options.
+    ///
+    /// - Parameter regularExpressionPattern: *Required.* Regular expression pattern to initialize an `NSRegularExpression` from..
+    /// - Parameter options: *Optional.* `NSRegularExpression.Options` to use when initializing an `NSRegularExpression`; default is `[]`.
+    ///
+    /// - Returns: `Bool?`. Matching result, if regular expression initialized successfully; otherwise, `nil`.
+    public func matchesRegularExpression(fromPattern regularExpressionPattern: String, withOptions options: NSRegularExpression.Options = []) -> Bool? {
+        do {
+            let regularExpression = try NSRegularExpression(pattern: regularExpressionPattern, options: options)
+            
+            return self.matchesRegularExpression(regularExpression)
+        } catch {
+            return nil
+        }
+    }
+    
+}
