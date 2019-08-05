@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
 
   spec.name = "YMKit"
-  spec.version = "1.0"
+  spec.version = "1.1"
   spec.summary = "YMKit is a collection of tools for quicker and easier development of iOS apps."
-  spec.homepage = "https://ym.dev/kit"
+  spec.homepage = "https://kit.ym.dev/"
   spec.license = "Apache License, version 2"
   spec.author = "Yakov Manshin"
   spec.social_media_url = "https://twitter.com/yakovmanshin"

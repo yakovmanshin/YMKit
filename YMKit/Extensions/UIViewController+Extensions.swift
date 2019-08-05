@@ -37,18 +37,17 @@ extension UIViewController {
 
 extension UIViewController {
     
-    /**
-     Display an alert with the specified title, message, and up to two options.
-     + The primary option is displayed only when both `primaryOptionLabel` and `primaryOptionAction` are set.
-     - Parameters:
-        - title: Title of the alert
-        - message: Message of the alert; default is `nil`
-        - cancelOptionLabel: Label of the cancel option; default is “OK”
-        - cancelOptionAction: Block of code to execute when the cancel option is seleected; default is `void`
-        - primaryOptionLabel: Label of the primary option; default is `nil`
-        - primaryOptionStyle: See `UIAlertAction.Style`; default is `default`
-        - primaryOptionAction: Block of code to execute when the primary option is seleected; default is `void`
-    */
+    /// Displays an alert with one or two options.
+    ///
+    /// + If `primaryOptionLabelKey` or `primaryOptionAction` is not set, the alert will have only one (cancel) option.
+    ///
+    /// - Parameter title: *Required.* Title of the alert.
+    /// - Parameter message: *Optional.* Message of the alert; default is `nil`.
+    /// - Parameter cancelOptionLabel: *Optional.* Cancel option label; default is OK.
+    /// - Parameter cancelOptionAction: *Optional.* Closure to execute when the cancel option is selected; default is `nil`.
+    /// - Parameter primaryOptionLabel: *Optional.* Primary option label; default is `nil`.
+    /// - Parameter primaryOptionStyle: *Optional.* See `UIAlertAction.Style`; default is `default`.
+    /// - Parameter primaryOptionAction: *Optional.* Closure to execute when the primary option is selected; default is `nil`.
     public func displayAlert(titled title: String, saying message: String? = nil, cancelOptionLabel: String = "OK", cancelOptionAction: ((UIAlertAction) -> Void)? = nil, primaryOptionLabel: String? = nil, primaryOptionStyle: UIAlertAction.Style = .default, primaryOptionAction: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -63,15 +62,55 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    /**
-     Display an info alert with the specified title, message, and the OK button.
-     - Parameters:
-        - title: Title of the alert
-        - message: Message of the alert
-        - postAlertAction: Block of code to execute when the alert is dismissed; not required
-     */
+    /// Displays an info alert with a single (OK) button.
+    /// - Parameter titleKey: *Required.* Localization key for the title of the alert.
+    /// - Parameter messageKey: *Optional.* Localization key for the message of the alert; default is `nil`.
+    /// - Parameter postAlertAction: *Optional.* Closure to execute when the alert is dismissed; default is `nil`.
     public func displayInfoAlert(titled title: String, saying message: String? = nil, triggering postAlertAction: ((UIAlertAction) -> Void)? = nil) {
         displayAlert(titled: title, saying: message, cancelOptionAction: postAlertAction)
+    }
+    
+}
+
+// MARK: - LOCALIZED ALERTS
+
+extension UIViewController {
+    
+    /// Displays an alert with one or two options with localized title, message, and option label keys.
+    ///
+    /// + If `primaryOptionLabelKey` or `primaryOptionAction` is not set, the alert will have only one (cancel) option.
+    ///
+    /// - Parameter titleKey: *Required.* Localization key for the title of the alert.
+    /// - Parameter messageKey: *Optional.* Localization key for the message of the alert; default is `nil`.
+    /// - Parameter cancelOptionLabelKey: *Optional.* Localization key for the cancel option label; default is OK (literally).
+    /// - Parameter cancelOptionAction: *Optional.* Closure to execute when the cancel option is selected; default is `nil`.
+    /// - Parameter primaryOptionLabelKey: *Optional.* Localization key for the primary option label; default is `nil`.
+    /// - Parameter primaryOptionStyle: *Optional.* See `UIAlertAction.Style`; default is `default`.
+    /// - Parameter primaryOptionAction: *Optional.* Closure to execute when the primary option is selected; default is `nil`.
+    public func displayLocalizedAlert(titled titleKey: String, saying messageKey: String? = nil, cancelOptionLabel cancelOptionLabelKey: String = "OK", cancelOptionAction: ((UIAlertAction) -> Void)? = nil, primaryOptionLabel primaryOptionLabelKey: String? = nil, primaryOptionStyle: UIAlertAction.Style = .default, primaryOptionAction: ((UIAlertAction) -> Void)? = nil) {
+        let title = titleKey.localized
+        let message = messageKey?.localized
+        let primaryOptionLabel = primaryOptionLabelKey?.localized
+        
+        let cancelOptionLabel: String
+        if cancelOptionLabelKey == "OK" {
+            cancelOptionLabel = "OK"
+        } else {
+            cancelOptionLabel = cancelOptionLabelKey.localized
+        }
+        
+        displayAlert(titled: title, saying: message, cancelOptionLabel: cancelOptionLabel, cancelOptionAction: cancelOptionAction, primaryOptionLabel: primaryOptionLabel, primaryOptionStyle: primaryOptionStyle, primaryOptionAction: primaryOptionAction)
+    }
+    
+    /// Displays an info alert with a single (OK) button with localized title and message.
+    /// - Parameter titleKey: *Required.* Localization key for the title of the alert.
+    /// - Parameter messageKey: *Optional.* Localization key for the message of the alert; default is `nil`.
+    /// - Parameter postAlertAction: *Optional.* Closure to execute when the alert is dismissed; default is `nil`.
+    public func displayLocalizedInfoAlert(titled titleKey: String, saying messageKey: String? = nil, triggering postAlertAction: ((UIAlertAction) -> Void)? = nil) {
+        let title = titleKey.localized
+        let message = messageKey?.localized
+        
+        displayInfoAlert(titled: title, saying: message, triggering: postAlertAction)
     }
     
 }
