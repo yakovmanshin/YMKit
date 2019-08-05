@@ -21,12 +21,14 @@ extension UITableView {
         self.layoutIfNeeded()
     }
     
+    /// Automatically adjusts height of the header view to fit the content.
     public func adjustHeaderViewHeight() {
         guard let headerView = self.tableHeaderView else { return }
         
         adjustHeight(of: headerView)
     }
     
+    /// Automatically adjusts height of the footer view to fit the content.
     public func adjustFooterViewHeight() {
         guard let footerView = self.tableFooterView else { return }
         
