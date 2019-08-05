@@ -37,7 +37,7 @@
 		666E78282274B9AC00CFF08A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		667A17CA22B15AA40010CF86 /* YMStringRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMStringRepresentable.swift; sourceTree = "<group>"; };
 		667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJSONDataCodable.swift; sourceTree = "<group>"; };
-		668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMErrorStringConvertible.swift; sourceTree = "<group>"; };
 		66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
@@ -305,6 +305,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 101;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
