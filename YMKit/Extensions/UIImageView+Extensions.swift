@@ -10,6 +10,19 @@ import UIKit
 
 extension UIImageView {
     
+    /// Initialize a `UIImageView` with image name, target frame, and, optinally, tint color.
+    /// - Parameter imageName: *Required.* Image name to initialize an image view with. If an image with the specified name doesn't exist, the initializer fails and returns `nil`.
+    /// - Parameter frame: *Required.* `CGRect` to draw the image view in.
+    /// - Parameter tintColor: *Optional.* Tint color to use with the image.
+    public convenience init?(withImageNamed imageName: String, in frame: CGRect, tinted tintColor: UIColor? = nil) {
+        guard let image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate) else { return nil }
+        
+        self.init(frame: frame)
+        
+        self.image = image
+        self.tintColor = tintColor
+    }
+    
     /**
      Initialize `UIImageView` with the name of the images and, optionally, its dimensions and tint color.
      - Parameters:
