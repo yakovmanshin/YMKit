@@ -51,6 +51,7 @@ extension UIImageView {
         - height: Height of the image in the initialized `UIImageView`
         - tintColor: Tint color of the image in the initialized `UIImageView`
     */
+    @available(*, deprecated, renamed: "init(imageName:width:height:tintColor:)")
     public convenience init(imageName: String, intWidth: Int? = nil, intHeight: Int? = nil, tintColor: UIColor? = nil) {
         var cgWidth: CGFloat? = nil
         var cgHeight: CGFloat? = nil
