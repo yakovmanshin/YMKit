@@ -41,6 +41,11 @@ extension YMKit {
             return Bundle.main.infoDictionary?["CFBundleVersion"] as? String
         }
         
+        /// Returns bundle identifier of the main app.
+        public static var bundleID: String? {
+            return Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
+        }
+        
         /// Returns version number of currently installed main app (the one YMKit is embedded into).
         public static var version: String? {
             return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
