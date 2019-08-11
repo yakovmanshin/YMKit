@@ -46,6 +46,11 @@ extension YMKit {
             return Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
         }
         
+        /// Returns display name (product name) of the main app.
+        public static var name: String? {
+            return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String
+        }
+        
         /// Returns version number of currently installed main app (the one YMKit is embedded into).
         public static var version: String? {
             return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
