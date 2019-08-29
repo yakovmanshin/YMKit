@@ -27,18 +27,52 @@ extension Int {
 extension Int {
     
     /// Convert `Int` values to price strings. You can optionally specify minimum and maximum numbers of fraction digits, locale, currency code, and currency symbol.
-    public func getBasicPriceString(minFractionDigits: Int = 0, maxFractionDigits: Int = 3, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
-        return NSNumber(value: self).getBasicPriceString(minFractionDigits: minFractionDigits, maxFractionDigits: maxFractionDigits, locale: locale, currencyCode: currencyCode, currencySymbol: currencySymbol)
+    public func getBasicPriceString(
+        minFractionDigits: Int = 0,
+        maxFractionDigits: Int = 3,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
+        return NSNumber(value: self).getBasicPriceString(
+            minFractionDigits: minFractionDigits,
+            maxFractionDigits: maxFractionDigits,
+            locale: locale,
+            currencyCode: currencyCode,
+            currencySymbol: currencySymbol
+        )
     }
     
     /// Convert `Int` values to price strings with the specified number of fraction digits. You can optionally specify locale, currency code, and currency symbol.
-    public func getPriceStringWithFixedFractionDigits(numberOfFractionDigits: Int, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
-        return NSNumber(value: self).getPriceStringWithFixedFractionDigits(numberOfFractionDigits: numberOfFractionDigits, locale: locale, currencyCode: currencyCode, currencySymbol: currencySymbol)
+    public func getPriceStringWithFixedFractionDigits(
+        numberOfFractionDigits: Int,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
+        return NSNumber(value: self).getPriceStringWithFixedFractionDigits(
+            numberOfFractionDigits: numberOfFractionDigits,
+            locale: locale,
+            currencyCode: currencyCode,
+            currencySymbol: currencySymbol
+        )
     }
     
     /// Convert `Int` values to price strings that use significant digits formatting (see `NumberFormatter.usesSignificantDigits`). You can optionally specify minimum and maximum numbers of significant digits, locale, currency code, and currency symbol.
-    public func getPriceStringUsingSignificantDigits(min: Int? = nil, max: Int? = nil, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
-        return NSNumber(value: self).getPriceStringUsingSignificantDigits(min: min, max: max, locale: locale, currencyCode: currencyCode, currencySymbol: currencySymbol)
+    public func getPriceStringUsingSignificantDigits(
+        min: Int? = nil,
+        max: Int? = nil,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
+        return NSNumber(value: self).getPriceStringUsingSignificantDigits(
+            min: min,
+            max: max,
+            locale: locale,
+            currencyCode: currencyCode,
+            currencySymbol: currencySymbol
+        )
     }
     
 }

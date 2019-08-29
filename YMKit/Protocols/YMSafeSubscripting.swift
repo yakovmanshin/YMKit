@@ -7,6 +7,7 @@
 //
 
 /// Adopt this protocol to prevent out-of-bounds-class errors in collections.
+@available(*, deprecated, renamed: "YMSafeSubscriptable")
 public protocol YMSafeSubscripting: Collection {
     
     /**
@@ -17,14 +18,6 @@ public protocol YMSafeSubscripting: Collection {
      - Returns: An element with the specified index, if it exists; otherwise, `nil`.
     */
     subscript(safe index: Index) -> Element? { get }
-    
-}
-
-extension YMSafeSubscripting {
-    
-    public subscript(safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
     
 }
 

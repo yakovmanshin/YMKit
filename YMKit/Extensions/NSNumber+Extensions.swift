@@ -26,7 +26,18 @@ extension NSNumber {
         - currencySymbol: a symbol that represents the currency (such as “$” or “€”)
      - Returns: A string that represents the `NSNumber` value with specified style.
     */
-    public func getPriceString(significantDigits: Bool = false, minSignificantDigits: Int? = nil, maxSignificantDigits: Int? = nil, fixedFractionDigits: Int? = nil, minFractionDigits: Int = 0, maxFractionDigits: Int = 3, groupingSeparator: Bool = true, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
+    public func getPriceString(
+        significantDigits: Bool = false,
+        minSignificantDigits: Int? = nil,
+        maxSignificantDigits: Int? = nil,
+        fixedFractionDigits: Int? = nil,
+        minFractionDigits: Int = 0,
+        maxFractionDigits: Int = 3,
+        groupingSeparator: Bool = true,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.usesGroupingSeparator = groupingSeparator
@@ -68,18 +79,53 @@ extension NSNumber {
     }
     
     /// Convert `NSNumber` values to price strings. You can optionally specify minimum and maximum numbers of fraction digits, locale, currency code, and currency symbol.
-    public func getBasicPriceString(minFractionDigits: Int = 0, maxFractionDigits: Int = 3, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
-        return getPriceString(minFractionDigits: minFractionDigits, maxFractionDigits: maxFractionDigits, locale: locale, currencyCode: currencyCode, currencySymbol: currencySymbol)
+    public func getBasicPriceString(
+        minFractionDigits: Int = 0,
+        maxFractionDigits: Int = 3,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
+        return getPriceString(
+            minFractionDigits: minFractionDigits,
+            maxFractionDigits: maxFractionDigits,
+            locale: locale,
+            currencyCode: currencyCode,
+            currencySymbol: currencySymbol
+        )
     }
     
     /// Convert `NSNumber` values to price strings with the specified number of fraction digits. You can optionally specify locale, currency code, and currency symbol.
-    public func getPriceStringWithFixedFractionDigits(numberOfFractionDigits: Int, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
-        return getPriceString(fixedFractionDigits: numberOfFractionDigits, locale: locale, currencyCode: currencyCode, currencySymbol: currencySymbol)
+    public func getPriceStringWithFixedFractionDigits(
+        numberOfFractionDigits: Int,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
+        return getPriceString(
+            fixedFractionDigits: numberOfFractionDigits,
+            locale: locale,
+            currencyCode: currencyCode,
+            currencySymbol: currencySymbol
+        )
     }
     
     /// Convert `NSNumber` values to price strings that use significant digits formatting (see `NumberFormatter.usesSignificantDigits`). You can optionally specify minimum and maximum numbers of significant digits, locale, currency code, and currency symbol.
-    public func getPriceStringUsingSignificantDigits(min: Int? = nil, max: Int? = nil, locale: Locale = .current, currencyCode: String? = nil, currencySymbol: String? = nil) -> String? {
-        return getPriceString(significantDigits: true, minSignificantDigits: min, maxSignificantDigits: max, locale: locale, currencyCode: currencyCode, currencySymbol: currencySymbol)
+    public func getPriceStringUsingSignificantDigits(
+        min: Int? = nil,
+        max: Int? = nil,
+        locale: Locale = .current,
+        currencyCode: String? = nil,
+        currencySymbol: String? = nil
+    ) -> String? {
+        return getPriceString(
+            significantDigits: true,
+            minSignificantDigits: min,
+            maxSignificantDigits: max,
+            locale: locale,
+            currencyCode: currencyCode,
+            currencySymbol: currencySymbol
+        )
     }
     
 }
