@@ -20,7 +20,12 @@ extension UIColor {
         - greenInput: The amount of green; from 0 to 255
         - alpha: Alpha value for the color; default is 1.0
     */
-    public convenience init(red redInput: Int, green greenInput: Int, blue blueInput: Int, alpha alphaInput: CGFloat = 1) {
+    public convenience init(
+        red redInput: Int,
+        green greenInput: Int,
+        blue blueInput: Int,
+        alpha alphaInput: CGFloat = 1
+    ) {
         var red: Int
         var green: Int
         var blue: Int
@@ -42,7 +47,12 @@ extension UIColor {
         else if alphaInput > 1 { alpha = 1 }
         else { alpha = alphaInput }
         
-        self.init(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: alpha)
+        self.init(
+            red: CGFloat(red) / 255,
+            green: CGFloat(green) / 255,
+            blue: CGFloat(blue) / 255,
+            alpha: alpha
+        )
     }
     
 }
@@ -63,7 +73,12 @@ extension UIColor {
         let green = (hex >> 8) & 0xFF
         let blue = hex & 0xFF
         
-        self.init(red: Int(red), green: Int(green), blue: Int(blue), alpha: alpha)
+        self.init(
+            red: Int(red),
+            green: Int(green),
+            blue: Int(blue),
+            alpha: alpha
+        )
     }
     
     ///

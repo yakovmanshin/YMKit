@@ -24,7 +24,15 @@ public struct YMFormatter {
         - suffix: Esq., Jr., Ph.D., etc.
     */
     @available(iOS, introduced: 9)
-    public static func getPersonNameString(withStyle style: PersonNameComponentsFormatter.Style = .default, prefix: String? = nil, firstName: String? = nil, middleName: String? = nil, nickname: String? = nil, lastName: String? = nil, suffix: String? = nil) -> String {
+    public static func getPersonNameString(
+        withStyle style: PersonNameComponentsFormatter.Style = .default,
+        prefix: String? = nil,
+        firstName: String? = nil,
+        middleName: String? = nil,
+        nickname: String? = nil,
+        lastName: String? = nil,
+        suffix: String? = nil
+    ) -> String {
         let nameFormatter = PersonNameComponentsFormatter()
         nameFormatter.style = style
         
@@ -48,8 +56,20 @@ public struct YMFormatter {
         - lastName: Appleseed
     */
     @available(iOS, introduced: 9)
-    public static func getPersonNameString(withStyle style: PersonNameComponentsFormatter.Style = .default, firstName: String? = nil, lastName: String? = nil) -> String {
-        return getPersonNameString(withStyle: style, prefix: nil, firstName: firstName, middleName: nil, nickname: nil, lastName: lastName, suffix: nil)
+    public static func getPersonNameString(
+        withStyle style: PersonNameComponentsFormatter.Style = .default,
+        firstName: String? = nil,
+        lastName: String? = nil
+    ) -> String {
+        return getPersonNameString(
+            withStyle: style,
+            prefix: nil,
+            firstName: firstName,
+            middleName: nil,
+            nickname: nil,
+            lastName: lastName,
+            suffix: nil
+        )
     }
     
 }

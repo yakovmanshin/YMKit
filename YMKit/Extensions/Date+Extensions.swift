@@ -109,7 +109,10 @@ extension Date {
         - rfc3339String: An RFC 3339-compliant string
         - colonInTimeZone: Set to `true` to accept colons in time zone
     */
-    public init?(fromRFC3339String rfc3339String: String, withColonInTimeZone colonInTimeZone: Bool) {
+    public init?(
+        fromRFC3339String rfc3339String: String,
+        withColonInTimeZone colonInTimeZone: Bool
+    ) {
         self.init(string: rfc3339String, format: colonInTimeZone ? "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     }
     
@@ -127,7 +130,10 @@ extension Date {
     // MARK: - ISO8601 STRING
     
     @available(iOS, introduced: 10)
-    public init?(fromISO8601String iso8601String: String, formatOptions: ISO8601DateFormatter.Options = []) {
+    public init?(
+        fromISO8601String iso8601String: String,
+        formatOptions: ISO8601DateFormatter.Options = []
+    ) {
         let iso8601DateFormatter = ISO8601DateFormatter()
         if !formatOptions.isEmpty { iso8601DateFormatter.formatOptions = formatOptions }
         guard let date = iso8601DateFormatter.date(from: iso8601String) else { return nil }
@@ -159,7 +165,11 @@ extension Date {
         - dateStyle: see `DateFormatter.Style`
         - timeStyle: see `DateFormatter.Style`
     */
-    public func getDateTimeString(in locale: Locale = Locale.current, dateStyle: DateFormatter.Style = .long, timeStyle: DateFormatter.Style = .short) -> String {
+    public func getDateTimeString(
+        in locale: Locale = Locale.current,
+        dateStyle: DateFormatter.Style = .long,
+        timeStyle: DateFormatter.Style = .short
+    ) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = locale
         dateFormatter.dateStyle = dateStyle
