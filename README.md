@@ -1,4 +1,8 @@
-# YMKit [![Build Status](https://travis-ci.com/yakovmanshin/YMKit.svg?branch=master)](https://travis-ci.com/yakovmanshin/YMKit)
+# YMKit
+
+![Build Status — master](https://go.ym.dev/ymkit-ci-master)
+![Build Status — dev](https://go.ym.dev/ymkit-ci-dev)
+
 **YMKit** is a collection of tools for quicker and easier development of iOS apps.
 
 **YMKit** extends built-in types, such as `Date` or `UIColor`, with helpful additional methods, and introduces new types, such as `YMFormatter`, for advanced functionality.
