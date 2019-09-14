@@ -10,7 +10,7 @@
 
 extension Array: YMSafeSubscriptable { }
 
-// MARK: - Conditional Append and Insertion
+// MARK: - Conditional Append, Insertion, and Removal
 
 extension Array {
     

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Animation
+
 extension UIView {
     
     /**

@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - INITIALIZATION
+// MARK: - Instantiation from Storyboards
 
 extension UIViewController {
     
@@ -95,7 +95,7 @@ extension UIViewController {
     
 }
 
-// MARK: - ALERTS
+// MARK: - Alerts
 
 extension UIViewController {
     
@@ -164,7 +164,7 @@ extension UIViewController {
     
 }
 
-// MARK: - LOCALIZED ALERTS
+// MARK: - Localized Alerts
 
 extension UIViewController {
     

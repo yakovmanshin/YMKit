@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// MARK: - NETWORKING
+// MARK: - Networking
 
 extension Int {
     
@@ -22,7 +22,7 @@ extension Int {
     
 }
 
-// MARK: - PRICE STRINGS
+// MARK: - Price Strings
 
 extension Int {
     

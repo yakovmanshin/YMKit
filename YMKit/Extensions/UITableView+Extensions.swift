@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Header and Footer Configuration
+
 extension UITableView {
     
     private func adjustHeight(of view: UIView) {

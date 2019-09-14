@@ -6,6 +6,8 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+// MARK: - Data-to-String Conversion
+
 extension Data {
     
     /// Returns a `String` containing a representation of the `Data`.
