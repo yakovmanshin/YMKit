@@ -31,10 +31,7 @@ final public class YMKit {
 }
 
 extension YMKit {
-    public struct AppInfo {
-        
-        // No instances of AppInfo can be initialized.
-        private init() { }
+    public enum AppInfo {
         
         /// Returns build number of currently installed main app (the one YMKit is embedded into).
         public static var build: String? {
@@ -60,20 +57,14 @@ extension YMKit {
 }
 
 extension YMKit {
-    public struct DeviceInfo {
-        
-        // No instances of DeviceInfo can be initialized.
-        private init() { }
+    public enum DeviceInfo {
         
         /// Returns model name of the device.
         public static var model: String {
             return UIDevice.current.model
         }
         
-        public struct OS {
-            
-            // No instances of OS can be initialized.
-            private init() { }
+        public enum OS {
             
             /// Returns name of the operating system installed on the device.
             public static var name: String {
