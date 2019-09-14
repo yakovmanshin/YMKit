@@ -42,7 +42,7 @@ extension Array {
         }
     }
     
-    /// Inserts a new element at the specified position.
+    /// Inserts a new element at the specified position if the specified closure evaluates to `true`.
     ///
     /// - Parameter newElement: The new element to insert into the array.
     /// - Parameter i: The position at which to insert the new element. `index` must be a valid index of the array or equal to its `endIndex` property.
