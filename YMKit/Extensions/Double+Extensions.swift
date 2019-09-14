@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// MARK: - PRICE STRINGS
+// MARK: - Price Strings
 
 extension Double {
     

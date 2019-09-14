@@ -20,5 +20,3 @@ public protocol YMSafeSubscripting: Collection {
     subscript(safe index: Index) -> Element? { get }
     
 }
-
-extension Array: YMSafeSubscripting { }

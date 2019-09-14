@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// MARK: - LOCALIZATION
+// MARK: - Localization
 
 extension String {
     
@@ -27,7 +27,7 @@ extension String {
     
 }
 
-// MARK: - TRANSFORMATION
+// MARK: - Transformation
 
 extension String {
     
@@ -49,7 +49,7 @@ extension String {
     
 }
 
-// MARK: - COMPARISON
+// MARK: - Comparison
 
 extension String {
     
@@ -66,7 +66,7 @@ extension String {
     
 }
 
-// MARK: - MATCHING AGAINST REGULAR EXPRESSIONS
+// MARK: - Matching Against Regular Expressions
 
 extension String {
     
