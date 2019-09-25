@@ -12,14 +12,12 @@ import UIKit
 
 extension UIColor {
     
-    /**
-     Initialize a `UIColor` value with RGB values.
-     - Parameters:
-        - redInput: The amount of red; from 0 to 255
-        - blueInput: The amount of blue; from 0 to 255
-        - greenInput: The amount of green; from 0 to 255
-        - alpha: Alpha value for the color; default is 1.0
-    */
+    /// Initializes a `UIColor` with RGB values and optional alpha.
+    ///
+    /// - Parameter redInput: *Required.* The amount of red; from 0 to 255
+    /// - Parameter greenInput: *Required.* The amount of green; from 0 to 255
+    /// - Parameter blueInput: *Required.* The amount of blue; from 0 to 255
+    /// - Parameter alphaInput: *Optional.* The alpha value; from 0 to 1; default is 1.
     public convenience init(
         red redInput: Int,
         green greenInput: Int,
