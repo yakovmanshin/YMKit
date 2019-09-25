@@ -12,6 +12,18 @@ import UIKit
 
 extension UIColor {
     
+    @inline(__always)
+    private static func resolveColorValue(_ inputValue: Int) -> UInt8 {
+        switch inputValue {
+        case ..<0:
+            return 0
+        case 0...255:
+            return UInt8(inputValue)
+        default:
+            return 255
+        }
+    }
+    
     /// Initializes a `UIColor` with RGB values and optional alpha.
     ///
     /// - Parameter redInput: *Required.* The amount of red; from 0 to 255
@@ -24,26 +36,16 @@ extension UIColor {
         blue blueInput: Int,
         alpha alphaInput: CGFloat = 1
     ) {
-        var red: Int
-        var green: Int
-        var blue: Int
-        var alpha: CGFloat
+        let red = UIColor.resolveColorValue(redInput)
+        let green = UIColor.resolveColorValue(greenInput)
+        let blue = UIColor.resolveColorValue(blueInput)
         
-        if redInput < 0 { red = 0 }
-        else if redInput > 255 { red = 255 }
-        else { red = redInput }
-        
-        if greenInput < 0 { green = 0 }
-        else if greenInput > 255 { green = 255 }
-        else { green = greenInput }
-        
-        if blueInput < 0 { blue = 0 }
-        else if blueInput > 255 { blue = 255 }
-        else { blue = blueInput }
-        
-        if alphaInput < 0 { alpha = 0 }
-        else if alphaInput > 1 { alpha = 1 }
-        else { alpha = alphaInput }
+        let alpha: CGFloat
+        switch alphaInput {
+        case ..<0: alpha = 0
+        case 0...1: alpha = alphaInput
+        default: alpha = 1
+        }
         
         self.init(
             red: CGFloat(red) / 255,
