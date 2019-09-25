@@ -68,7 +68,7 @@ extension UIColor {
         - hex: Hexadecimal color number (from `0x000000` to `0xFFFFFF`)
         - alpha: Alpha value for the color; default is 1.0
     */
-    public convenience init?(hex: UInt32, alpha: CGFloat = 1) {
+    public convenience init(hex: UInt32, alpha: CGFloat = 1) {
         let red = (hex >> 16) & 0xFF
         let green = (hex >> 8) & 0xFF
         let blue = hex & 0xFF
@@ -88,10 +88,20 @@ extension UIColor {
      - parameter hexStringInput: String with hexadecimal color code
     */
     public convenience init?(hexString hexStringInput: String) {
-        let regExPattern = "^#{0,1}([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
-        let regEx = try! NSRegularExpression(pattern: regExPattern, options: [])
+        let regExPattern = "^#{0,1}([0-9a-f]{3}|[0-9a-f]{6})$"
+        guard let regEx = try? NSRegularExpression(
+            pattern: regExPattern,
+            options: [.caseInsensitive]
+        ) else { return nil }
         
-        guard regEx.matches(in: hexStringInput, options: [], range: NSRange(location: 0, length: hexStringInput.count)).count == 1 else { return nil }
+        guard regEx.matches(
+            in: hexStringInput,
+            options: [],
+            range: NSRange(
+                location: 0,
+                length: hexStringInput.count
+            )
+        ).count == 1 else { return nil }
         
         var hexString = hexStringInput
         
