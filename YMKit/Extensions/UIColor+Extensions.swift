@@ -12,40 +12,40 @@ import UIKit
 
 extension UIColor {
     
-    /**
-     Initialize a `UIColor` value with RGB values.
-     - Parameters:
-        - redInput: The amount of red; from 0 to 255
-        - blueInput: The amount of blue; from 0 to 255
-        - greenInput: The amount of green; from 0 to 255
-        - alpha: Alpha value for the color; default is 1.0
-    */
+    @inline(__always)
+    private static func resolveColorValue(_ inputValue: Int) -> UInt8 {
+        switch inputValue {
+        case ..<0:
+            return 0
+        case 0...255:
+            return UInt8(inputValue)
+        default:
+            return 255
+        }
+    }
+    
+    /// Initializes a `UIColor` with RGB values and optional alpha.
+    ///
+    /// - Parameter redInput: *Required.* The amount of red; from 0 to 255
+    /// - Parameter greenInput: *Required.* The amount of green; from 0 to 255
+    /// - Parameter blueInput: *Required.* The amount of blue; from 0 to 255
+    /// - Parameter alphaInput: *Optional.* The alpha value; from 0 to 1; default is 1.
     public convenience init(
         red redInput: Int,
         green greenInput: Int,
         blue blueInput: Int,
         alpha alphaInput: CGFloat = 1
     ) {
-        var red: Int
-        var green: Int
-        var blue: Int
-        var alpha: CGFloat
+        let red = UIColor.resolveColorValue(redInput)
+        let green = UIColor.resolveColorValue(greenInput)
+        let blue = UIColor.resolveColorValue(blueInput)
         
-        if redInput < 0 { red = 0 }
-        else if redInput > 255 { red = 255 }
-        else { red = redInput }
-        
-        if greenInput < 0 { green = 0 }
-        else if greenInput > 255 { green = 255 }
-        else { green = greenInput }
-        
-        if blueInput < 0 { blue = 0 }
-        else if blueInput > 255 { blue = 255 }
-        else { blue = blueInput }
-        
-        if alphaInput < 0 { alpha = 0 }
-        else if alphaInput > 1 { alpha = 1 }
-        else { alpha = alphaInput }
+        let alpha: CGFloat
+        switch alphaInput {
+        case ..<0: alpha = 0
+        case 0...1: alpha = alphaInput
+        default: alpha = 1
+        }
         
         self.init(
             red: CGFloat(red) / 255,
@@ -68,7 +68,7 @@ extension UIColor {
         - hex: Hexadecimal color number (from `0x000000` to `0xFFFFFF`)
         - alpha: Alpha value for the color; default is 1.0
     */
-    public convenience init?(hex: UInt32, alpha: CGFloat = 1) {
+    public convenience init(hex: UInt32, alpha: CGFloat = 1) {
         let red = (hex >> 16) & 0xFF
         let green = (hex >> 8) & 0xFF
         let blue = hex & 0xFF
@@ -88,10 +88,20 @@ extension UIColor {
      - parameter hexStringInput: String with hexadecimal color code
     */
     public convenience init?(hexString hexStringInput: String) {
-        let regExPattern = "^#{0,1}([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
-        let regEx = try! NSRegularExpression(pattern: regExPattern, options: [])
+        let regExPattern = "^#{0,1}([0-9a-f]{3}|[0-9a-f]{6})$"
+        guard let regEx = try? NSRegularExpression(
+            pattern: regExPattern,
+            options: [.caseInsensitive]
+        ) else { return nil }
         
-        guard regEx.matches(in: hexStringInput, options: [], range: NSRange(location: 0, length: hexStringInput.count)).count == 1 else { return nil }
+        guard regEx.matches(
+            in: hexStringInput,
+            options: [],
+            range: NSRange(
+                location: 0,
+                length: hexStringInput.count
+            )
+        ).count == 1 else { return nil }
         
         var hexString = hexStringInput
         

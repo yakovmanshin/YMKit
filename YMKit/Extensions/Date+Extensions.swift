@@ -6,7 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-// MARK: - DATE COMPONENTS
+// MARK: - Date Components
 
 extension Date {
     
@@ -37,11 +37,11 @@ extension Date {
     
 }
 
-// MARK: - DATE FORMATTERS
+// MARK: - Date Formatters
 
 extension Date {
     
-    // MARK: - CUSTOM FORMAT
+    // MARK: Custom Format
     
     /// Initialize a `Date` value from a strings in the specified format.
     public init?(string dateTimeString: String, format formatString: String) {
@@ -60,7 +60,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    // MARK: - API STRING
+    // MARK: API String
     
     /// Initialize a `Date` value from a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
     @available(*, deprecated, renamed: "init(ymdString:)")
@@ -79,7 +79,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    // MARK: - YYYY-MM-DD STRING
+    // MARK: YYYY-MM-DD String
     
     /// Initialize a `Date` value from a year-month-day `String`, formatted as`yyyy-MM-dd` (e.g. `1984-01-24`).
     /// - Parameter ymdString: Date formatted as `yyyy-MM-dd`.
@@ -99,7 +99,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    // MARK: - RFC 3339 STRING
+    // MARK: RFC 3339 String
     
     /**
      Initialize dates from RFC 3339-compliant strings.
@@ -127,7 +127,7 @@ extension Date {
         return self.getDateTimeString(withFormat: colonInTimeZone ? "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     }
     
-    // MARK: - ISO8601 STRING
+    // MARK: ISO8601 String
     
     @available(iOS, introduced: 10)
     public init?(
@@ -154,7 +154,7 @@ extension Date {
     
 }
 
-// MARK: - DATE AND TIME STRINGS
+// MARK: - Date and Time Strings
 
 extension Date {
     
@@ -189,7 +189,7 @@ extension Date {
     
 }
     
-// MARK: - AGE CALCULATION
+// MARK: - Age Calculation
 
 extension Date {
     

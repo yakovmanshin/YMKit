@@ -6,10 +6,9 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
-public struct YMFormatter {
-    
-    // No instances of YMFormatter can be initialized.
-    private init() { }
+// MARK: - Person Name
+
+public enum YMFormatter {
     
     /**
      Compose person name components into a single string with the specified style.

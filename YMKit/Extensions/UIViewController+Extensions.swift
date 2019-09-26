@@ -8,7 +8,68 @@
 
 import UIKit
 
-// MARK: - INITIALIZATION
+// MARK: - Instantiation from Storyboards
+
+extension UIViewController {
+    
+    // Fallback on pre-Swift 5.1
+    private static func __instantiate<T: UIViewController>(
+        withStoryboardID viewControllerStoryboardID: String? = nil,
+        fromStoryboardNamed storyboardName: String,
+        in storyboardBundle: Bundle = .main
+    ) -> T {
+        let resolvedStoryboardID: String
+        if let viewControllerStoryboardID = viewControllerStoryboardID {
+            resolvedStoryboardID = viewControllerStoryboardID
+        } else {
+            resolvedStoryboardID = String(describing: T.self)
+        }
+        
+        return UIStoryboard(
+            name: storyboardName,
+            bundle: storyboardBundle
+        ).instantiateViewController(
+            withIdentifier: resolvedStoryboardID
+        ) as! T
+    }
+    
+    /// Instantiates a view controller from a storyboard.
+    ///
+    /// + Make sure all string literals are valid and have no typos; otherwise the method will throw a runtime exception.
+    /// + If the view controller is named after the view controller subclass (e.g. `MyViewController`), you can omit `viewControllerStoryboardID`.
+    ///
+    /// - Parameter viewControllerStoryboardID: *Optional.* The storyboard ID of the view controller. You can view and set this ID in Interface Builder's Identity inspector. Default is a string equal to the view controller subclass name (e.g. `MyViewController`).
+    /// - Parameter storyboardName: *Required.* The name of the storyboard file.
+    /// - Parameter storyboardBundle: *Optional.* The bundle the storyboard belongs to. Default is `main`.
+    public static func instantiate(
+        withStoryboardID viewControllerStoryboardID: String? = nil,
+        fromStoryboardNamed storyboardName: String,
+        in storyboardBundle: Bundle = .main
+    ) -> Self {
+        #if swift(>=5.1)
+        let resolvedStoryboardID: String
+        if let viewControllerStoryboardID = viewControllerStoryboardID {
+            resolvedStoryboardID = viewControllerStoryboardID
+        } else {
+            resolvedStoryboardID = String(describing: Self.self)
+        }
+        
+        return UIStoryboard(
+            name: storyboardName,
+            bundle: storyboardBundle
+        ).instantiateViewController(
+            withIdentifier: resolvedStoryboardID
+        ) as! Self
+        #else
+        return __instantiate(
+            withStoryboardID: viewControllerStoryboardID,
+            fromStoryboardNamed: storyboardName,
+            in: storyboardBundle
+        )
+        #endif
+    }
+    
+}
 
 extension UIViewController {
     
@@ -21,6 +82,7 @@ extension UIViewController {
      + Make sure storyboard name is correct; otherwise, runtime error will occur.
      - parameter storyboardName: Name of the storyboard that contains the view controller
     */
+    @available(*, deprecated, renamed: "instantiate(fromStoryboardNamed:)")
     public class func instantiate(from storyboardName: String) -> Self {
         return UIViewController.instantiate(self, from: storyboardName)
     }
@@ -33,7 +95,7 @@ extension UIViewController {
     
 }
 
-// MARK: - ALERTS
+// MARK: - Alerts
 
 extension UIViewController {
     
@@ -102,7 +164,7 @@ extension UIViewController {
     
 }
 
-// MARK: - LOCALIZED ALERTS
+// MARK: - Localized Alerts
 
 extension UIViewController {
     

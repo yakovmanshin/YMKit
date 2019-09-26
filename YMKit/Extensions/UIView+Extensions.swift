@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Animation
+
 extension UIView {
     
     /**
@@ -18,7 +20,10 @@ extension UIView {
          - animation: 12
          - duration: `TimeInterval`
     */
-    public static func animate(_ animation: @escaping @autoclosure () -> Void, withDuration duration: TimeInterval = 1.0) {
+    public static func animate(
+        _ animation: @escaping @autoclosure () -> Void,
+        withDuration duration: TimeInterval = 1.0
+    ) {
         UIView.animate(withDuration: duration, animations: animation)
     }
     
