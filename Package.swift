@@ -24,5 +24,6 @@ let package = Package(
             path: ".",
             sources: ["YMKit"]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
