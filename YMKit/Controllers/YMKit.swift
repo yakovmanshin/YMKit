@@ -6,6 +6,8 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+import UIKit
+
 final public class YMKit {
     
     // No instances of YMKit can be initialized.
