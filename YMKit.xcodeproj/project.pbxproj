@@ -10,7 +10,6 @@
 		660F4CC2222EE919007C4C4C /* YMKitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F4CC1222EE919007C4C4C /* YMKitInfo.swift */; };
 		662D173D2313AD5900ECD184 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662D173C2313AD5900ECD184 /* Array+Extensions.swift */; };
 		662D173F2313B22A00ECD184 /* YMSafeSubscriptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */; };
-		664E25B021F647BC00F2FA90 /* YMSafeSubscripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E25AF21F647BC00F2FA90 /* YMSafeSubscripting.swift */; };
 		66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600ED521EA97E900236A30 /* Double+Extensions.swift */; };
 		66600ED921ECB29000236A30 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600ED821ECB29000236A30 /* Int+Extensions.swift */; };
 		66600EDB21ECC55600236A30 /* YMFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600EDA21ECC55600236A30 /* YMFormatter.swift */; };
@@ -33,7 +32,6 @@
 		660F4CC1222EE919007C4C4C /* YMKitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMKitInfo.swift; sourceTree = "<group>"; };
 		662D173C2313AD5900ECD184 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscriptable.swift; sourceTree = "<group>"; };
-		664E25AF21F647BC00F2FA90 /* YMSafeSubscripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscripting.swift; sourceTree = "<group>"; };
 		66600ED521EA97E900236A30 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		66600ED821ECB29000236A30 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		66600EDA21ECC55600236A30 /* YMFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatter.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */,
 				667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */,
 				662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */,
-				664E25AF21F647BC00F2FA90 /* YMSafeSubscripting.swift */,
 				667A17CA22B15AA40010CF86 /* YMStringRepresentable.swift */,
 			);
 			path = Protocols;
@@ -226,7 +223,6 @@
 				66A265FC229ABE63009C2DE7 /* YMErrorStringConvertible.swift in Sources */,
 				662D173D2313AD5900ECD184 /* Array+Extensions.swift in Sources */,
 				667F2F8A22A291E90079B342 /* YMJSONDataCodable.swift in Sources */,
-				664E25B021F647BC00F2FA90 /* YMSafeSubscripting.swift in Sources */,
 				66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */,
 				662D173F2313B22A00ECD184 /* YMSafeSubscriptable.swift in Sources */,
 				66B6400A21EA7D53005DA4B0 /* NSNumber+Extensions.swift in Sources */,
