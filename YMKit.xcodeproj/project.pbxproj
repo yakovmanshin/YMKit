@@ -18,7 +18,6 @@
 		667F2F8A22A291E90079B342 /* YMJSONDataCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */; };
 		668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */; };
 		66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */; };
-		66A265FC229ABE63009C2DE7 /* YMErrorStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */; };
 		66B22B2F22C79FFC00AB7CFF /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */; };
 		66B63FFD21EA7D2B005DA4B0 /* YMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B63FFB21EA7D2B005DA4B0 /* YMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */; };
@@ -41,7 +40,6 @@
 		667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJSONDataCodable.swift; sourceTree = "<group>"; };
 		668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
-		66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMErrorStringConvertible.swift; sourceTree = "<group>"; };
 		66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		66B63FF821EA7D2B005DA4B0 /* YMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B63FFB21EA7D2B005DA4B0 /* YMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMKit.h; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 		664E25B121F647C000F2FA90 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */,
 				667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */,
 				662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */,
 				667A17CA22B15AA40010CF86 /* YMStringRepresentable.swift */,
@@ -220,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A265FC229ABE63009C2DE7 /* YMErrorStringConvertible.swift in Sources */,
 				662D173D2313AD5900ECD184 /* Array+Extensions.swift in Sources */,
 				667F2F8A22A291E90079B342 /* YMJSONDataCodable.swift in Sources */,
 				66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */,
