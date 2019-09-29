@@ -8,9 +8,11 @@
 
 import Foundation
 
-// MARK: - Person Name
+public enum YMFormatter { }
 
-public enum YMFormatter {
+// MARK: - Person Name String
+
+extension YMFormatter {
     
     /**
      Compose person name components into a single string with the specified style.
