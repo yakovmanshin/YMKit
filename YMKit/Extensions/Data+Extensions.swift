@@ -20,11 +20,13 @@ extension Data {
     }
     
     /// Returns a `String` containing a representation of the `Data` decoded using UTF-8.
+    @inlinable
     public var utf8String: String? {
         return self.getString(using: .utf8)
     }
     
     /// Returns a `String` containing a representation of the `Data` decoded using UTF-16.
+    @inlinable
     public var utf16String: String? {
         return self.getString(using: .utf16)
     }
