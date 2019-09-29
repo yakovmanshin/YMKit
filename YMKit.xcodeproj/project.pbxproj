@@ -112,18 +112,9 @@
 		66B6400D21EA7D58005DA4B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				662D173C2313AD5900ECD184 /* Array+Extensions.swift */,
-				66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */,
-				66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */,
-				66600ED521EA97E900236A30 /* Double+Extensions.swift */,
-				66600ED821ECB29000236A30 /* Int+Extensions.swift */,
-				66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */,
-				66B6400421EA7D52005DA4B0 /* String+Extensions.swift */,
-				66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */,
-				66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */,
-				668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */,
-				66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */,
-				666E78282274B9AC00CFF08A /* UIView+Extensions.swift */,
+				66CA857023412FBB005F005D /* Standard Library */,
+				66CA857123412FD0005F005D /* Foundation */,
+				66CA857223412FD7005F005D /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +126,39 @@
 				66B63FFC21EA7D2B005DA4B0 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		66CA857023412FBB005F005D /* Standard Library */ = {
+			isa = PBXGroup;
+			children = (
+				662D173C2313AD5900ECD184 /* Array+Extensions.swift */,
+				66600ED521EA97E900236A30 /* Double+Extensions.swift */,
+				66600ED821ECB29000236A30 /* Int+Extensions.swift */,
+				66B6400421EA7D52005DA4B0 /* String+Extensions.swift */,
+			);
+			path = "Standard Library";
+			sourceTree = "<group>";
+		};
+		66CA857123412FD0005F005D /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */,
+				66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */,
+				66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		66CA857223412FD7005F005D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */,
+				66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */,
+				668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */,
+				666E78282274B9AC00CFF08A /* UIView+Extensions.swift */,
+				66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
