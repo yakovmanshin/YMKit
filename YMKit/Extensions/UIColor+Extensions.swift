@@ -93,31 +93,27 @@ extension UIColor {
             options: [.caseInsensitive]
         ) else { return nil }
         
-        guard regEx.matches(
-            in: hexStringInput,
-            options: [],
-            range: NSRange(
-                location: 0,
-                length: hexStringInput.count
-            )
-        ).count == 1 else { return nil }
+        guard hexStringInput.matches(regEx) else { return nil }
         
         var hexString = hexStringInput
         
         if hexString.hasPrefix("#") {
-            hexString.remove(at: hexString.startIndex)
+            hexString.removeFirst()
         }
         
         if hexString.count == 3 {
-            let r = hexString[..<hexString.index(hexString.startIndex, offsetBy: 1)]
-            let g = hexString[hexString.index(hexString.startIndex, offsetBy: 1)..<hexString.index(hexString.startIndex, offsetBy: 2)]
-            let b = hexString[hexString.index(hexString.startIndex, offsetBy: 2)...]
-            
-            hexString = [r, r, g, g, b, b].map({ String($0) }).joined()
+            for (index, character) in hexString.enumerated() {
+                hexString.insert(
+                    character,
+                    at: hexString.index(
+                        hexString.startIndex,
+                        offsetBy: index * 2
+                    )
+                )
+            }
         }
         
-        var hex: UInt32 = 0
-        Scanner(string: hexString).scanHexInt32(&hex)
+        guard let hex = UInt32(hexString, radix: 16) else { return nil }
         
         self.init(hex: hex)
     }
