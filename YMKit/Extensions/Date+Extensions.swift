@@ -6,6 +6,8 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+import Foundation
+
 // MARK: - Date Components
 
 extension Date {

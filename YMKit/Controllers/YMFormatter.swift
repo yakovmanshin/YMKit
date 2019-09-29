@@ -6,6 +6,8 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+import Foundation
+
 // MARK: - Person Name
 
 public enum YMFormatter {
