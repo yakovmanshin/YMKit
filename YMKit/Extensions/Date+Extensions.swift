@@ -62,25 +62,6 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    // MARK: API String
-    
-    /// Initialize a `Date` value from a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
-    @available(*, deprecated, renamed: "init(ymdString:)")
-    public init?(apiString: String) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let date = dateFormatter.date(from: apiString) else { return nil }
-        self = date
-    }
-    
-    /// Convert the `Date` value to a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
-    @available(*, deprecated, renamed: "ymdString")
-    public var apiDateString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: self)
-    }
-    
     // MARK: YYYY-MM-DD String
     
     /// Initialize a `Date` value from a year-month-day `String`, formatted as`yyyy-MM-dd` (e.g. `1984-01-24`).
