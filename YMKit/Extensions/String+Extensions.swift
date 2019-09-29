@@ -85,9 +85,15 @@ extension String {
     /// - Parameter options: *Optional.* `NSRegularExpression.Options` to use when initializing an `NSRegularExpression`; default is `[]`.
     ///
     /// - Returns: `Bool?`. Matching result, if regular expression initialized successfully; otherwise, `nil`.
-    public func matchesRegularExpression(fromPattern regularExpressionPattern: String, withOptions options: NSRegularExpression.Options = []) -> Bool? {
+    public func matchesRegularExpression(
+        fromPattern regularExpressionPattern: String,
+        withOptions options: NSRegularExpression.Options = []
+    ) -> Bool? {
         do {
-            let regularExpression = try NSRegularExpression(pattern: regularExpressionPattern, options: options)
+            let regularExpression = try NSRegularExpression(
+                pattern: regularExpressionPattern,
+                options: options
+            )
             
             return self.matchesRegularExpression(regularExpression)
         } catch {
