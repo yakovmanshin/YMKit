@@ -28,6 +28,7 @@ extension NSNumber {
         - currencySymbol: a symbol that represents the currency (such as “$” or “€”)
      - Returns: A string that represents the `NSNumber` value with specified style.
     */
+    @available(*, deprecated, message: "Use YMFormatter.getPriceString(from:significantDigits:minSignificantDigits:maxSignificantDigits:fixedFractionDigits:minFractionDigits:maxFractionDigits:groupingSeparatorIsEnabled:locale:currencyCode:currencySymbol:)")
     public func getPriceString(
         significantDigits: Bool = false,
         minSignificantDigits: Int? = nil,
@@ -88,7 +89,8 @@ extension NSNumber {
         currencyCode: String? = nil,
         currencySymbol: String? = nil
     ) -> String? {
-        return getPriceString(
+        return YMFormatter.getPriceString(
+            from: self,
             minFractionDigits: minFractionDigits,
             maxFractionDigits: maxFractionDigits,
             locale: locale,
@@ -104,7 +106,8 @@ extension NSNumber {
         currencyCode: String? = nil,
         currencySymbol: String? = nil
     ) -> String? {
-        return getPriceString(
+        return YMFormatter.getPriceString(
+            from: self,
             fixedFractionDigits: numberOfFractionDigits,
             locale: locale,
             currencyCode: currencyCode,
@@ -120,7 +123,8 @@ extension NSNumber {
         currencyCode: String? = nil,
         currencySymbol: String? = nil
     ) -> String? {
-        return getPriceString(
+        return YMFormatter.getPriceString(
+            from: self,
             significantDigits: true,
             minSignificantDigits: min,
             maxSignificantDigits: max,
