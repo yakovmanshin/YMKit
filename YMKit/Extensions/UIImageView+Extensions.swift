@@ -57,38 +57,4 @@ extension UIImageView {
         )
     }
     
-    /**
-     Initialize `UIImageView` with the name of the images and, optionally, its dimensions and tint color.
-     - Parameters:
-        - imageName: The name of the image stored in an `.xcassets` file
-        - width: Width of the image in the initialized `UIImageView`
-        - height: Height of the image in the initialized `UIImageView`
-        - tintColor: Tint color of the image in the initialized `UIImageView`
-    */
-    @available(*, deprecated, renamed: "init(imageName:width:height:tintColor:)")
-    public convenience init(
-        imageName: String,
-        intWidth: Int? = nil,
-        intHeight: Int? = nil,
-        tintColor: UIColor? = nil
-    ) {
-        var cgWidth: CGFloat? = nil
-        var cgHeight: CGFloat? = nil
-        
-        if let intWidth = intWidth {
-            cgWidth = CGFloat(integerLiteral: intWidth)
-        }
-        
-        if let intHeight = intHeight {
-            cgHeight = CGFloat(integerLiteral: intHeight)
-        }
-        
-        self.init(
-            imageName: imageName,
-            width: cgWidth,
-            height: cgHeight,
-            tintColor: tintColor
-        )
-    }
-    
 }
