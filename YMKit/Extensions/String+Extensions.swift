@@ -75,8 +75,17 @@ extension String {
     /// - Parameter regularExpression: *Required.* Regular expression to match the string against.
     ///
     /// - Returns: `Bool`. Matching result.
+    public func matches(_ regularExpression: NSRegularExpression) -> Bool {
+        return regularExpression.numberOfMatches(
+            in: self,
+            options: [],
+            range: NSRange(location: 0, length: self.count)
+        ) == 1
+    }
+    
+    @available(*, deprecated, renamed: "matches(_:)")
     public func matchesRegularExpression(_ regularExpression: NSRegularExpression) -> Bool {
-        return regularExpression.numberOfMatches(in: self, options: [], range: NSRange(location: 0, length: self.count)) == 1
+        return self.matches(regularExpression)
     }
     
     /// Indicates whether the string fully matches (i.e. has exactly one match with) a regular expression initialized with the specified pattern with options.
@@ -95,7 +104,7 @@ extension String {
                 options: options
             )
             
-            return self.matchesRegularExpression(regularExpression)
+            return self.matches(regularExpression)
         } catch {
             return nil
         }
