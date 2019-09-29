@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		660F4CC2222EE919007C4C4C /* YMKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F4CC1222EE919007C4C4C /* YMKit.swift */; };
+		660F4CC2222EE919007C4C4C /* YMKitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F4CC1222EE919007C4C4C /* YMKitInfo.swift */; };
 		662D173D2313AD5900ECD184 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662D173C2313AD5900ECD184 /* Array+Extensions.swift */; };
 		662D173F2313B22A00ECD184 /* YMSafeSubscriptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */; };
-		664E25B021F647BC00F2FA90 /* YMSafeSubscripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E25AF21F647BC00F2FA90 /* YMSafeSubscripting.swift */; };
 		66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600ED521EA97E900236A30 /* Double+Extensions.swift */; };
 		66600ED921ECB29000236A30 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600ED821ECB29000236A30 /* Int+Extensions.swift */; };
 		66600EDB21ECC55600236A30 /* YMFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600EDA21ECC55600236A30 /* YMFormatter.swift */; };
@@ -19,7 +18,6 @@
 		667F2F8A22A291E90079B342 /* YMJSONDataCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */; };
 		668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */; };
 		66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */; };
-		66A265FC229ABE63009C2DE7 /* YMErrorStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */; };
 		66B22B2F22C79FFC00AB7CFF /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */; };
 		66B63FFD21EA7D2B005DA4B0 /* YMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B63FFB21EA7D2B005DA4B0 /* YMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */; };
@@ -30,10 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		660F4CC1222EE919007C4C4C /* YMKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMKit.swift; sourceTree = "<group>"; };
+		660F4CC1222EE919007C4C4C /* YMKitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMKitInfo.swift; sourceTree = "<group>"; };
 		662D173C2313AD5900ECD184 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscriptable.swift; sourceTree = "<group>"; };
-		664E25AF21F647BC00F2FA90 /* YMSafeSubscripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscripting.swift; sourceTree = "<group>"; };
 		66600ED521EA97E900236A30 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		66600ED821ECB29000236A30 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		66600EDA21ECC55600236A30 /* YMFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatter.swift; sourceTree = "<group>"; };
@@ -43,7 +40,6 @@
 		667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMJSONDataCodable.swift; sourceTree = "<group>"; };
 		668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
-		66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMErrorStringConvertible.swift; sourceTree = "<group>"; };
 		66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		66B63FF821EA7D2B005DA4B0 /* YMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B63FFB21EA7D2B005DA4B0 /* YMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMKit.h; sourceTree = "<group>"; };
@@ -69,10 +65,8 @@
 		664E25B121F647C000F2FA90 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				66A265FB229ABE63009C2DE7 /* YMErrorStringConvertible.swift */,
 				667F2F8922A291E90079B342 /* YMJSONDataCodable.swift */,
 				662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */,
-				664E25AF21F647BC00F2FA90 /* YMSafeSubscripting.swift */,
 				667A17CA22B15AA40010CF86 /* YMStringRepresentable.swift */,
 			);
 			path = Protocols;
@@ -82,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				66600EDA21ECC55600236A30 /* YMFormatter.swift */,
-				660F4CC1222EE919007C4C4C /* YMKit.swift */,
+				660F4CC1222EE919007C4C4C /* YMKitInfo.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -118,18 +112,9 @@
 		66B6400D21EA7D58005DA4B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				662D173C2313AD5900ECD184 /* Array+Extensions.swift */,
-				66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */,
-				66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */,
-				66600ED521EA97E900236A30 /* Double+Extensions.swift */,
-				66600ED821ECB29000236A30 /* Int+Extensions.swift */,
-				66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */,
-				66B6400421EA7D52005DA4B0 /* String+Extensions.swift */,
-				66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */,
-				66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */,
-				668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */,
-				66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */,
-				666E78282274B9AC00CFF08A /* UIView+Extensions.swift */,
+				66CA857023412FBB005F005D /* Standard Library */,
+				66CA857123412FD0005F005D /* Foundation */,
+				66CA857223412FD7005F005D /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +126,39 @@
 				66B63FFC21EA7D2B005DA4B0 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		66CA857023412FBB005F005D /* Standard Library */ = {
+			isa = PBXGroup;
+			children = (
+				662D173C2313AD5900ECD184 /* Array+Extensions.swift */,
+				66600ED521EA97E900236A30 /* Double+Extensions.swift */,
+				66600ED821ECB29000236A30 /* Int+Extensions.swift */,
+				66B6400421EA7D52005DA4B0 /* String+Extensions.swift */,
+			);
+			path = "Standard Library";
+			sourceTree = "<group>";
+		};
+		66CA857123412FD0005F005D /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */,
+				66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */,
+				66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		66CA857223412FD7005F005D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */,
+				66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */,
+				668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */,
+				666E78282274B9AC00CFF08A /* UIView+Extensions.swift */,
+				66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,16 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A265FC229ABE63009C2DE7 /* YMErrorStringConvertible.swift in Sources */,
 				662D173D2313AD5900ECD184 /* Array+Extensions.swift in Sources */,
 				667F2F8A22A291E90079B342 /* YMJSONDataCodable.swift in Sources */,
-				664E25B021F647BC00F2FA90 /* YMSafeSubscripting.swift in Sources */,
 				66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */,
 				662D173F2313B22A00ECD184 /* YMSafeSubscriptable.swift in Sources */,
 				66B6400A21EA7D53005DA4B0 /* NSNumber+Extensions.swift in Sources */,
 				66B22B2F22C79FFC00AB7CFF /* Data+Extensions.swift in Sources */,
 				66B6400921EA7D53005DA4B0 /* String+Extensions.swift in Sources */,
-				660F4CC2222EE919007C4C4C /* YMKit.swift in Sources */,
+				660F4CC2222EE919007C4C4C /* YMKitInfo.swift in Sources */,
 				668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */,
 				66B6400C21EA7D53005DA4B0 /* UIViewController+Extensions.swift in Sources */,
 				66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */,
@@ -310,10 +326,11 @@
 		66B6400221EA7D2B005DA4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 120;
+				CURRENT_PROJECT_VERSION = 150;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -326,7 +343,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.ym.kit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

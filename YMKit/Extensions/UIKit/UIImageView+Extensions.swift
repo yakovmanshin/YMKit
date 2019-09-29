@@ -11,6 +11,7 @@ import UIKit
 extension UIImageView {
     
     /// Initialize a `UIImageView` with image name, target frame, and, optinally, tint color.
+    ///
     /// - Parameter imageName: *Required.* Image name to initialize an image view with. If an image with the specified name doesn't exist, the initializer fails and returns `nil`.
     /// - Parameter frame: *Required.* `CGRect` to draw the image view in.
     /// - Parameter tintColor: *Optional.* Tint color to use with the image.
@@ -27,6 +28,32 @@ extension UIImageView {
         self.tintColor = tintColor
     }
     
+    /// Initializes a `UIImageView` with the image retrieved by its name, and, optionally, the image's dimensions and tint color.
+    ///
+    /// - Parameter imageName: *Required.* The name of the image. Must be a valid name; otherwise, the method will return `nil`.
+    /// - Parameter width: *Optional.* The width of the image in the `UIImageView`; defaults to the image's width.
+    /// - Parameter height: *Optional.* The height of the image in the `UIImageView`; defaults to the image's height.
+    /// - Parameter tintColor: *Optional.* The tint color of the image in the `UIImageView`.
+    public convenience init?(
+        withImageNamed imageName: String,
+        width: CGFloat? = nil,
+        height: CGFloat? = nil,
+        tintColor: UIColor? = nil
+    ) {
+        guard let image = UIImage(named: imageName) else { return nil }
+        
+        let size = CGSize(
+            width: width ?? image.size.width,
+            height: height ?? image.size.height
+        )
+        
+        self.init(frame: CGRect(origin: .zero, size: size))
+        
+        if let tintColor = tintColor {
+            self.tintColor = tintColor
+        }
+    }
+    
     /**
      Initialize `UIImageView` with the name of the images and, optionally, its dimensions and tint color.
      - Parameters:
@@ -35,6 +62,7 @@ extension UIImageView {
         - height: Height of the image in the initialized `UIImageView`
         - tintColor: Tint color of the image in the initialized `UIImageView`
     */
+    @available(*, deprecated, message: "Use init(withImageNamed:width:height:tintColor:) instead")
     public convenience init(
         imageName: String,
         width: CGFloat? = nil,
@@ -54,40 +82,6 @@ extension UIImageView {
             y: 0,
             width: width ?? image?.size.width ?? 0.0,
             height: height ?? image?.size.height ?? 0
-        )
-    }
-    
-    /**
-     Initialize `UIImageView` with the name of the images and, optionally, its dimensions and tint color.
-     - Parameters:
-        - imageName: The name of the image stored in an `.xcassets` file
-        - width: Width of the image in the initialized `UIImageView`
-        - height: Height of the image in the initialized `UIImageView`
-        - tintColor: Tint color of the image in the initialized `UIImageView`
-    */
-    @available(*, deprecated, renamed: "init(imageName:width:height:tintColor:)")
-    public convenience init(
-        imageName: String,
-        intWidth: Int? = nil,
-        intHeight: Int? = nil,
-        tintColor: UIColor? = nil
-    ) {
-        var cgWidth: CGFloat? = nil
-        var cgHeight: CGFloat? = nil
-        
-        if let intWidth = intWidth {
-            cgWidth = CGFloat(integerLiteral: intWidth)
-        }
-        
-        if let intHeight = intHeight {
-            cgHeight = CGFloat(integerLiteral: intHeight)
-        }
-        
-        self.init(
-            imageName: imageName,
-            width: cgWidth,
-            height: cgHeight,
-            tintColor: tintColor
         )
     }
     

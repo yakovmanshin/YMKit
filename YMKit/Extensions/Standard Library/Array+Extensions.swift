@@ -62,6 +62,7 @@ extension Array {
     /// - Parameter index: The position of the element to remove. `index` must
     ///   be a valid index of the array.
     /// - Parameter conditionClosure: The closure to evaluate.
+    @inlinable
     public mutating func remove(
         at index: Int,
         if conditionClosure: @autoclosure () -> Bool

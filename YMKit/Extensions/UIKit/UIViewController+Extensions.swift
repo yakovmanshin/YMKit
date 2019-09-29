@@ -73,20 +73,6 @@ extension UIViewController {
 
 extension UIViewController {
     
-    fileprivate static func instantiate<T: UIViewController>(_ viewController: T.Type, from storyboardName: String) -> T {
-        return UIStoryboard(name: storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: viewController)) as! T
-    }
-    
-    /**
-     Instantiate a view controller with the specified storyboard name.
-     + Make sure storyboard name is correct; otherwise, runtime error will occur.
-     - parameter storyboardName: Name of the storyboard that contains the view controller
-    */
-    @available(*, deprecated, renamed: "instantiate(fromStoryboardNamed:)")
-    public class func instantiate(from storyboardName: String) -> Self {
-        return UIViewController.instantiate(self, from: storyboardName)
-    }
-    
     /// Dismiss the current view controller.
     @inline(__always)
     @objc public func dismissVC() {

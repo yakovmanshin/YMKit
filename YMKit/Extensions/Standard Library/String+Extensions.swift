@@ -6,12 +6,14 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+import Foundation
+
 // MARK: - Localization
 
 extension String {
     
     /// Substitute the specified key with the corresponding localized string.
-    @inline(__always)
+    @inlinable
     public var localized: String {
         return NSLocalizedString(self, comment: self)
     }
@@ -20,7 +22,6 @@ extension String {
      Substitute the specified key with the corresponding localized string, substituting additional parameters.
      + The number and types of parameters in function call must match the number and types of parameters in the localized string, or a runtime error will occur.
     */
-    @inline(__always)
     public func localized(withParameters parameters: CVarArg...) -> String {
         return String(format: self.localized, arguments: parameters)
     }
@@ -59,7 +60,6 @@ extension String {
      + For the full list of options, see `NSString.CompareOptions`.
      - Returns: A string created by calling `folding(options:locale:)` with options `caseInsensitive`, `diacriticInsensitive`, and `numeric` on the string.
     */
-    @inline(__always)
     public var suitableForComparison: String {
         return self.folding(options: [.caseInsensitive, .diacriticInsensitive, .numeric], locale: .current)
     }
@@ -75,9 +75,17 @@ extension String {
     /// - Parameter regularExpression: *Required.* Regular expression to match the string against.
     ///
     /// - Returns: `Bool`. Matching result.
-    @inlinable
+    public func matches(_ regularExpression: NSRegularExpression) -> Bool {
+        return regularExpression.numberOfMatches(
+            in: self,
+            options: [],
+            range: NSRange(location: 0, length: self.count)
+        ) == 1
+    }
+    
+    @available(*, deprecated, renamed: "matches(_:)")
     public func matchesRegularExpression(_ regularExpression: NSRegularExpression) -> Bool {
-        return regularExpression.numberOfMatches(in: self, options: [], range: NSRange(location: 0, length: self.count)) == 1
+        return self.matches(regularExpression)
     }
     
     /// Indicates whether the string fully matches (i.e. has exactly one match with) a regular expression initialized with the specified pattern with options.
@@ -86,11 +94,17 @@ extension String {
     /// - Parameter options: *Optional.* `NSRegularExpression.Options` to use when initializing an `NSRegularExpression`; default is `[]`.
     ///
     /// - Returns: `Bool?`. Matching result, if regular expression initialized successfully; otherwise, `nil`.
-    public func matchesRegularExpression(fromPattern regularExpressionPattern: String, withOptions options: NSRegularExpression.Options = []) -> Bool? {
+    public func matchesRegularExpression(
+        fromPattern regularExpressionPattern: String,
+        withOptions options: NSRegularExpression.Options = []
+    ) -> Bool? {
         do {
-            let regularExpression = try NSRegularExpression(pattern: regularExpressionPattern, options: options)
+            let regularExpression = try NSRegularExpression(
+                pattern: regularExpressionPattern,
+                options: options
+            )
             
-            return self.matchesRegularExpression(regularExpression)
+            return self.matches(regularExpression)
         } catch {
             return nil
         }

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+import Foundation
+
 // MARK: - Date Components
 
 extension Date {
@@ -57,25 +59,6 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = formatString
-        return dateFormatter.string(from: self)
-    }
-    
-    // MARK: API String
-    
-    /// Initialize a `Date` value from a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
-    @available(*, deprecated, renamed: "init(ymdString:)")
-    public init?(apiString: String) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let date = dateFormatter.date(from: apiString) else { return nil }
-        self = date
-    }
-    
-    /// Convert the `Date` value to a string formatted as `yyyy-MM-dd` (e.g. `1984-01-24`).
-    @available(*, deprecated, renamed: "ymdString")
-    public var apiDateString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: self)
     }
     
