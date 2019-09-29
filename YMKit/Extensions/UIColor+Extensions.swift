@@ -81,12 +81,11 @@ extension UIColor {
         )
     }
     
+    /// Initializes a `UIColor` from a hexadecimal color code.
     ///
-    /**
-     Initialize values of `UIColor` from hexadecimal color codes.
-     + The following formats are supported: `ed2c61`, `#aeaeae`, `eee`, and `#123`.
-     - parameter hexStringInput: String with hexadecimal color code
-    */
+    /// + The following formats are supported: `ed2c61`, `#aeaeae`, `eee`, and `#123`.
+    ///
+    /// - Parameter hexStringInput: *Required.* The string which contains a hexadecimal color code.
     public convenience init?(hexString hexStringInput: String) {
         let regExPattern = "^#{0,1}([0-9a-f]{3}|[0-9a-f]{6})$"
         guard let regEx = try? NSRegularExpression(

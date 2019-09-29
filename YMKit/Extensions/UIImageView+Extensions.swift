@@ -11,6 +11,7 @@ import UIKit
 extension UIImageView {
     
     /// Initialize a `UIImageView` with image name, target frame, and, optinally, tint color.
+    ///
     /// - Parameter imageName: *Required.* Image name to initialize an image view with. If an image with the specified name doesn't exist, the initializer fails and returns `nil`.
     /// - Parameter frame: *Required.* `CGRect` to draw the image view in.
     /// - Parameter tintColor: *Optional.* Tint color to use with the image.
