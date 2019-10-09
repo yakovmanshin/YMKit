@@ -73,12 +73,16 @@ extension String {
     /// Indicates whether the string fully matches (i.e. has exactly one match with) the specified regular expression.
     ///
     /// - Parameter regularExpression: *Required.* Regular expression to match the string against.
+    /// - Parameter matchingOptions: *Optional.* Matching options to use. See `NSRegularExpression.MatchingOptions`. Default is `[]`.
     ///
     /// - Returns: `Bool`. Matching result.
-    public func matches(_ regularExpression: NSRegularExpression) -> Bool {
+    public func matches(
+        _ regularExpression: NSRegularExpression,
+        withOptions matchingOptions: NSRegularExpression.MatchingOptions = []
+    ) -> Bool {
         return regularExpression.numberOfMatches(
             in: self,
-            options: [],
+            options: matchingOptions,
             range: NSRange(location: 0, length: self.count)
         ) == 1
     }
