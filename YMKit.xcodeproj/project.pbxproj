@@ -30,6 +30,7 @@
 		66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */; };
 		66E3AEDF234F9D8F0025A616 /* YMStringRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */; };
 		66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */; };
+		66E3AEE3234FA4700025A616 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */; };
 		66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameFormatterTests.swift; sourceTree = "<group>"; };
 		66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMStringRepresentableTests.swift; sourceTree = "<group>"; };
 		66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscriptableTests.swift; sourceTree = "<group>"; };
+		66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */,
 				66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */,
 				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
+				66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */,
 				66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */,
 				66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */,
 				66E3AED4234F909C0025A616 /* Info.plist */,
@@ -345,6 +348,7 @@
 				66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */,
 				66E3AEDB234F92010025A616 /* PriceFormatterTests.swift in Sources */,
 				66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */,
+				66E3AEE3234FA4700025A616 /* StringExtensionsTests.swift in Sources */,
 				66E3AEDF234F9D8F0025A616 /* YMStringRepresentableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
