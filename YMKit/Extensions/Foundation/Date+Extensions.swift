@@ -15,7 +15,12 @@ extension Date {
     /// Initialize `Date` values with year, month, and day (as integers).
     public init?(year: Int, month: Int, day: Int) {
         let calendar = Calendar.current
-        let dateComponents = DateComponents(calendar: calendar, year: year, month: month, day: day)
+        let dateComponents = DateComponents(
+            calendar: calendar,
+            year: year,
+            month: month,
+            day: day
+        )
         
         guard let date = calendar.date(from: dateComponents) else { return nil }
         
