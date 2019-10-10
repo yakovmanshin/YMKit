@@ -28,6 +28,7 @@
 		66E3AED5234F909C0025A616 /* YMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B63FF821EA7D2B005DA4B0 /* YMKit.framework */; };
 		66E3AEDB234F92010025A616 /* PriceFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */; };
 		66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */; };
+		66E3AEDF234F9D8F0025A616 /* YMStringRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		66E3AED4234F909C0025A616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterTests.swift; sourceTree = "<group>"; };
 		66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameFormatterTests.swift; sourceTree = "<group>"; };
+		66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMStringRepresentableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */,
 				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
+				66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */,
 				66E3AED4234F909C0025A616 /* Info.plist */,
 			);
 			path = YMKitTests;
@@ -334,6 +337,7 @@
 			files = (
 				66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */,
 				66E3AEDB234F92010025A616 /* PriceFormatterTests.swift in Sources */,
+				66E3AEDF234F9D8F0025A616 /* YMStringRepresentableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
