@@ -21,6 +21,10 @@ let package = Package(
         .target(
             name: "YMKit",
             path: "YMKit"
+        ),
+        .testTarget(
+            name: "YMKitTests",
+            path: "YMKitTests"
         )
     ],
     swiftLanguageVersions: [.v5]
