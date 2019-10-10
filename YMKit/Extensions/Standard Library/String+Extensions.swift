@@ -22,6 +22,7 @@ extension String {
      Substitute the specified key with the corresponding localized string, substituting additional parameters.
      + The number and types of parameters in function call must match the number and types of parameters in the localized string, or a runtime error will occur.
     */
+    @inlinable
     public func localized(withParameters parameters: CVarArg...) -> String {
         return String(format: self.localized, arguments: parameters)
     }
