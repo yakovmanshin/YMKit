@@ -10,4 +10,4 @@ jobs:
     - name: xcodebuild
       run: |
         sudo xcode-select -switch /Applications/Xcode_11.app
-        xcodebuild -workspace YMKit.xcworkspace -scheme YMKit -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+        xcodebuild -workspace /YMKit.xcworkspace -scheme YMKit -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
