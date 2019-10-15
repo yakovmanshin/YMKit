@@ -9,5 +9,4 @@ jobs:
     steps:
     - name: xcodebuild
       run: |
-        sudo xcode-select -switch /Applications/Xcode_11.app
-        xcodebuild -project YMKit.xcodeproj -scheme YMKit -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+        xcodebuild -project YMKit.xcodeproj -scheme YMKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
