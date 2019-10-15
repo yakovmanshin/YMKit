@@ -1,7 +1,7 @@
 language: swift
 os: osx
 osx_image: xcode11.1
-script: xcodebuild -project YMKit.xcodeproj -scheme YMKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -project YMKit.xcodeproj -scheme YMKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone 11 Pro Max
 xcode_scheme: YMKit
 xcode_sdk: iphonesimulator13.1
