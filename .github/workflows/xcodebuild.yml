@@ -1,0 +1,14 @@
+name: Build with Xcode
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: xcodebuild
+      run: |
+        sudo xcode-select -switch /Applications/Xcode_11.app
+        xcodebuild -workspace YMKit.xcworkspace -scheme YMKit -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
