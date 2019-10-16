@@ -59,8 +59,8 @@ extension Array {
     }
     
     /// Removes and returns the element at the specified position if the specified closure evaluates to `true`.
-    /// - Parameter index: The position of the element to remove. `index` must
-    ///   be a valid index of the array.
+    ///
+    /// - Parameter index: The position of the element to remove. `index` must be a valid index of the array.
     /// - Parameter conditionClosure: The closure to evaluate.
     @inlinable
     public mutating func remove(
