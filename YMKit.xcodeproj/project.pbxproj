@@ -25,7 +25,24 @@
 		66B6400A21EA7D53005DA4B0 /* NSNumber+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */; };
 		66B6400B21EA7D53005DA4B0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */; };
 		66B6400C21EA7D53005DA4B0 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */; };
+		66E3AED5234F909C0025A616 /* YMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B63FF821EA7D2B005DA4B0 /* YMKit.framework */; };
+		66E3AEDB234F92010025A616 /* PriceFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */; };
+		66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */; };
+		66E3AEDF234F9D8F0025A616 /* YMStringRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */; };
+		66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */; };
+		66E3AEE3234FA4700025A616 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */; };
+		66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66E3AED6234F909C0025A616 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66B63FEF21EA7D2B005DA4B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66B63FF721EA7D2B005DA4B0;
+			remoteInfo = YMKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		660F4CC1222EE919007C4C4C /* YMKitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMKitInfo.swift; sourceTree = "<group>"; };
@@ -49,6 +66,14 @@
 		66B6400521EA7D52005DA4B0 /* NSNumber+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+Extensions.swift"; sourceTree = "<group>"; };
 		66B6400621EA7D52005DA4B0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		66B6400721EA7D53005DA4B0 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		66E3AED0234F909C0025A616 /* YMKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YMKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E3AED4234F909C0025A616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatterTests.swift; sourceTree = "<group>"; };
+		66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNameFormatterTests.swift; sourceTree = "<group>"; };
+		66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMStringRepresentableTests.swift; sourceTree = "<group>"; };
+		66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscriptableTests.swift; sourceTree = "<group>"; };
+		66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
+		66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66E3AECD234F909C0025A616 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66E3AED5234F909C0025A616 /* YMKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +119,7 @@
 			children = (
 				66B63FFA21EA7D2B005DA4B0 /* YMKit */,
 				66600EE121EE58FC00236A30 /* README.md */,
+				66E3AED1234F909C0025A616 /* YMKitTests */,
 				66B63FF921EA7D2B005DA4B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				66B63FF821EA7D2B005DA4B0 /* YMKit.framework */,
+				66E3AED0234F909C0025A616 /* YMKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +196,20 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		66E3AED1234F909C0025A616 /* YMKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */,
+				66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */,
+				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
+				66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */,
+				66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */,
+				66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */,
+				66E3AED4234F909C0025A616 /* Info.plist */,
+			);
+			path = YMKitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -193,6 +242,24 @@
 			productReference = 66B63FF821EA7D2B005DA4B0 /* YMKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		66E3AECF234F909C0025A616 /* YMKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66E3AED9234F909C0025A616 /* Build configuration list for PBXNativeTarget "YMKitTests" */;
+			buildPhases = (
+				66E3AECC234F909C0025A616 /* Sources */,
+				66E3AECD234F909C0025A616 /* Frameworks */,
+				66E3AECE234F909C0025A616 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66E3AED7234F909C0025A616 /* PBXTargetDependency */,
+			);
+			name = YMKitTests;
+			productName = YMKitTests;
+			productReference = 66E3AED0234F909C0025A616 /* YMKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,12 +267,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = YM;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Yakov Manshin";
 				TargetAttributes = {
 					66B63FF721EA7D2B005DA4B0 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+					};
+					66E3AECF234F909C0025A616 = {
+						CreatedOnToolsVersion = 11.1;
 					};
 				};
 			};
@@ -222,12 +293,20 @@
 			projectRoot = "";
 			targets = (
 				66B63FF721EA7D2B005DA4B0 /* YMKit */,
+				66E3AECF234F909C0025A616 /* YMKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		66B63FF621EA7D2B005DA4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66E3AECE234F909C0025A616 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,7 +340,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66E3AECC234F909C0025A616 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */,
+				66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */,
+				66E3AEDB234F92010025A616 /* PriceFormatterTests.swift in Sources */,
+				66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */,
+				66E3AEE3234FA4700025A616 /* StringExtensionsTests.swift in Sources */,
+				66E3AEDF234F9D8F0025A616 /* YMStringRepresentableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66E3AED7234F909C0025A616 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66B63FF721EA7D2B005DA4B0 /* YMKit */;
+			targetProxy = 66E3AED6234F909C0025A616 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		66B63FFF21EA7D2B005DA4B0 /* Release */ = {
@@ -327,15 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 150;
+				CURRENT_PROJECT_VERSION = 160;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/YMKit/Support Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,12 +442,28 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.ym.kit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		66E3AED8234F909C0025A616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YMKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.ym.kit.unit-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -368,6 +483,14 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				66B6400221EA7D2B005DA4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66E3AED9234F909C0025A616 /* Build configuration list for PBXNativeTarget "YMKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66E3AED8234F909C0025A616 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

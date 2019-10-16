@@ -22,8 +22,41 @@ extension String {
      Substitute the specified key with the corresponding localized string, substituting additional parameters.
      + The number and types of parameters in function call must match the number and types of parameters in the localized string, or a runtime error will occur.
     */
+    @inlinable
     public func localized(withParameters parameters: CVarArg...) -> String {
         return String(format: self.localized, arguments: parameters)
+    }
+    
+    /// Produces a localized string by interpolating `parameters` in the localizable string template accessed by the key (`self`).
+    ///
+    /// + Make sure the number and value types of `parameters` match the localizable string template. Otherwise, a runtime error will occur.
+    ///
+    /// - Parameter parameters: *Required.* The parameters to interpolate.
+    /// - Parameter locale: *Optional.* A `Locale` object specifying the locale to use. To use the current locale (specified by user preferences), pass `.current`. To use the system locale, pass `nil`.
+    @inlinable
+    public func localized(
+        withParameters parameters: [CVarArg],
+        in locale: Locale? = nil
+    ) -> String {
+        return String(
+            format: self.localized,
+            locale: locale,
+            arguments: parameters
+        )
+    }
+    
+    /// Produces a localized string by interpolating `parameter` in the localizable string template accessed by the key (`self`).
+    ///
+    /// + Make sure the value type of `parameter` matches the localizable string template. Otherwise, a runtime error will occur.
+    ///
+    /// - Parameter parameter: *Required.* The parameter to interpolate.
+    /// - Parameter locale: *Optional.* A `Locale` object specifying the locale to use. To use the current locale (specified by user preferences), pass `.current`. To use the system locale, pass `nil`.
+    @inlinable
+    public func localized(
+        withParameter parameter: CVarArg,
+        in locale: Locale? = nil
+    ) -> String {
+        return self.localized(withParameters: [parameter], in: locale)
     }
     
 }
@@ -73,12 +106,16 @@ extension String {
     /// Indicates whether the string fully matches (i.e. has exactly one match with) the specified regular expression.
     ///
     /// - Parameter regularExpression: *Required.* Regular expression to match the string against.
+    /// - Parameter matchingOptions: *Optional.* Matching options to use. See `NSRegularExpression.MatchingOptions`. Default is `[]`.
     ///
     /// - Returns: `Bool`. Matching result.
-    public func matches(_ regularExpression: NSRegularExpression) -> Bool {
+    public func matches(
+        _ regularExpression: NSRegularExpression,
+        withOptions matchingOptions: NSRegularExpression.MatchingOptions = []
+    ) -> Bool {
         return regularExpression.numberOfMatches(
             in: self,
-            options: [],
+            options: matchingOptions,
             range: NSRange(location: 0, length: self.count)
         ) == 1
     }
@@ -90,7 +127,23 @@ extension String {
     
     /// Indicates whether the string fully matches (i.e. has exactly one match with) a regular expression initialized with the specified pattern with options.
     ///
-    /// - Parameter regularExpressionPattern: *Required.* Regular expression pattern to initialize an `NSRegularExpression` from..
+    /// - Parameter regularExpressionPattern: *Required.* Regular expression pattern to initialize an `NSRegularExpression` from.
+    /// - Parameter options: *Optional.* `NSRegularExpression.Options` to use when initializing an `NSRegularExpression`; default is `[]`.
+    public func matchesRegularExpressionThrowing(
+        fromPattern regularExpressionPattern: String,
+        withOptions options: NSRegularExpression.Options = []
+    ) throws -> Bool {
+        let regularExpression = try NSRegularExpression(
+            pattern: regularExpressionPattern,
+            options: options
+        )
+        
+        return self.matches(regularExpression)
+    }
+    
+    /// Indicates whether the string fully matches (i.e. has exactly one match with) a regular expression initialized with the specified pattern with options.
+    ///
+    /// - Parameter regularExpressionPattern: *Required.* Regular expression pattern to initialize an `NSRegularExpression` from.
     /// - Parameter options: *Optional.* `NSRegularExpression.Options` to use when initializing an `NSRegularExpression`; default is `[]`.
     ///
     /// - Returns: `Bool?`. Matching result, if regular expression initialized successfully; otherwise, `nil`.
@@ -98,16 +151,10 @@ extension String {
         fromPattern regularExpressionPattern: String,
         withOptions options: NSRegularExpression.Options = []
     ) -> Bool? {
-        do {
-            let regularExpression = try NSRegularExpression(
-                pattern: regularExpressionPattern,
-                options: options
-            )
-            
-            return self.matches(regularExpression)
-        } catch {
-            return nil
-        }
+        return try? self.matchesRegularExpressionThrowing(
+            fromPattern: regularExpressionPattern,
+            withOptions: options
+        )
     }
     
 }

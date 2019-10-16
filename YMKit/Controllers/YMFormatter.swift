@@ -12,21 +12,20 @@ public enum YMFormatter { }
 
 // MARK: - Person Name String
 
+@available(iOS, introduced: 9)
 extension YMFormatter {
     
-    /**
-     Compose person name components into a single string with the specified style.
-     + Even though all parameters have default values, you’re highly advised to specify at least one name component; otherwise, you’ll get an empty string.
-     - Parameters:
-        - style: See `PersonNameComponentsFormatter.Style`
-        - prefix: Dr., Mr., Ms., etc.
-        - firstName: Johnatan
-        - middleName: Maple
-        - nickname: Johnny
-        - lastName: Appleseed
-        - suffix: Esq., Jr., Ph.D., etc.
-    */
-    @available(iOS, introduced: 9)
+    /// Compose person name components into a single string with the specified style.
+    ///
+    /// + Even though all parameters have default values, you should provide at least one name component; otherwise, an empty string will be returned.
+    ///
+    /// - Parameter style: *Optional.* See `PersonNameComponentsFormatter.Style`.
+    /// - Parameter prefix: *Optional.* Dr., Mr., Ms., etc.
+    /// - Parameter firstName: *Optional.* Johnatan
+    /// - Parameter middleName: *Optional.* Maple
+    /// - Parameter nickname: *Optional.* Johnny
+    /// - Parameter lastName: *Optional.* Appleseed
+    /// - Parameter suffix: *Optional.* Esq., Jr., Ph.D., etc.
     public static func getPersonNameString(
         withStyle style: PersonNameComponentsFormatter.Style = .default,
         prefix: String? = nil,
@@ -50,15 +49,13 @@ extension YMFormatter {
         return nameFormatter.string(from: nameComponents)
     }
     
-    /**
-     Compose a person’s first name and last name into a single string with the specified style.
-     + Although both `firstName` and `lastName` are optional, specify at least one of arguments; otherwise, you’ll get an empty string.
-     - Parameters:
-        - style: See `PersonNameComponentsFormatter.Style`
-        - firstName: Johnatan
-        - lastName: Appleseed
-    */
-    @available(iOS, introduced: 9)
+    /// Compose a person's first name and last name into a single string with the specified style.
+    ///
+    /// + Although both `firstName` and `lastName` are optional, specify at least one of arguments; otherwise, an empty string will be returned.
+    ///
+    /// - Parameter style: *Optional.* See `PersonNameComponentsFormatter.Style`.
+    /// - Parameter firstName: *Optional.* Johnatan
+    /// - Parameter lastName: *Optional.* Appleseed
     public static func getPersonNameString(
         withStyle style: PersonNameComponentsFormatter.Style = .default,
         firstName: String? = nil,

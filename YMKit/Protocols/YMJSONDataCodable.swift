@@ -18,9 +18,15 @@ public protocol YMJSONDataDecodable: Decodable {
     
     /// Initializes a value from JSON `Data` using `JSONDecoder`.
     ///
+    /// - Parameter jsonData: *Required.* The object's JSON representation (as `Data`).
+    init(throwingWithJSONData jsonData: Data) throws
+    
+    /// Initializes a value from JSON `Data` using `JSONDecoder`.
+    ///
     /// + If something goes wrong, the method `throws`.
     ///
     /// - Parameter jsonData: *Required.* JSON `Data`.
+    @available(*, deprecated, renamed: "init(throwingWithJSONData:)")
     init(throwingJSONData jsonData: Data) throws
     
     /// Initializes a value from JSON `Data` using `JSONDecoder`.
@@ -34,25 +40,24 @@ public protocol YMJSONDataDecodable: Decodable {
 
 extension YMJSONDataDecodable {
     
+    public init(throwingWithJSONData jsonData: Data) throws {
+        self = try Self.initialize(with: jsonData)
+    }
+    
     public init(throwingJSONData jsonData: Data) throws {
-        self = try Self.initialize(from: jsonData)
+        try self.init(throwingWithJSONData: jsonData)
     }
     
     public init?(jsonData: Data) {
         do {
-            self = try Self.init(throwingJSONData: jsonData)
+            self = try Self(throwingWithJSONData: jsonData)
         } catch {
             print(error)
             return nil
         }
     }
     
-    @available(*, unavailable)
-    private static func initialize<T: YMJSONDataDecodable>(from jsonData: Data) throws -> T {
-        return try JSONDecoder().decode(T.self, from: jsonData)
-    }
-    
-    private static func initialize(from jsonData: Data) throws -> Self {
+    private static func initialize(with jsonData: Data) throws -> Self {
         return try JSONDecoder().decode(Self.self, from: jsonData)
     }
     
@@ -81,17 +86,7 @@ extension YMJSONDataEncodable {
     }
     
     public var jsonData: Data? {
-        do {
-            return try self.getJSONData()
-        } catch {
-            print(error)
-            return nil
-        }
-    }
-    
-    @available(*, unavailable)
-    private static func getJSONData<V: YMJSONDataEncodable>(from value: V) throws -> Data {
-        return try JSONEncoder().encode(value)
+        return try? self.getJSONData()
     }
     
 }
