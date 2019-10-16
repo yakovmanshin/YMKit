@@ -50,7 +50,7 @@ extension YMJSONDataDecodable {
     
     public init?(jsonData: Data) {
         do {
-            self = try Self(throwingJSONData: jsonData)
+            self = try Self(throwingWithJSONData: jsonData)
         } catch {
             print(error)
             return nil
