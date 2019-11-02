@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name = "YMKit"
-  spec.version = "2.0.0"
+  spec.version = "2.1.0"
   spec.summary = "YMKit is a collection of tools for quicker and easier development of iOS apps."
   spec.homepage = "https://kit.ym.dev/"
   spec.license = "Apache License, version 2"
