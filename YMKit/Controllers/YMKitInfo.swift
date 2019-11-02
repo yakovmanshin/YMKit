@@ -15,7 +15,7 @@ final public class YMKitInfo {
     
     /// Returns the number of currently installed YMKit version.
     public class var version: String? {
-        return Bundle(for: Self.self).infoDictionary?["CFBundleShortVersionString"] as? String
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     }
     
 }

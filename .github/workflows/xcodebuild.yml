@@ -1,14 +1,75 @@
-name: Build with Xcode
+name: Build & Test with Xcode
 
 on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: macOS-latest
-    
+  xcode-build:
+    runs-on: macOS-10.14
+    strategy:
+      matrix:
+        sdk: [
+          'iphonesimulator13.2',
+          'iphonesimulator13.1',
+          'iphonesimulator12.4',
+        ]
+        include:
+          - xcode_app: 'Xcode_11.2.app'
+            sdk: 'iphonesimulator13.2'
+          - xcode_app: 'Xcode_11.1.app'
+            sdk: 'iphonesimulator13.1'
+          - xcode_app: 'Xcode_10.3.app'
+            sdk: 'iphonesimulator12.4'
     steps:
       - uses: actions/checkout@master
-      - name: xcodebuild
+      - name: Build
         run: |
-          sudo xcode-select -switch /Applications/Xcode_11.app
-          xcodebuild -project YMKit.xcodeproj -scheme YMKit -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+          sudo xcode-select -switch /Applications/"${xcode_app}"
+          xcodebuild \
+          -project YMKit.xcodeproj \
+          -scheme YMKit \
+          -sdk "${sdk}" \
+          ONLY_ACTIVE_ARCH=NO \
+          | xcpretty && exit ${PIPESTATUS[0]}
+        env:
+          xcode_app: ${{ matrix.xcode_app }}
+          sdk: ${{ matrix.sdk }}
+
+  xcode-test:
+    runs-on: macOS-10.14
+    strategy:
+      matrix:
+        destination: [
+          'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2',
+          'platform=iOS Simulator,name=iPhone 11,OS=13.1',
+          'platform=iOS Simulator,name=iPhone XS Max,OS=12.4',
+          'platform=iOS Simulator,name=iPhone SE,OS=10.2',
+        ]
+        include:
+          - destination: 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2'
+            xcode_app: 'Xcode_11.2.app'
+            sdk: 'iphonesimulator13.2'
+          - destination: 'platform=iOS Simulator,name=iPhone 11,OS=13.1'
+            xcode_app: 'Xcode_11.1.app'
+            sdk: 'iphonesimulator13.1'
+          - destination: 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4'
+            xcode_app: 'Xcode_10.3.app'
+            sdk: 'iphonesimulator12.4'
+          - destination: 'platform=iOS Simulator,name=iPhone SE,OS=10.2'
+            xcode_app: 'Xcode_11.1.app'
+            sdk: 'iphonesimulator13.1'
+    steps:
+      - uses: actions/checkout@master
+      - name: Test
+        run: |
+          sudo xcode-select -switch /Applications/"${xcode_app}"
+          xcodebuild clean test \
+          -project YMKit.xcodeproj \
+          -scheme YMKit \
+          -sdk "${sdk}" \
+          -destination "${destination}" \
+          ONLY_ACTIVE_ARCH=NO \
+          | xcpretty && exit ${PIPESTATUS[0]}
+        env:
+          destination: ${{ matrix.destination }}
+          xcode_app: ${{ matrix.xcode_app }}
+          sdk: ${{ matrix.sdk }}
