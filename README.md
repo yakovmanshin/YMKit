@@ -5,22 +5,22 @@
 
 **YMKit** is a collection of tools for quicker and easier development of iOS apps.
 
-**YMKit** extends built-in types, such as `Date` or `UIColor`, with helpful additional methods, and introduces new types, such as `YMFormatter`, for advanced functionality.
+**YMKit** extends built-in types, such as `Date` or `UIColor`, with helpful new methods, and introduces new types, such as `YMFormatter`, for advanced functionality.
 
 ## Installation
-Use [CocoaPods](https://fwd2.net/cocoapods) to install **YMKit**. If you’ve never used it before, watch this detailed (and funny) [video from Google](https://fwd2.net/cocoapods-tutorial) on how to install and use CocoaPods.
+Use [CocoaPods](https://fwd2.net/cocoapods) to install **YMKit**. If you’ve never worked with CocoaPods before, watch this detailed (and funny) [video from Google](https://fwd2.net/cocoapods-tutorial) on how to install and use CocoaPods.
 
-To install **YMKit**, add the pod to your podfile:
+To install **YMKit**, add the pod to your Podfile:
 ```ruby
-pod 'YMKit'
+pod 'YMKit', '~>2.0'
 ```
 
-Run the following command in Terminal to install the newly-added pod:
+Run the following command in your project directory to install the newly-added pod:
 ```ruby
 pod install
 ```
 
-From now on, use the created/updated *workspace* (not project).
+From now on, use the created / updated *workspace* (not the project).
 
 ## Usage
 To use **YMKit**, you’ll need to import the framework.
