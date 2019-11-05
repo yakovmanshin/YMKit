@@ -10,6 +10,17 @@
 ## Installation
 There are multiple ways to install **YMKit** and keep it up to date.
 
+### Swift Package Manager
+To install **YMKit** into your app with Swift Package Manager, use the built-in SPM client. In Xcode, click *File* → *Swift Packages* → *Add Package Dependency…*, paste **YMKit** repository URL (`https://github.com/yakovmanshin/YMKit`) into the search field, and select preferred version mode (we recommend selecting *Up to Next Major*).
+
+If you need to use **YMKit** as a dependency in a Swift package of your own, add the following entry to the `dependencies` array in the `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/yakovmanshin/YMKit.git", from: "2.0.0")
+```
+
+Should you like to learn more about Swift packages and SPM, there's [a WWDC session](https://fwd2.net/33lDCqq) on that.
+
 ### CocoaPods
 Use [CocoaPods](https://fwd2.net/cocoapods) to install **YMKit**. If you’ve never worked with CocoaPods before, watch this detailed (and funny) [video from Google](https://fwd2.net/cocoapods-tutorial) on how to install and use CocoaPods.
 
