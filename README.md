@@ -55,3 +55,5 @@ To use new types declared in **YMKit** (such as `YMFormatter`), you’ll need to
 
 ## Documentation
 Most variables and methods are documented in code.
+
+For a nicer look, see [YMKit Docs](https://kit.ym.dev/).
