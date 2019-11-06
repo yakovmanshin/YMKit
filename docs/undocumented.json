@@ -1,64 +1,8 @@
 {
   "warnings": [
     {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter.swift",
-      "line": 11,
-      "symbol": "YMFormatter",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter.swift",
-      "line": 16,
-      "symbol": "YMFormatter",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter.swift",
-      "line": 79,
-      "symbol": "YMFormatter",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
-      "line": 11,
-      "symbol": "YMKitInfo",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
-      "line": 23,
-      "symbol": "YMKitInfo",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
-      "line": 24,
-      "symbol": "YMKitInfo.AppInfo",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
-      "line": 49,
-      "symbol": "YMKitInfo",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
-      "line": 50,
-      "symbol": "YMKitInfo.DeviceInfo",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
-      "line": 57,
+      "line": 63,
       "symbol": "YMKitInfo.DeviceInfo.OS",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
@@ -107,28 +51,14 @@
     },
     {
       "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Protocols/YMJSONDataCodable.swift",
-      "line": 17,
-      "symbol": "YMJSONDataDecodable",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Protocols/YMJSONDataCodable.swift",
-      "line": 41,
-      "symbol": "YMJSONDataDecodable",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Protocols/YMJSONDataCodable.swift",
-      "line": 68,
+      "line": 69,
       "symbol": "YMJSONDataEncodable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Protocols/YMJSONDataCodable.swift",
-      "line": 82,
+      "line": 83,
       "symbol": "YMJSONDataEncodable",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
