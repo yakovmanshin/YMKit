@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A class that provides information about the YMKit framework itself, as well as the device, its operating system, etc.
 final public class YMKitInfo {
     
     // No instances of YMKit can be initialized.
@@ -21,6 +22,8 @@ final public class YMKitInfo {
 }
 
 extension YMKitInfo {
+    
+    /// Information about the app YMKit is embedded into.
     public enum AppInfo {
         
         /// Returns build number of currently installed main app (the one YMKit is embedded into).
@@ -44,9 +47,12 @@ extension YMKitInfo {
         }
         
     }
+    
 }
 
 extension YMKitInfo {
+    
+    /// Information the device that's being used to run the app with YMKit.
     public enum DeviceInfo {
         
         /// Returns model name of the device.
@@ -69,4 +75,5 @@ extension YMKitInfo {
         }
         
     }
+    
 }
