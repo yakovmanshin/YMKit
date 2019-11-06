@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A collection of methods for formatting different kinds of data, such as names, prices, and more.
 public enum YMFormatter { }
 
 // MARK: - Person Name String
