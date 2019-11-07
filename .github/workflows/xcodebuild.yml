@@ -50,7 +50,7 @@ jobs:
             sdk: 'iphonesimulator13.1'
           - destination: 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4'
             xcode_app: 'Xcode_11.app'
-            sdk: 'iphonesimulator12.4'
+            sdk: 'iphonesimulator13.0'
           - destination: 'platform=iOS Simulator,name=iPhone SE,OS=10.2'
             xcode_app: 'Xcode_11.1.app'
             sdk: 'iphonesimulator13.1'
