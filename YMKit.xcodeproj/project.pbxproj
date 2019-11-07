@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				66600EDC21ECC56600236A30 /* Controllers */,
-				664E25B121F647C000F2FA90 /* Protocols */,
 				66B6400D21EA7D58005DA4B0 /* Extensions */,
+				664E25B121F647C000F2FA90 /* Protocols */,
 				66B6400E21EA7D5F005DA4B0 /* Support Files */,
 			);
 			path = YMKit;
