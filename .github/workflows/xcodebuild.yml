@@ -10,15 +10,12 @@ jobs:
         sdk: [
           'iphonesimulator13.2',
           'iphonesimulator13.1',
-          'iphonesimulator12.4',
         ]
         include:
           - xcode_app: 'Xcode_11.2.app'
             sdk: 'iphonesimulator13.2'
           - xcode_app: 'Xcode_11.1.app'
             sdk: 'iphonesimulator13.1'
-          - xcode_app: 'Xcode_11.app'
-            sdk: 'iphonesimulator12.4'
     steps:
       - uses: actions/checkout@master
       - name: Build
