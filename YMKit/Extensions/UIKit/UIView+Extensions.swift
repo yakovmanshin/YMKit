@@ -27,3 +27,42 @@ extension UIView {
     }
     
 }
+
+// MARK: - Auto Layout
+
+extension UIView {
+    
+    /// Pins the view to its superview's sides. Throws `YMLayoutError.superviewNotFound` if no superview is found.
+    ///
+    /// - Parameter edgeInsets: *Optional.* The insets to add between the view and its superview. Default is `.zero`.
+    @available(iOS 9, *)
+    public func constrainToSuperview(withInsets edgeInsets: UIEdgeInsets = .zero) throws {
+        guard let superview = self.superview else {
+            throw YMLayoutError.superviewNotFound
+        }
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraintsToSuperview = [
+            self.topAnchor.constraint(
+                equalTo: superview.topAnchor,
+                constant: edgeInsets.top
+            ),
+            self.bottomAnchor.constraint(
+                equalTo: superview.bottomAnchor,
+                constant: -edgeInsets.bottom
+            ),
+            self.leftAnchor.constraint(
+                equalTo: superview.leftAnchor,
+                constant: edgeInsets.left
+            ),
+            self.rightAnchor.constraint(
+                equalTo: superview.rightAnchor,
+                constant: -edgeInsets.right
+            ),
+        ]
+        
+        NSLayoutConstraint.activate(constraintsToSuperview)
+    }
+    
+}
