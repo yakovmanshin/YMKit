@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   xcode-build:
-    runs-on: macOS-10.14
+    runs-on: macos-latest
     strategy:
       matrix:
         sdk: [
@@ -35,7 +35,7 @@ jobs:
           sdk: ${{ matrix.sdk }}
 
   xcode-test:
-    runs-on: macOS-10.14
+    runs-on: macos-latest
     strategy:
       matrix:
         destination: [
