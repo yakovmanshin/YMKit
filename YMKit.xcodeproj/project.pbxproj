@@ -19,6 +19,7 @@
 		668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */; };
 		66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */; };
 		66A7F4622374D7810059F536 /* YMLayoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7F4612374D7810059F536 /* YMLayoutError.swift */; };
+		66A7F4642374D8CE0059F536 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7F4632374D8CE0059F536 /* DateExtensionsTests.swift */; };
 		66B22B2F22C79FFC00AB7CFF /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */; };
 		66B63FFD21EA7D2B005DA4B0 /* YMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B63FFB21EA7D2B005DA4B0 /* YMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */; };
@@ -59,6 +60,7 @@
 		668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		66A7F4612374D7810059F536 /* YMLayoutError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMLayoutError.swift; sourceTree = "<group>"; };
+		66A7F4632374D8CE0059F536 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
 		66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		66B63FF821EA7D2B005DA4B0 /* YMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B63FFB21EA7D2B005DA4B0 /* YMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMKit.h; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */,
+				66A7F4632374D8CE0059F536 /* DateExtensionsTests.swift */,
 				66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */,
 				66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */,
 				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */,
+				66A7F4642374D8CE0059F536 /* DateExtensionsTests.swift in Sources */,
 				66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */,
 				66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */,
 				66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */,
