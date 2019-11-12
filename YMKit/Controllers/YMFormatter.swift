@@ -130,7 +130,8 @@ extension YMFormatter {
         groupingSeparatorIsEnabled: Bool = true,
         locale: Locale = .current,
         currencyCode: String? = nil,
-        currencySymbol: String? = nil
+        currencySymbol: String? = nil,
+        configurationClosure: (NumberFormatter) -> Void = { _ in }
     ) -> String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
@@ -168,6 +169,8 @@ extension YMFormatter {
                 numberFormatter.maximumFractionDigits = maxFractionDigits
             }
         }
+        
+        configurationClosure(numberFormatter)
         
         return numberFormatter.string(from: inputValue)
     }
