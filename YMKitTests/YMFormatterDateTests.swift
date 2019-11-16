@@ -9,14 +9,16 @@
 import XCTest
 @testable import YMKit
 
+// MARK: - Core Declaration
+
 final class YMFormatterDateTests: XCTestCase {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     private var date: Date!
     private var dateFormatter: DateFormatter!
     
-    // MARK: - Preparation
+    // MARK: Preparation
     
     override func setUp() {
         let timeZone = TimeZone(identifier: "PST")
@@ -42,7 +44,11 @@ final class YMFormatterDateTests: XCTestCase {
         dateFormatter = nil
     }
     
-    // MARK: - Date
+}
+
+// MARK: - Date
+
+extension YMFormatterDateTests {
     
     func testFullDate() {
         let masterDateString = "Tuesday, January 24, 1984"
@@ -84,7 +90,11 @@ final class YMFormatterDateTests: XCTestCase {
         XCTAssertEqual(dateString, masterDateString)
     }
     
-    // MARK: - Time
+}
+
+// MARK: - Time
+
+extension YMFormatterDateTests {
     
     func testFullTime() {
         let masterTimeString = "9:41:55 AM Pacific Standard Time"
@@ -126,7 +136,11 @@ final class YMFormatterDateTests: XCTestCase {
         XCTAssertEqual(timeString, masterTimeString)
     }
     
-    // MARK: - Date and Time
+}
+
+// MARK: - Date and Time
+
+extension YMFormatterDateTests {
     
     func testFullDateTime() {
         let masterDateTimeString = "Tuesday, January 24, 1984 at 9:41:55 AM Pacific Standard Time"
