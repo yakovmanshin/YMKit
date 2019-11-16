@@ -21,15 +21,12 @@ extension YMFormatter {
     ///   - date: *Required.* The `Date` for convert to a `String`.
     ///   - configurationClosure: *Optional.* The block of code that contains a custom configuration of `DateFormatter`. The default value does nothing.
     ///   - dateFormatter: The `DateFormatter` provided to caller to configure.
+    @available(iOS, deprecated, message: "Use YMFormatter.Date's makeString(using:) method")
     public static func getDateString(
-        from date: Date,
+        from date: Foundation.Date,
         configurationClosure: (_ dateFormatter: DateFormatter) -> Void = { _ in }
     ) -> String {
-        let dateFormatter = DateFormatter()
-        
-        configurationClosure(dateFormatter)
-        
-        return dateFormatter.string(from: date)
+        Date(date).makeString(using: configurationClosure)
     }
     
 }
