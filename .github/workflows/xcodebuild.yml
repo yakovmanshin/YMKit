@@ -1,6 +1,6 @@
 name: Build & Test with Xcode
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   xcode-build:
@@ -10,12 +10,15 @@ jobs:
         sdk: [
           'iphonesimulator13.2',
           'iphonesimulator13.1',
+          'iphonesimulator13.0',
         ]
         include:
           - xcode_app: 'Xcode_11.2.app'
             sdk: 'iphonesimulator13.2'
           - xcode_app: 'Xcode_11.1.app'
             sdk: 'iphonesimulator13.1'
+          - xcode_app: 'Xcode_11.app'
+            sdk: 'iphonesimulator13.0'
     steps:
       - uses: actions/checkout@master
       - name: Build
