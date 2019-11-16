@@ -26,7 +26,7 @@ extension YMFormatter {
         from date: Foundation.Date,
         configurationClosure: (_ dateFormatter: DateFormatter) -> Void = { _ in }
     ) -> String {
-        Date(date).makeString(using: configurationClosure)
+        return Date(date).makeString(using: configurationClosure)
     }
     
 }
