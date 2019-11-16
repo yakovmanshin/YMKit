@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		660F4CC2222EE919007C4C4C /* YMKitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F4CC1222EE919007C4C4C /* YMKitInfo.swift */; };
+		6629007B2380616100EE4127 /* YMFormatter+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629007A2380616100EE4127 /* YMFormatter+Date.swift */; };
 		662D173D2313AD5900ECD184 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662D173C2313AD5900ECD184 /* Array+Extensions.swift */; };
 		662D173F2313B22A00ECD184 /* YMSafeSubscriptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */; };
 		66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600ED521EA97E900236A30 /* Double+Extensions.swift */; };
@@ -19,6 +20,7 @@
 		668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */; };
 		66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */; };
 		66A7F4622374D7810059F536 /* YMLayoutError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7F4612374D7810059F536 /* YMLayoutError.swift */; };
+		66A7F4642374D8CE0059F536 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A7F4632374D8CE0059F536 /* DateExtensionsTests.swift */; };
 		66B22B2F22C79FFC00AB7CFF /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */; };
 		66B63FFD21EA7D2B005DA4B0 /* YMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B63FFB21EA7D2B005DA4B0 /* YMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B6400321EA7D52005DA4B0 /* Date+Extensions.swift */; };
@@ -33,6 +35,9 @@
 		66E3AEE3234FA4700025A616 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */; };
 		66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */; };
 		66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */; };
+		66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB54238079320096F591 /* YMFormatterDateTests.swift */; };
+		66EFAB5723807C7E0096F591 /* YMFormatter+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */; };
+		66EFAB59238082CB0096F591 /* YMFormatterNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB58238082CB0096F591 /* YMFormatterNumberTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		660F4CC1222EE919007C4C4C /* YMKitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMKitInfo.swift; sourceTree = "<group>"; };
+		6629007A2380616100EE4127 /* YMFormatter+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YMFormatter+Date.swift"; sourceTree = "<group>"; };
 		662D173C2313AD5900ECD184 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		662D173E2313B22A00ECD184 /* YMSafeSubscriptable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMSafeSubscriptable.swift; sourceTree = "<group>"; };
 		66600ED521EA97E900236A30 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 		668A8D1F22EEC29700CE26E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		66A265F9229ABBA7009C2DE7 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		66A7F4612374D7810059F536 /* YMLayoutError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMLayoutError.swift; sourceTree = "<group>"; };
+		66A7F4632374D8CE0059F536 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
 		66B22B2E22C79FFC00AB7CFF /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		66B63FF821EA7D2B005DA4B0 /* YMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B63FFB21EA7D2B005DA4B0 /* YMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMKit.h; sourceTree = "<group>"; };
@@ -77,6 +84,9 @@
 		66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 		66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
+		66EFAB54238079320096F591 /* YMFormatterDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatterDateTests.swift; sourceTree = "<group>"; };
+		66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YMFormatter+Number.swift"; sourceTree = "<group>"; };
+		66EFAB58238082CB0096F591 /* YMFormatterNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatterNumberTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		662900772380607400EE4127 /* YMFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				66600EDA21ECC55600236A30 /* YMFormatter.swift */,
+				6629007A2380616100EE4127 /* YMFormatter+Date.swift */,
+				66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */,
+			);
+			path = YMFormatter;
+			sourceTree = "<group>";
+		};
 		664E25B121F647C000F2FA90 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +131,7 @@
 		66600EDC21ECC56600236A30 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				66600EDA21ECC55600236A30 /* YMFormatter.swift */,
+				662900772380607400EE4127 /* YMFormatter */,
 				660F4CC1222EE919007C4C4C /* YMKitInfo.swift */,
 			);
 			path = Controllers;
@@ -220,10 +240,13 @@
 			isa = PBXGroup;
 			children = (
 				66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */,
+				66A7F4632374D8CE0059F536 /* DateExtensionsTests.swift */,
 				66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */,
 				66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */,
 				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
 				66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */,
+				66EFAB54238079320096F591 /* YMFormatterDateTests.swift */,
+				66EFAB58238082CB0096F591 /* YMFormatterNumberTests.swift */,
 				66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */,
 				66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */,
 				66E3AED4234F909C0025A616 /* Info.plist */,
@@ -346,6 +369,7 @@
 				66A7F4622374D7810059F536 /* YMLayoutError.swift in Sources */,
 				66600ED621EA97E900236A30 /* Double+Extensions.swift in Sources */,
 				662D173F2313B22A00ECD184 /* YMSafeSubscriptable.swift in Sources */,
+				6629007B2380616100EE4127 /* YMFormatter+Date.swift in Sources */,
 				66B6400A21EA7D53005DA4B0 /* NSNumber+Extensions.swift in Sources */,
 				66B22B2F22C79FFC00AB7CFF /* Data+Extensions.swift in Sources */,
 				66B6400921EA7D53005DA4B0 /* String+Extensions.swift in Sources */,
@@ -353,6 +377,7 @@
 				668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */,
 				66B6400C21EA7D53005DA4B0 /* UIViewController+Extensions.swift in Sources */,
 				66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */,
+				66EFAB5723807C7E0096F591 /* YMFormatter+Number.swift in Sources */,
 				66600ED921ECB29000236A30 /* Int+Extensions.swift in Sources */,
 				66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */,
 				66600EDB21ECC55600236A30 /* YMFormatter.swift in Sources */,
@@ -366,7 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */,
 				66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */,
+				66A7F4642374D8CE0059F536 /* DateExtensionsTests.swift in Sources */,
+				66EFAB59238082CB0096F591 /* YMFormatterNumberTests.swift in Sources */,
 				66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */,
 				66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */,
 				66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */,
