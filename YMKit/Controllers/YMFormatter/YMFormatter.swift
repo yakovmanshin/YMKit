@@ -8,7 +8,28 @@
 
 import Foundation
 
+/// A collection of methods for formatting different kinds of data, such as names, prices, and more.
 public enum YMFormatter { }
+
+// MARK: - Date String
+
+extension YMFormatter {
+    
+    /// Converts a `Date` to a `String` using the provided `configurationClosure.`
+    ///
+    /// - Parameters:
+    ///   - date: *Required.* The `Date` for convert to a `String`.
+    ///   - configurationClosure: *Optional.* The block of code that contains a custom configuration of `DateFormatter`. The default value does nothing.
+    ///   - dateFormatter: The `DateFormatter` provided to caller to configure.
+    @available(iOS, deprecated, message: "Use YMFormatter.Date's makeString(using:) method")
+    public static func getDateString(
+        from date: Foundation.Date,
+        configurationClosure: (_ dateFormatter: DateFormatter) -> Void = { _ in }
+    ) -> String {
+        return Date(date).makeString(using: configurationClosure)
+    }
+    
+}
 
 // MARK: - Person Name String
 
@@ -106,46 +127,48 @@ extension YMFormatter {
         groupingSeparatorIsEnabled: Bool = true,
         locale: Locale = .current,
         currencyCode: String? = nil,
-        currencySymbol: String? = nil
+        currencySymbol: String? = nil,
+        configurationClosure: (NumberFormatter) -> Void = { _ in }
     ) -> String? {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.usesGroupingSeparator = groupingSeparatorIsEnabled
-        
-        numberFormatter.locale = locale
-        
-        if let currencyCode = currencyCode {
-            numberFormatter.currencyCode = currencyCode
-        }
-        
-        if let currencySymbol = currencySymbol {
-            numberFormatter.currencySymbol = currencySymbol
-        }
-        
-        if significantDigits {
-            numberFormatter.usesSignificantDigits = true
+        return YMFormatter.Number(inputValue).makeString { numberFormatter in
+            numberFormatter.numberStyle = .currency
+            numberFormatter.usesGroupingSeparator = groupingSeparatorIsEnabled
             
-            if let minSignificantDigits = minSignificantDigits {
-                numberFormatter.minimumSignificantDigits = minSignificantDigits
+            numberFormatter.locale = locale
+            
+            if let currencyCode = currencyCode {
+                numberFormatter.currencyCode = currencyCode
             }
             
-            if let maxSignificantDigits = maxSignificantDigits {
-                numberFormatter.maximumSignificantDigits = maxSignificantDigits
+            if let currencySymbol = currencySymbol {
+                numberFormatter.currencySymbol = currencySymbol
             }
-        } else {
-            numberFormatter.usesSignificantDigits = false
-            numberFormatter.minimumIntegerDigits = 1
             
-            if let fixedFractionDigits = fixedFractionDigits {
-                numberFormatter.minimumFractionDigits = fixedFractionDigits
-                numberFormatter.maximumFractionDigits = fixedFractionDigits
+            if significantDigits {
+                numberFormatter.usesSignificantDigits = true
+                
+                if let minSignificantDigits = minSignificantDigits {
+                    numberFormatter.minimumSignificantDigits = minSignificantDigits
+                }
+                
+                if let maxSignificantDigits = maxSignificantDigits {
+                    numberFormatter.maximumSignificantDigits = maxSignificantDigits
+                }
             } else {
-                numberFormatter.minimumFractionDigits = minFractionDigits
-                numberFormatter.maximumFractionDigits = maxFractionDigits
+                numberFormatter.usesSignificantDigits = false
+                numberFormatter.minimumIntegerDigits = 1
+                
+                if let fixedFractionDigits = fixedFractionDigits {
+                    numberFormatter.minimumFractionDigits = fixedFractionDigits
+                    numberFormatter.maximumFractionDigits = fixedFractionDigits
+                } else {
+                    numberFormatter.minimumFractionDigits = minFractionDigits
+                    numberFormatter.maximumFractionDigits = maxFractionDigits
+                }
             }
+            
+            configurationClosure(numberFormatter)
         }
-        
-        return numberFormatter.string(from: inputValue)
     }
     
 }

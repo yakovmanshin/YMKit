@@ -14,6 +14,7 @@ public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
 
 // MARK: - YMJSONDataDecodable
 
+/// A protocol that facilitates faster and easier decoding of JSON.
 public protocol YMJSONDataDecodable: Decodable {
     
     /// Initializes a value from JSON `Data` using `JSONDecoder`.
