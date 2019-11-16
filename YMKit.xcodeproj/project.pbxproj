@@ -36,6 +36,7 @@
 		66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */; };
 		66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */; };
 		66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB54238079320096F591 /* YMFormatterDateTests.swift */; };
+		66EFAB5723807C7E0096F591 /* YMFormatter+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 		66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 		66EFAB54238079320096F591 /* YMFormatterDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatterDateTests.swift; sourceTree = "<group>"; };
+		66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YMFormatter+Number.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				66600EDA21ECC55600236A30 /* YMFormatter.swift */,
 				6629007A2380616100EE4127 /* YMFormatter+Date.swift */,
+				66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */,
 			);
 			path = YMFormatter;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				668A8D2022EEC29700CE26E5 /* UITableView+Extensions.swift in Sources */,
 				66B6400C21EA7D53005DA4B0 /* UIViewController+Extensions.swift in Sources */,
 				66A265FA229ABBA7009C2DE7 /* UIImageView+Extensions.swift in Sources */,
+				66EFAB5723807C7E0096F591 /* YMFormatter+Number.swift in Sources */,
 				66600ED921ECB29000236A30 /* Int+Extensions.swift in Sources */,
 				66B6400821EA7D53005DA4B0 /* Date+Extensions.swift in Sources */,
 				66600EDB21ECC55600236A30 /* YMFormatter.swift in Sources */,
