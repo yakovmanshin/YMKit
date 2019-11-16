@@ -56,3 +56,24 @@ public extension YMFormatter.Number {
     }
     
 }
+
+// MARK: - Number String
+
+public extension YMFormatter.Number {
+    
+    /// Creates a `String` representation of `number`.
+    /// 
+    /// - Parameters:
+    ///   - configurationClosure: *Required.* The block of code that configures `NumberFormatter` before the latter is used for transforming
+    ///   `number` into a `String`. Use this opportunity to set locale, currency code (if needed), rounding rules, and more. See
+    ///   [documentation](https://developer.apple.com/documentation/foundation/numberformatter) for all properties available
+    ///   to configure.
+    ///   - numberFormatter: The `NumberFormatter` that can be configured by the caller.
+    func makeString(
+        using configurationClosure: (_ numberFormatter: NumberFormatter) -> Void
+    ) -> String? {
+        configurationClosure(numberFormatter)
+        return numberFormatter.string(from: number)
+    }
+    
+}
