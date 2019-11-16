@@ -98,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		662900772380607400EE4127 /* YMFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				66600EDA21ECC55600236A30 /* YMFormatter.swift */,
+			);
+			path = YMFormatter;
+			sourceTree = "<group>";
+		};
 		664E25B121F647C000F2FA90 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +119,7 @@
 		66600EDC21ECC56600236A30 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				66600EDA21ECC55600236A30 /* YMFormatter.swift */,
+				662900772380607400EE4127 /* YMFormatter */,
 				660F4CC1222EE919007C4C4C /* YMKitInfo.swift */,
 			);
 			path = Controllers;
