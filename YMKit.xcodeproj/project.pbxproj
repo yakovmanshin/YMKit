@@ -37,6 +37,7 @@
 		66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */; };
 		66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB54238079320096F591 /* YMFormatterDateTests.swift */; };
 		66EFAB5723807C7E0096F591 /* YMFormatter+Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */; };
+		66EFAB59238082CB0096F591 /* YMFormatterNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB58238082CB0096F591 /* YMFormatterNumberTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 		66EFAB54238079320096F591 /* YMFormatterDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatterDateTests.swift; sourceTree = "<group>"; };
 		66EFAB5623807C7E0096F591 /* YMFormatter+Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YMFormatter+Number.swift"; sourceTree = "<group>"; };
+		66EFAB58238082CB0096F591 /* YMFormatterNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatterNumberTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
 				66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */,
 				66EFAB54238079320096F591 /* YMFormatterDateTests.swift */,
+				66EFAB58238082CB0096F591 /* YMFormatterNumberTests.swift */,
 				66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */,
 				66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */,
 				66E3AED4234F909C0025A616 /* Info.plist */,
@@ -391,6 +394,7 @@
 				66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */,
 				66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */,
 				66A7F4642374D8CE0059F536 /* DateExtensionsTests.swift in Sources */,
+				66EFAB59238082CB0096F591 /* YMFormatterNumberTests.swift in Sources */,
 				66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */,
 				66E3AEDD234F9B760025A616 /* PersonNameFormatterTests.swift in Sources */,
 				66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */,
