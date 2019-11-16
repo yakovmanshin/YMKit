@@ -19,7 +19,7 @@ extension Int {
      + Success HTTP status codes are numbers between 200 and 299.
     */
     public var isHTTPSuccess: Bool {
-        return NSRange(location: 200, length: 100).contains(self)
+        return (200..<300).contains(self)
     }
     
 }

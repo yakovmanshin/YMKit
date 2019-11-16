@@ -19,6 +19,14 @@ final class IntExtensionsTests: XCTestCase {
         XCTAssertTrue(isHTTPSuccess)
     }
     
+    func testHTTPCode299() {
+        let statusCode = 299
+        
+        let isHTTPSuccess = statusCode.isHTTPSuccess
+        
+        XCTAssertTrue(isHTTPSuccess)
+    }
+    
     func testHTTPCode404() {
         let statusCode = 404
         
