@@ -35,6 +35,7 @@
 		66E3AEE3234FA4700025A616 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */; };
 		66E3AEE5234FA7640025A616 /* IntExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */; };
 		66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */; };
+		66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAB54238079320096F591 /* YMFormatterDateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		66E3AEE4234FA7640025A616 /* IntExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 		66EDCB4023732C7800B5FE8F /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
+		66EFAB54238079320096F591 /* YMFormatterDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMFormatterDateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				66E3AEDC234F9B760025A616 /* PersonNameFormatterTests.swift */,
 				66E3AEDA234F92010025A616 /* PriceFormatterTests.swift */,
 				66E3AEE2234FA4700025A616 /* StringExtensionsTests.swift */,
+				66EFAB54238079320096F591 /* YMFormatterDateTests.swift */,
 				66E3AEE0234FA3150025A616 /* YMSafeSubscriptableTests.swift */,
 				66E3AEDE234F9D8F0025A616 /* YMStringRepresentableTests.swift */,
 				66E3AED4234F909C0025A616 /* Info.plist */,
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66EFAB55238079320096F591 /* YMFormatterDateTests.swift in Sources */,
 				66E3AEE1234FA3150025A616 /* YMSafeSubscriptableTests.swift in Sources */,
 				66A7F4642374D8CE0059F536 /* DateExtensionsTests.swift in Sources */,
 				66EDCB4123732C7800B5FE8F /* ArrayExtensionsTests.swift in Sources */,
