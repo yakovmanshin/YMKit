@@ -39,3 +39,23 @@ extension YMFormatter {
     }
     
 }
+
+// MARK: - Date String
+
+public extension YMFormatter.Date {
+    
+    /// Creates a `String` representation of `date`.
+    ///
+    /// - Parameters:
+    ///   - configurationClosure: *Required.* The block of code that configures `DateFormatter` before the latter is used for transforming `date`
+    ///   into a `String`. Use this opportunity to set date and time style, locale, and more options. See
+    ///   [documentation](https://developer.apple.com/documentation/foundation/DateFormatter) for all properties available to configure.
+    ///   - dateFormatter: The `DateFormatter` that can be configured by the caller.
+    func makeString(
+        using configurationClosure: (_ dateFormatter: DateFormatter) -> Void
+    ) -> String {
+        configurationClosure(dateFormatter)
+        return dateFormatter.string(from: date)
+    }
+    
+}
