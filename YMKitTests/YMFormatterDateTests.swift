@@ -151,7 +151,13 @@ final class YMFormatterDateTests: XCTestCase {
     }
     
     func testMediumDateTime() {
-        let masterDateTimeString = "Jan 24, 1984 at 9:41:55 AM"
+        let masterDateTimeString: String
+        if #available(iOS 11, *) {
+            masterDateTimeString = "Jan 24, 1984 at 9:41:55 AM"
+        } else {
+            masterDateTimeString = "Jan 24, 1984, 9:41:55 AM"
+        }
+        
         
         let dateTimeString = YMFormatter.Date(date, dateFormatter: dateFormatter).makeString { dateFormatter in
             dateFormatter.dateStyle = .medium
