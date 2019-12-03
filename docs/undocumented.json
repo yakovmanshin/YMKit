@@ -1,6 +1,41 @@
 {
   "warnings": [
     {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter/YMFormatter+Date.swift",
+      "line": 28,
+      "symbol": "YMFormatter.Date.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter/YMFormatter+Number.swift",
+      "line": 24,
+      "symbol": "YMFormatter.Number.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter/YMFormatter+Number.swift",
+      "line": 43,
+      "symbol": "YMFormatter.Number.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter/YMFormatter+Number.swift",
+      "line": 48,
+      "symbol": "YMFormatter.Number.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMFormatter/YMFormatter+Number.swift",
+      "line": 53,
+      "symbol": "YMFormatter.Number.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Controllers/YMKitInfo.swift",
       "line": 63,
       "symbol": "YMKitInfo.DeviceInfo.OS",
@@ -40,6 +75,20 @@
       "line": 124,
       "symbol": "String.matchesRegularExpression(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Models/Errors/YMLayoutError.swift",
+      "line": 9,
+      "symbol": "YMLayoutError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Yakov/Documents/Development/YMKit/YMKit/Models/Errors/YMLayoutError.swift",
+      "line": 10,
+      "symbol": "YMLayoutError.superviewNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {

@@ -6,6 +6,7 @@
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
 //
 
+/// A protocol that enforces values of the conforming type to always have nice `String` representation.
 public protocol YMStringRepresentable {
     
     /// String representation of the value.
@@ -16,7 +17,7 @@ public protocol YMStringRepresentable {
 extension Int: YMStringRepresentable {
     
     public var stringValue: String {
-        return String(self)
+        return String(describing: self)
     }
     
 }
@@ -24,7 +25,7 @@ extension Int: YMStringRepresentable {
 extension Double: YMStringRepresentable {
     
     public var stringValue: String {
-        return String(self)
+        return String(describing: self)
     }
     
 }

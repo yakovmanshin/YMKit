@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - YMJSONDataCodable
 
+/// A combination of `YMJSONDataDecodable` and `YMJSONDataEncodable`.
 public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
 
 // MARK: - YMJSONDataDecodable
@@ -39,6 +40,7 @@ public protocol YMJSONDataDecodable: Decodable {
     
 }
 
+/// A protocol that facilitates faster and easier value encoding into JSON.
 extension YMJSONDataDecodable {
     
     public init(throwingWithJSONData jsonData: Data) throws {

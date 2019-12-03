@@ -12,29 +12,32 @@ import UIKit
 
 extension UITableView {
     
-    private func adjustHeight(of view: UIView) {
+    private static func adjustHeight(of view: UIView) {
         let targetSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         
         guard view.frame.size.height != targetSize.height else { return }
         
         view.frame.size.height = targetSize.height
-        
-        // iOS 9 only
-        self.layoutIfNeeded()
     }
     
     /// Automatically adjusts height of the header view to fit the content.
     public func adjustHeaderViewHeight() {
         guard let headerView = self.tableHeaderView else { return }
         
-        adjustHeight(of: headerView)
+        UITableView.adjustHeight(of: headerView)
+        
+        // iOS 9 only
+        self.layoutIfNeeded()
     }
     
     /// Automatically adjusts height of the footer view to fit the content.
     public func adjustFooterViewHeight() {
         guard let footerView = self.tableFooterView else { return }
         
-        adjustHeight(of: footerView)
+        UITableView.adjustHeight(of: footerView)
+        
+        // iOS 9 only
+        self.layoutIfNeeded()
     }
     
 }
