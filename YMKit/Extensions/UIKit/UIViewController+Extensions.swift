@@ -171,8 +171,8 @@ extension UIViewController {
         cancelOptionLabel cancelOptionLabelKey: String = "OK",
         cancelOptionAction: ((UIAlertAction) -> Void)? = nil,
         primaryOptionLabel primaryOptionLabelKey: String? = nil,
-        primaryOptionStyle: UIAlertAction.Style = .default
-        , primaryOptionAction: ((UIAlertAction) -> Void)? = nil
+        primaryOptionStyle: UIAlertAction.Style = .default,
+        primaryOptionAction: ((UIAlertAction) -> Void)? = nil
     ) {
         let title = titleKey.localized
         let message = messageKey?.localized
