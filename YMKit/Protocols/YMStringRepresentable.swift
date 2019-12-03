@@ -17,7 +17,7 @@ public protocol YMStringRepresentable {
 extension Int: YMStringRepresentable {
     
     public var stringValue: String {
-        return String(self)
+        return String(describing: self)
     }
     
 }
@@ -25,7 +25,7 @@ extension Int: YMStringRepresentable {
 extension Double: YMStringRepresentable {
     
     public var stringValue: String {
-        return String(self)
+        return String(describing: self)
     }
     
 }
