@@ -11,6 +11,8 @@ public protocol YMSafeSubscriptable: Collection {
     
     /// Allows subscripting collections in a safe manner, without out-of-bounds exceptions.
     ///
+    /// + This protocol has a default implementation.
+    ///
     /// - Parameter index: The index of an element.
     ///
     /// - Returns: The element with the specified index, if such an element exists; otherwise, `nil`.
