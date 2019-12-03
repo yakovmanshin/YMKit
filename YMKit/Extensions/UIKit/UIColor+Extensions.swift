@@ -8,6 +8,64 @@
 
 import UIKit
 
+// MARK: - RGB Components
+
+extension UIColor {
+    
+    /// A tuple combining values of individual RGB color components.
+    private typealias RGBComponents = (
+        red: CGFloat,
+        green: CGFloat,
+        blue: CGFloat,
+        alpha: CGFloat
+    )
+    
+    /// Returns an `RGBComponents` tuple with values of individual color components.
+    ///
+    /// + On iOS 10 and later, color components can have any values, including those outside of the 0.0–1.0 range. See [documentation](https://developer.apple.com/documentation/uikit/uicolor/1621919-getred) for `getRed(_:green:blue:alpha:)` for details.
+    /// + If the color is not in a compatible color space, the property is `nil`.
+    private var rgbComponents: RGBComponents? {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else { return nil }
+        
+        return RGBComponents(red, green, blue, alpha)
+    }
+    
+    /// One of four components—red, green, blue, or alpha—a color consists of.
+    enum RGBComponent {
+        case red
+        case green
+        case blue
+        case alpha
+    }
+    
+    /// Returns the value of an RGB component the color consists of.
+    ///
+    /// + On iOS 10 and later, color components can have any values, including those outside of the 0.0–1.0 range. See [documentation](https://developer.apple.com/documentation/uikit/uicolor/1621919-getred) for `getRed(_:green:blue:alpha:)` for details.
+    /// + If the color is not in a compatible color space, the method returns `nil`.
+    ///
+    /// - Parameter component: *Required.* The requested component.
+    func getRGBComponent(_ component: RGBComponent) -> CGFloat? {
+        guard let rgbComponents = self.rgbComponents else { return nil }
+        
+        switch component {
+        case .red:
+            return rgbComponents.red
+        case .green:
+            return rgbComponents.green
+        case .blue:
+            return rgbComponents.blue
+        case .alpha:
+            return rgbComponents.alpha
+        }
+    }
+    
+}
+
 // MARK: - RGB
 
 extension UIColor {
