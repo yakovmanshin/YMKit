@@ -9,28 +9,72 @@
 import XCTest
 @testable import YMKit
 
-final class StringExtensionsTests: XCTestCase {
+// MARK: - String+Extensions Tests Core
+
+final class StringExtensionsTests: XCTestCase { }
+
+// MARK: - Regular Expression Matching
+
+extension StringExtensionsTests {
+    
+    static let emailAddressPattern = #"^[a-z0-9]{1}([a-z0-9._%+-]*[a-z0-9]{1})?@[a-z0-9]{1}[a-z0-9.-]{0,126}[a-z0-9]{1}\.[a-z]{2,64}$"#
+    
+    static let emailAddress1 = "john@example.com"
+    static let emailAddress2 = "Jack555@Example.Com"
+    static let emailAddress3 = "This is my email address."
     
     func testRegularExpressionMatching() {
-        let emailAddressPattern = #"^[a-z0-9]{1}([a-z0-9._%+-]*[a-z0-9]{1})?@[a-z0-9]{1}[a-z0-9.-]{0,126}[a-z0-9]{1}\.[a-z]{2,64}$"#
+        let emailAddress1IsValid = Self.emailAddress1.matchesRegularExpression(fromPattern: Self.emailAddressPattern)
         
-        let emailAddress1 = "john@example.com"
-        let isEmailAddress1Valid = emailAddress1.matchesRegularExpression(fromPattern: emailAddressPattern)
-        XCTAssertNotNil(isEmailAddress1Valid)
-        XCTAssertTrue(isEmailAddress1Valid!)
+        XCTAssertTrue(emailAddress1IsValid!)
         
-        let emailAddress2 = "Jack555@Example.Com"
-        let isEmailAddress2Valid = emailAddress2.matchesRegularExpression(
-            fromPattern: emailAddressPattern,
+        let emailAddress2IsValid = Self.emailAddress2.matchesRegularExpression(
+            fromPattern: Self.emailAddressPattern,
             withOptions: .caseInsensitive
         )
-        XCTAssertNotNil(isEmailAddress2Valid)
-        XCTAssertTrue(isEmailAddress2Valid!)
         
-        let emailAddress3 = "This is my email address."
-        let isEmailAddress3Valid = emailAddress3.matchesRegularExpression(fromPattern: emailAddressPattern)
-        XCTAssertNotNil(isEmailAddress3Valid)
-        XCTAssertFalse(isEmailAddress3Valid!)
+        XCTAssertTrue(emailAddress2IsValid!)
+        
+        let emailAddress3IsValid = Self.emailAddress3.matchesRegularExpression(fromPattern: Self.emailAddressPattern)
+        
+        XCTAssertFalse(emailAddress3IsValid!)
+    }
+    
+    func testLegacyRegularExpressionMatching() {
+        guard let regularExpression = try? NSRegularExpression(
+            pattern: Self.emailAddressPattern,
+            options: [.caseInsensitive]
+        ) else {
+            XCTFail("Failed to initialize NSRegularExpression from pattern")
+            return
+        }
+        
+        let emailAddress1IsValid = Self.emailAddress1.matchesRegularExpression(regularExpression)
+        
+        XCTAssertTrue(emailAddress1IsValid)
+        
+        let emailAddress2IsValid = Self.emailAddress2.matchesRegularExpression(regularExpression)
+        
+        XCTAssertTrue(emailAddress2IsValid)
+        
+        let emailAddress3IsValid = Self.emailAddress3.matchesRegularExpression(regularExpression)
+        
+        XCTAssertFalse(emailAddress3IsValid)
+    }
+    
+}
+
+// MARK: - Comparison Suitability
+
+extension StringExtensionsTests {
+    
+    static let masterComparisonUnsuitableString = "Thîs ÌS my tëSt 023"
+    static let masterComparisonSuitableString = "this is my test 023"
+    
+    func testComparisonSuitability() {
+        let comparisonSuitableString = Self.masterComparisonUnsuitableString.suitableForComparison
+        
+        XCTAssertEqual(comparisonSuitableString, Self.masterComparisonSuitableString)
     }
     
 }
