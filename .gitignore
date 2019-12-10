@@ -70,3 +70,4 @@ fastlane/test_output
 # Jazzy Documentation
 
 docs/docsets
+docs/undocumented.json
