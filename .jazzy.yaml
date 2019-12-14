@@ -5,7 +5,7 @@ clean: true
 copyright: © 2019 [Yakov Manshin](https://www.ym.dev/). Available under [Apache License, version 2.0](https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE).
 github_file_prefix: https://github.com/yakovmanshin/YMKit/tree/master
 github_url: https://github.com/yakovmanshin/YMKit
-head: <meta name"robots" content="noarchive">
+head: <meta name="robots" content="noarchive">
 module: YMKit
 output: docs
 title: YMKit Docs
