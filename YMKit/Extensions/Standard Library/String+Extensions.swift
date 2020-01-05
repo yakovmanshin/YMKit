@@ -120,11 +120,6 @@ extension String {
         ) == 1
     }
     
-    @available(*, deprecated, renamed: "matches(_:)")
-    public func matchesRegularExpression(_ regularExpression: NSRegularExpression) -> Bool {
-        return self.matches(regularExpression)
-    }
-    
     /// Indicates whether the string fully matches (i.e. has exactly one match with) a regular expression initialized with the specified pattern with options.
     ///
     /// - Parameter regularExpressionPattern: *Required.* Regular expression pattern to initialize an `NSRegularExpression` from.
