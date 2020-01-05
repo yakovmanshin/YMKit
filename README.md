@@ -16,7 +16,7 @@ To install **YMKit** into your app with Swift Package Manager, use the built-in 
 If you need to use **YMKit** as a dependency in a Swift package of your own, add the following entry to the `dependencies` array in the `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/yakovmanshin/YMKit.git", from: "2.0.0")
+.package(url: "https://github.com/yakovmanshin/YMKit.git", from: "3.0.0")
 ```
 
 Should you like to learn more about Swift packages and SPM, there's [a WWDC session](https://fwd2.net/33lDCqq) on that.
@@ -26,7 +26,7 @@ Use [CocoaPods](https://fwd2.net/cocoapods) to install **YMKit**. If you’ve ne
 
 To install **YMKit**, add the pod to your Podfile:
 ```ruby
-pod 'YMKit', '~>2.0'
+pod 'YMKit', '~>3.0'
 ```
 
 Run the following command in your project directory to install the newly-added pod:
@@ -34,7 +34,7 @@ Run the following command in your project directory to install the newly-added p
 pod install
 ```
 
-From now on, use the created / updated *workspace* (not the project).
+From now on, use the created / updated `.xcworkspace` (not `.xcodeproj`).
 
 ### Binary `XCFramework`
 `XCFramework` is a binary format for framework distribution, which solves the most annoying problem of binary frameworks: architecture incompatibility. One bundle contains versions for all supported architectures: physical devices (`armv7` and `arm64`) and simulators (`i386` and `x86_64`). Learn more about binary frameworks and `XCFramework` in [this WWDC session](https://fwd2.net/32jBVIz).
