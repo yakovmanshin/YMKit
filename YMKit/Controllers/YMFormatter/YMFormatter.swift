@@ -11,26 +11,6 @@ import Foundation
 /// A collection of methods for formatting different kinds of data, such as names, prices, and more.
 public enum YMFormatter { }
 
-// MARK: - Date String
-
-extension YMFormatter {
-    
-    /// Converts a `Date` to a `String` using the provided `configurationClosure.`
-    ///
-    /// - Parameters:
-    ///   - date: *Required.* The `Date` for convert to a `String`.
-    ///   - configurationClosure: *Optional.* The block of code that contains a custom configuration of `DateFormatter`. The default value does nothing.
-    ///   - dateFormatter: The `DateFormatter` provided to caller to configure.
-    @available(iOS, deprecated, message: "Use YMFormatter.Date's makeString(using:) method")
-    public static func getDateString(
-        from date: Foundation.Date,
-        configurationClosure: (_ dateFormatter: DateFormatter) -> Void = { _ in }
-    ) -> String {
-        return Date(date).makeString(using: configurationClosure)
-    }
-    
-}
-
 // MARK: - Person Name String
 
 @available(iOS, introduced: 9)

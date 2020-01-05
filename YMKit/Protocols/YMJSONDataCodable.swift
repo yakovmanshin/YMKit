@@ -25,14 +25,6 @@ public protocol YMJSONDataDecodable: Decodable {
     
     /// Initializes a value from JSON `Data` using `JSONDecoder`.
     ///
-    /// + If something goes wrong, the method `throws`.
-    ///
-    /// - Parameter jsonData: *Required.* JSON `Data`.
-    @available(*, deprecated, renamed: "init(throwingWithJSONData:)")
-    init(throwingJSONData jsonData: Data) throws
-    
-    /// Initializes a value from JSON `Data` using `JSONDecoder`.
-    ///
     /// + If something goes wrong, `nil` is returned.
     ///
     /// - Parameter jsonData: *Required.* JSON `Data`.
