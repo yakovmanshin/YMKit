@@ -1,14 +1,19 @@
 language: swift
 os: osx
-script: xcodebuild ONLY_ACTIVE_ARCH=NO | xcpretty && exit ${PIPESTATUS[0]}
-xcode_scheme: YMKit
+script: |
+    swift package generate-xcodeproj
+    xcodebuild -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty && exit ${PIPESTATUS[0]}
+xcode_scheme: YMKit-Package
 xcode_project: YMKit.xcodeproj
 
 jobs:
     include:
-        - osx_image: xcode11.2
+        - name: Xcode 11.2 / iOS 13.2
+          osx_image: xcode11.2
           xcode_sdk: iphonesimulator13.2
-        - osx_image: xcode11.1
+        - name: Xcode 11.1 / iOS 13.1
+          osx_image: xcode11.1
           xcode_sdk: iphonesimulator13.1
-        - osx_image: xcode10.3
+        - name: Xcode 10.3 / iOS 12.4
+          osx_image: xcode10.3
           xcode_sdk: iphonesimulator12.4
