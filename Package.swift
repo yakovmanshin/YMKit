@@ -24,6 +24,7 @@ let package = Package(
         ),
         .testTarget(
             name: "YMKitTests",
+            dependencies: ["YMKit"],
             path: "YMKitTests"
         )
     ],
