@@ -14,6 +14,6 @@ Pod::Spec.new do |spec|
       :git => "https://github.com/yakovmanshin/YMKit.git",
       :tag => "v#{spec.version}"
   }
-  spec.source_files = "YMKit/**/*.{h,m,swift}"
+  spec.source_files = "YMKit/**/*.swift"
 
 end
