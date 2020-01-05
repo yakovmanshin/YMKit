@@ -84,17 +84,24 @@ jobs:
           xcversion simulators
         env:
           simulator_to_install: ${{ matrix.simulator_to_install }}
-      - name: Test
+      - name: Switch Xcode version
         run: |
           sudo xcode-select -switch /Applications/"${xcode_app}"
+          xcodebuild -version
+          swift -version
+        env:
+          xcode_app: ${{ matrix.xcode_app }}
+      - name: Generate xcodeproj
+        run: swift package generate-xcodeproj
+      - name: Test xcodeproj
+        run: |
           xcodebuild clean test \
           -project YMKit.xcodeproj \
-          -scheme YMKit \
+          -scheme YMKit-Package \
           -sdk "${sdk}" \
           -destination "${destination}" \
           ONLY_ACTIVE_ARCH=NO \
           | xcpretty && exit ${PIPESTATUS[0]}
         env:
           destination: ${{ matrix.destination }}
-          xcode_app: ${{ matrix.xcode_app }}
           sdk: ${{ matrix.sdk }}
