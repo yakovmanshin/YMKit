@@ -3,7 +3,9 @@
 ![Build Status — master](https://go.ym.dev/ymkit-ci-master)
 ![Build Status — dev](https://go.ym.dev/ymkit-ci-dev)
 
-**YMKit** is a collection of tools for quicker and easier development of iOS apps.
+**YMKit** is a collection of tools that make development of iOS apps quicker and easier.
+
+The framework provides a set of small hacks, such as `UIColor` initialization from HEX values, string localization, date and number formatters, and more.
 
 ---
 
@@ -14,8 +16,6 @@ YMKit v3.0.0 is currently under active development, and it introduces some break
 Also, documentation you see on this page may be irrelevant for v2.3.0. You can find the correct documentation at [kit.ym.dev](https://kit.ym.dev/).
 
 ---
-
-**YMKit** extends built-in types, such as `Date` or `UIColor`, with helpful new methods, and introduces new types, such as `YMFormatter`, for advanced functionality.
 
 ## Installation
 There are multiple ways to install **YMKit** and keep it up to date.
