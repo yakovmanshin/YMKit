@@ -134,10 +134,15 @@ On the [releases page](https://github.com/yakovmanshin/YMKit/releases), you will
 
 Keep in mind there's no auto-update feature for `XCFramework`s at this time. You have to repeat the steps above every time a new version is released.
 
-## Usage
-To use **YMKit**, you’ll need to import the framework.
+## General Usage Tips
+Just as with all frameworks, you need to import YMKit in files you'd like to use its methods in. You've most likely done it before: the most trivial example is UIKit. It's recommended to put all import statements at the top of your code files, but you can do it anywhere, in fact. Anyway, just add the following to your `.swift` file:
 
-To activate extensions of built-in types (such as `Date`, `UIColor`, `String`, etc.), you only need to import **YMKit** once. Open `AppDelegate.swift` in project navigator and import the framework:
+```swift
+import YMKit
+```
+
+Here's a pro tip. You can activate extensions of all built-in types (such as `Date`, `UIColor`, `String`, etc.) for your entire project at once—to do it, import YMKit in `AppDelegate.swift`.
+
 ```swift
 // AppDelegate.swift
 
@@ -153,7 +158,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // ...
 ```
 
-To use new types declared in **YMKit** (such as `YMFormatter`), you’ll need to import **YMKit** in every file you want to use the types in.
+This hack won't work with types declared in YMKit, such as `YMFormatter`: to use them, you'll still need to import YMKit in individual code files.
 
 ## Documentation
 Most variables and methods are documented in code.
