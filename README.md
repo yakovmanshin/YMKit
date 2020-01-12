@@ -160,7 +160,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 This hack won't work with types declared in YMKit, such as `YMFormatter`: to use them, you'll still need to import YMKit in individual code files.
 
-## Documentation
-Most variables and methods are documented in code.
+## In-Depth Documentation
+My ultimate goal is to cover 100% of types, properties, and methods with accurate, detailed, and extensive documentation. At the moment, the rate is near 90%.
 
-For a nicer look, see [YMKit Docs](https://kit.ym.dev/).
+To view documentation for a given type, property, or method, just Option-click its name, and the [likely] familiar pop-up will appear. You can browse source files as well, of course.
+
+Thanks to [Jazzy](https://github.com/realm/jazzy), documentation for YMKit is also available on the web at [kit.ym.dev](https://kit.ym.dev/). However, it is only valid for the most recent release version.
