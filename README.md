@@ -66,6 +66,34 @@ let green = myColor.getRGBComponent(.green)
 
 *CMYK support is coming later.*
 
+### Number Formatting
+
+Formatting numbers (prices, for examples) for different locales is no easy task. Fortunately, you don't have to remember formats for all countries—Foundation's `NumberFormatter` will take care of it. Unfortunately, using it quickly gets overwhelmingly verbose.
+
+YMKit takes another, more declarative approach.
+
+Let's say you need to display a price in euros that's formatted according to the user's locale and has up to two decimal digits. Here's how you do it with `NumberFormatter`:
+
+```swift
+let numberFormatter = NumberFormatter()
+numberFormatter.numberStyle = .currency
+numberFormatter.locale = .current
+numberFormatter.currencyCode = currencyCode
+numberFormatter.minimumIntegerDigits = 1
+numberFormatter.minimumFractionDigits = 0
+numberFormatter.maximumFractionDigits = 2
+
+let priceString = numberFormatter.string(from: NSNumber(value: myItem.price))
+```
+
+And here's YMKit:
+
+```swift
+let priceString = myItem.price.getBasicPriceString(maxFractionDigits: 2, currencyCode: myItem.currencyCode)
+```
+
+Of course there's many options for further customization: "significant digits," grouping sepator, and currency symbol literal are just a few examples. If they're still not enough, you can even have a closure and set the remaining properties manually (as in the first example above): it will still be nicer to use because you don't have to worry about creating and managing lifecycle of the `NumberFormatter` object manually.
+
 ## Installation
 There are multiple ways to install **YMKit** and keep it up to date.
 
