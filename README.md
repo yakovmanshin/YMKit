@@ -5,6 +5,16 @@
 
 **YMKit** is a collection of tools for quicker and easier development of iOS apps.
 
+---
+
+**NOTE**
+
+YMKit v3.0.0 is currently under active development, and it introduces some breaking changes, compared to [v2.3.0](https://github.com/yakovmanshin/YMKit/releases/tag/v2.3.0), the most recent publicly released version. Don't use code from `dev` in production environments.
+
+Also, documentation you see on this page may be irrelevant for v2.3.0. You can find the correct documentation at [kit.ym.dev](https://kit.ym.dev/).
+
+---
+
 **YMKit** extends built-in types, such as `Date` or `UIColor`, with helpful new methods, and introduces new types, such as `YMFormatter`, for advanced functionality.
 
 ## Installation
