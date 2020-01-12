@@ -95,12 +95,14 @@ let priceString = myItem.price.getBasicPriceString(maxFractionDigits: 2, currenc
 Of course there's many options for further customization: "significant digits," grouping sepator, and currency symbol literal are just a few examples. If they're still not enough, you can even have a closure and set the remaining properties manually (as in the first example above): it will still be nicer to use because you don't have to worry about creating and managing lifecycle of the `NumberFormatter` object manually.
 
 ## Installation
-There are multiple ways to install **YMKit** and keep it up to date.
+There are multiple ways to install YMKit and keep it up to date.
 
 ### Swift Package Manager
-To install **YMKit** into your app with Swift Package Manager, use the built-in SPM client. In Xcode, click *File* → *Swift Packages* → *Add Package Dependency…*, paste **YMKit** repository URL (`https://github.com/yakovmanshin/YMKit`) into the search field, and select preferred version mode (we recommend selecting *Up to Next Major*).
+The easiest way to add YMKit to your project is with Swift Package Manager (SPM). Xcode 11 has an SPM client built right in, so you can use the GUI. Click *File* → *Swift Packages* → *Add Package Dependency…*, paste YMKit repository URL (`https://github.com/yakovmanshin/YMKit`) into the search field, and select preferred update policy (*Up to Next Major* should be fine for most uses).
 
-If you need to use **YMKit** as a dependency in a Swift package of your own, add the following entry to the `dependencies` array in the `Package.swift` file:
+Xcode will check for newer versions that comply with the specified update policy from time to time. You can always check for updates manually: *File* → *Swift Packages* → *Update to Latest Package Versions*.
+
+If you prefer working with the `Package.swift` file manually, or need to use YMKit as a dependency in a Swift package of your own, add the following entry to the `dependencies` array in the `Package.swift` file:
 
 ```swift
 .package(url: "https://github.com/yakovmanshin/YMKit.git", from: "3.0.0")
@@ -109,9 +111,9 @@ If you need to use **YMKit** as a dependency in a Swift package of your own, add
 Should you like to learn more about Swift packages and SPM, there's [a WWDC session](https://fwd2.net/33lDCqq) on that.
 
 ### CocoaPods
-Use [CocoaPods](https://fwd2.net/cocoapods) to install **YMKit**. If you’ve never worked with CocoaPods before, watch this detailed (and funny) [video from Google](https://fwd2.net/cocoapods-tutorial) on how to install and use CocoaPods.
+Alternatively, you can use [CocoaPods](https://fwd2.net/cocoapods) to install YMKit. If you’ve never worked with CocoaPods before, watch this detailed (and funny) [video from Google](https://fwd2.net/cocoapods-tutorial) on how to install and use the tool.
 
-To install **YMKit**, add the pod to your Podfile:
+To install YMKit, add the following to your Podfile:
 ```ruby
 pod 'YMKit', '~>3.0'
 ```
@@ -121,12 +123,14 @@ Run the following command in your project directory to install the newly-added p
 pod install
 ```
 
-From now on, use the created / updated `.xcworkspace` (not `.xcodeproj`).
+From now on, use the created / updated `.xcworkspace` (not `.xcodeproj`) to work on your app.
 
 ### Binary `XCFramework`
+*This option will probably go away in v3.0.0.*
+
 `XCFramework` is a binary format for framework distribution, which solves the most annoying problem of binary frameworks: architecture incompatibility. One bundle contains versions for all supported architectures: physical devices (`armv7` and `arm64`) and simulators (`i386` and `x86_64`). Learn more about binary frameworks and `XCFramework` in [this WWDC session](https://fwd2.net/32jBVIz).
 
-On the [releases page](https://github.com/yakovmanshin/YMKit/releases), you will find binary `XCFramework` files attached to **YMKit** releases starting with v2.0.0. To use on of those files, just unzip it and drag the `XCFramework` bundle to the *Frameworks, Libraries, and Embedded Content* section in your target's *General* settings.
+On the [releases page](https://github.com/yakovmanshin/YMKit/releases), you will find binary `XCFramework` files attached to YMKit releases starting with v2.0.0. To use on of those files, just unzip it and drag the `XCFramework` bundle to the *Frameworks, Libraries, and Embedded Content* section in your target's *General* settings.
 
 Keep in mind there's no auto-update feature for `XCFramework`s at this time. You have to repeat the steps above every time a new version is released.
 
