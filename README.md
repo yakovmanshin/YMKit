@@ -42,6 +42,18 @@ let helloWorld = "HelloWorldKey".localized
 let greeting = "LocalizableGreetingKey".localized(withParameters: firstName, lastName)
 ```
 
+### `UIColor` from HEX
+
+When you need to parse a HEX color string (such as `#ff4600`), things get so ugly I won't even demostrate them.
+
+However, with YMKit, all it takes to get a `UIColor` instance is one line of code:
+
+```swift
+let myColor = UIColor(hexString: "#ff4600")
+```
+
+This single initializer works with both three- (`#fff`) and six-digit (`#aeaeae`) codes; with or without the `#` character.
+
 ## Installation
 There are multiple ways to install **YMKit** and keep it up to date.
 
