@@ -17,6 +17,31 @@ Also, documentation you see on this page may be irrelevant for v2.3.0. You can f
 
 ---
 
+## Usage Examples
+
+Here's a few examples of how YMKit can make your development routine just a little easier.
+
+### Localized Strings
+When you need to substitute a localizable string key with its localized value at runtime, you usually do something like that:
+
+```swift
+// Without arguments
+let helloWorld = NSLocalizedString("HelloWorldKey", comment: "")
+
+// With arguments
+let greeting = String(format: NSLocalizedString("LocalizableGreetingKey", comment: ""), firstName, lastName)
+```
+
+With YMKit, it's shorter and simpler:
+
+```swift
+// Without arguments
+let helloWorld = "HelloWorldKey".localized
+
+// With arguments
+let greeting = "LocalizableGreetingKey".localized(withParameters: firstName, lastName)
+```
+
 ## Installation
 There are multiple ways to install **YMKit** and keep it up to date.
 
