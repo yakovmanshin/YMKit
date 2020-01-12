@@ -54,6 +54,18 @@ let myColor = UIColor(hexString: "#ff4600")
 
 This single initializer works with both three- (`#fff`) and six-digit (`#aeaeae`) codes; with or without the `#` character.
 
+### Individual RGB Channels from `UIColor`
+
+If you've ever needed to extract just one channel from `UIColor`, then you certainly know what a mess it is, with variables used only once, in-out parameters, and so on.
+
+YMKit will make your life easier—much easier:
+
+```swift
+let green = myColor.getRGBComponent(.green)
+```
+
+*CMYK support is coming later.*
+
 ## Installation
 There are multiple ways to install **YMKit** and keep it up to date.
 
