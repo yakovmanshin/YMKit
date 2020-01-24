@@ -49,15 +49,15 @@ extension StringExtensionsTests {
             return
         }
         
-        let emailAddress1IsValid = Self.emailAddress1.matchesRegularExpression(regularExpression)
+        let emailAddress1IsValid = Self.emailAddress1.matches(regularExpression)
         
         XCTAssertTrue(emailAddress1IsValid)
         
-        let emailAddress2IsValid = Self.emailAddress2.matchesRegularExpression(regularExpression)
+        let emailAddress2IsValid = Self.emailAddress2.matches(regularExpression)
         
         XCTAssertTrue(emailAddress2IsValid)
         
-        let emailAddress3IsValid = Self.emailAddress3.matchesRegularExpression(regularExpression)
+        let emailAddress3IsValid = Self.emailAddress3.matches(regularExpression)
         
         XCTAssertFalse(emailAddress3IsValid)
     }

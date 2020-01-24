@@ -7,14 +7,14 @@
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
-    <meta name"robots" content="noarchive">
+    <meta name="robots" content="noarchive">
   </head>
   <body>
     <a name="//apple_ref/swift/Extension/UIView" class="dashAnchor"></a>
     <a title="UIView Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">YMKit Docs</a> (90% documented)</p>
+        <p><a href="../index.html">YMKit Docs</a> (89% documented)</p>
         <p class="header-right"><a href="https://github.com/yakovmanshin/YMKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -81,6 +81,9 @@
                 <a href="../Extensions/NSNumber.html">NSNumber</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
               </li>
               <li class="nav-group-task">
@@ -131,12 +134,6 @@
         <section>
           <section class="section">
             <h1>UIView</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">UIView</span></code></pre>
-
-                </div>
-              </div>
             
           </section>
           <section class="section task-group-section">
@@ -145,9 +142,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC5YMKitE7animate_12withDurationyyyXA_SdtFZ"></a>
+                    <a name="/s:5YMKit7animateyyyyXA_XetcXeFZ"></a>
                     <a name="//apple_ref/swift/Method/animate(_:withDuration:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC5YMKitE7animate_12withDurationyyyXA_SdtFZ">animate(_:withDuration:)</a>
+                    <a class="token" href="#/s:5YMKit7animateyyyyXA_XetcXeFZ">animate(_:withDuration:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -214,13 +211,22 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Auto%20Layout"></a>
+                <a name="//apple_ref/swift/Section/Auto Layout" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Auto%20Layout"></a>
+                  <h3 class="section-name"><p>Auto Layout</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC5YMKitE20constrainToSuperview10withInsetsySo06UIEdgeG0V_tKF"></a>
-                    <a name="//apple_ref/swift/Method/constrainToSuperview(withInsets:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC5YMKitE20constrainToSuperview10withInsetsySo06UIEdgeG0V_tKF">constrainToSuperview(withInsets:)</a>
+                    <a name="/s:5YMKit22constraintsToSuperviewyXeXe_tKcXeF"></a>
+                    <a name="//apple_ref/swift/Method/constraintsToSuperview(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5YMKit22constraintsToSuperviewyXeXe_tKcXeF">constraintsToSuperview(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,7 +234,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Pins the view to its superview&rsquo;s sides. Throws <code><a href="../Enums/YMLayoutError.html#/s:5YMKit13YMLayoutErrorO17superviewNotFoundyA2CmF">YMLayoutError.superviewNotFound</a></code> if no superview is found.</p>
+                        <p>Returns an array of constraints which, once activated, pin the view to its superview&rsquo;s sides with optional insets.</p>
+
+<ul>
+<li>This method throws <code><a href="../Enums/YMLayoutError.html#/s:5YMKit13YMLayoutErrorO17superviewNotFoundyA2CmF">YMLayoutError.superviewNotFound</a></code> if no superview is found.</li>
+</ul><div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Note that this method does not set <code>translatesAutoresizingMaskIntoConstraints</code> on the view
+to <code>false</code>; you have to do it manually.</p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -236,7 +251,9 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mi">9</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">constrainToSuperview</span><span class="p">(</span><span class="n">withInsets</span> <span class="nv">edgeInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">constraintsToSuperview</span><span class="p">(</span>
+    <span class="n">with</span> <span class="nv">edgeInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
+<span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">NSLayoutConstraint</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -252,7 +269,8 @@
                               </td>
                               <td>
                                 <div>
-                                  <p><em>Optional.</em> The insets to add between the view and its superview. Default is <code>.zero</code>.</p>
+                                  <p><em>Optional.</em> The insets to add between the view and its superview.
+Default is <code>.zero</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -260,7 +278,92 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/UIKit/UIView+Extensions.swift#L39-L66">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/UIKit/UIView+Extensions.swift#L45-L70">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5YMKit20constrainToSuperviewyyXe_tKcXeF"></a>
+                    <a name="//apple_ref/swift/Method/constrainToSuperview(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5YMKit20constrainToSuperviewyyXe_tKcXeF">constrainToSuperview(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pins the view to its superview&rsquo;s sides with optional insets.</p>
+
+<ul>
+<li><p>This method throws <code><a href="../Enums/YMLayoutError.html#/s:5YMKit13YMLayoutErrorO17superviewNotFoundyA2CmF">YMLayoutError.superviewNotFound</a></code> if no superview is found.</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mi">9</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">constrainToSuperview</span><span class="p">(</span><span class="n">with</span> <span class="nv">edgeInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edgeInsets</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><em>Optional.</em> The insets to add between the view and its superview.
+Default is <code>.zero</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/UIKit/UIView+Extensions.swift#L79-L85">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5YMKit20constrainToSuperviewyyXe_tKcXeF"></a>
+                    <a name="//apple_ref/swift/Method/constrainToSuperview(withInsets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5YMKit20constrainToSuperviewyyXe_tKcXeF">constrainToSuperview(withInsets:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Documentation Coming Soon…</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">constrainToSuperview</span><span class="p">(</span><span class="n">withInsets</span> <span class="nv">edgeInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/UIKit/UIView+Extensions.swift#L89-L91">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -270,8 +373,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>© 2019 <a class="link" href="https://www.ym.dev/" target="_blank" rel="external">Yakov Manshin</a>. Available under <a class="link" href="https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE" target="_blank" rel="external">Apache License, version 2.0</a>.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2020 <a class="link" href="https://www.ym.dev/" target="_blank" rel="external">Yakov Manshin</a>. Available under <a class="link" href="https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE" target="_blank" rel="external">Apache License, version 2.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

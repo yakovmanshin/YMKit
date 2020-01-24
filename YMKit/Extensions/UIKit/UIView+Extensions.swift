@@ -32,18 +32,24 @@ extension UIView {
 
 extension UIView {
     
-    /// Pins the view to its superview's sides. Throws `YMLayoutError.superviewNotFound` if no superview is found.
+    
+    /// Returns an array of constraints which, once activated, pin the view to its superview's sides with optional insets.
     ///
-    /// - Parameter edgeInsets: *Optional.* The insets to add between the view and its superview. Default is `.zero`.
+    /// + This method throws `YMLayoutError.superviewNotFound` if no superview is found.
+    /// + Note that this method does not set `translatesAutoresizingMaskIntoConstraints` on the view
+    /// to `false`; you have to do it manually.
+    ///
+    /// - Parameter edgeInsets: *Optional.* The insets to add between the view and its superview.
+    /// Default is `.zero`.
     @available(iOS 9, *)
-    public func constrainToSuperview(withInsets edgeInsets: UIEdgeInsets = .zero) throws {
+    public func constraintsToSuperview(
+        with edgeInsets: UIEdgeInsets = .zero
+    ) throws -> [NSLayoutConstraint] {
         guard let superview = self.superview else {
             throw YMLayoutError.superviewNotFound
         }
         
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        let constraintsToSuperview = [
+        return [
             self.topAnchor.constraint(
                 equalTo: superview.topAnchor,
                 constant: edgeInsets.top
@@ -61,8 +67,27 @@ extension UIView {
                 constant: -edgeInsets.right
             ),
         ]
+    }
+    
+    /// Pins the view to its superview's sides with optional insets.
+    ///
+    /// + This method throws `YMLayoutError.superviewNotFound` if no superview is found.
+    ///
+    /// - Parameter edgeInsets: *Optional.* The insets to add between the view and its superview.
+    /// Default is `.zero`.
+    @available(iOS 9, *)
+    public func constrainToSuperview(with edgeInsets: UIEdgeInsets = .zero) throws {
+        let constraintsToSuperview = try self.constraintsToSuperview(with: edgeInsets)
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate(constraintsToSuperview)
+    }
+    
+    @available(iOS 9, *)
+    @available(iOS, unavailable, renamed: "constrainToSuperview(with:)")
+    public func constrainToSuperview(withInsets edgeInsets: UIEdgeInsets = .zero) throws {
+        try constrainToSuperview(with: edgeInsets)
     }
     
 }
