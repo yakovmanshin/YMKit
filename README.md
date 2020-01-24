@@ -7,16 +7,6 @@
 
 The framework provides a set of small hacks, such as `UIColor` initialization from HEX values, string localization, date and number formatters, and more.
 
----
-
-**NOTE**
-
-YMKit v3.0.0 is currently under active development, and it introduces some breaking changes, compared to [v2.3.0](https://github.com/yakovmanshin/YMKit/releases/tag/v2.3.0), the most recent publicly released version. Don't use code from `dev` in production environments.
-
-Also, documentation you see on this page may be irrelevant for v2.3.0. You can find the correct documentation at [kit.ym.dev](https://kit.ym.dev/).
-
----
-
 ## Usage Examples
 
 Here's a few examples of how YMKit can make your development routine just a little easier.
