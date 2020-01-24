@@ -47,6 +47,7 @@ extension String {
     ///
     /// - Parameter parameters: *Required.* The parameters to interpolate.
     /// - Parameter locale: *Optional.* A `Locale` object specifying the locale to use. To use the current locale (specified by user preferences), pass `.current`. To use the system locale, pass `nil`.
+    @available(*, unavailable, renamed: "localized(arguments:locale:)")
     @inlinable
     public func localized(
         withParameters parameters: [CVarArg],
@@ -57,6 +58,21 @@ extension String {
             locale: locale,
             arguments: parameters
         )
+    }
+    
+    /// Returns a string by pulling a format string from the `Localizable.strings` file by the key (the string you call this method on), and replacing placeholders with the arguments.
+    ///
+    /// + The number and types of arguments in call must match the number and types of placeholders in the format string. Otherwise a runtime error will occur.
+    /// + It's a good idea to have at least a rough understanding of how the localization process works. See [Introduction to String Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/introStrings.html) and, specifically, [Formatting String Objects](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/FormatStrings.html).
+    /// + For a table of available placeholder keys and corresponding data types, see [String Format Specifiers](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html).
+    ///
+    /// - Parameter arguments: *Required.* An array of arguments to interpolate in the format string.
+    /// - Parameter locale: *Optional.* The locale in which to render the localized string. Default is `nil`, which corresponds to the system locale.
+    public func localized(
+        arguments: [CVarArg],
+        locale: Locale? = nil
+    ) -> String {
+        String(format: self.localized, locale: locale, arguments: arguments)
     }
     
     /// Produces a localized string by interpolating `parameter` in the localizable string template accessed by the key (`self`).
