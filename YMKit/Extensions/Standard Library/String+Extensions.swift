@@ -75,20 +75,6 @@ extension String {
         String(format: self.localized, locale: locale, arguments: arguments)
     }
     
-    /// Produces a localized string by interpolating `parameter` in the localizable string template accessed by the key (`self`).
-    ///
-    /// + Make sure the value type of `parameter` matches the localizable string template. Otherwise, a runtime error will occur.
-    ///
-    /// - Parameter parameter: *Required.* The parameter to interpolate.
-    /// - Parameter locale: *Optional.* A `Locale` object specifying the locale to use. To use the current locale (specified by user preferences), pass `.current`. To use the system locale, pass `nil`.
-    @inlinable
-    public func localized(
-        withParameter parameter: CVarArg,
-        in locale: Locale? = nil
-    ) -> String {
-        return self.localized(withParameters: [parameter], in: locale)
-    }
-    
 }
 
 // MARK: - Transformation
