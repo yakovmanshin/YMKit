@@ -39,7 +39,7 @@ With YMKit, it's shorter and simpler:
 let helloWorld = "HelloWorldKey".localized
 
 // With arguments
-let greeting = "LocalizableGreetingKey".localized(withParameters: firstName, lastName)
+let greeting = "LocalizableGreetingKey".localized(with: firstName, lastName)
 ```
 
 ### `UIColor` from HEX
