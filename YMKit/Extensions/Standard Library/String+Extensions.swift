@@ -22,9 +22,23 @@ extension String {
      Substitute the specified key with the corresponding localized string, substituting additional parameters.
      + The number and types of parameters in function call must match the number and types of parameters in the localized string, or a runtime error will occur.
     */
+    @available(*, unavailable, renamed: "localized(with:)")
     @inlinable
     public func localized(withParameters parameters: CVarArg...) -> String {
         return String(format: self.localized, arguments: parameters)
+    }
+    
+    /// Returns a string by pulling a format string from the `Localizable.strings` file by the key (the string you call this method on), and replacing placeholders with the arguments.
+    ///
+    /// + Pass any number of arguments, separated by comma (this is called variadic parameter).
+    /// + The number and types of arguments in call must match the number and types of placeholders in the format string. Otherwise a runtime error will occur.
+    /// + It's a good idea to have at least a rough understanding of how the localization process works. See [Introduction to String Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/introStrings.html) and, specifically, [Formatting String Objects](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/FormatStrings.html).
+    /// + For a table of available placeholder keys and corresponding data types, see [String Format Specifiers](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html).
+    ///
+    /// - Parameter arguments: *Required.* Arguments to interpolate in the format string.
+    @inlinable
+    public func localized(with arguments: CVarArg...) -> String {
+        String(format: self.localized, arguments: arguments)
     }
     
     /// Produces a localized string by interpolating `parameters` in the localizable string template accessed by the key (`self`).
