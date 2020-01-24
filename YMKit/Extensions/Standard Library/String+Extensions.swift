@@ -12,7 +12,7 @@ import Foundation
 
 extension String {
     
-    /// Substitute the specified key with the corresponding localized string.
+    /// Returns a localized string pulled from `Localizable.strings` by its key.
     @inlinable
     public var localized: String {
         return NSLocalizedString(self, comment: self)
