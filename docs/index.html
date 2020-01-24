@@ -7,13 +7,13 @@
     <meta charset='utf-8'>
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
-    <meta name"robots" content="noarchive">
+    <meta name="robots" content="noarchive">
   </head>
   <body>
     <a title="YMKit  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">YMKit Docs</a> (90% documented)</p>
+        <p><a href="index.html">YMKit Docs</a> (89% documented)</p>
         <p class="header-right"><a href="https://github.com/yakovmanshin/YMKit"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -80,6 +80,9 @@
                 <a href="Extensions/NSNumber.html">NSNumber</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/String.html">String</a>
               </li>
               <li class="nav-group-task">
@@ -135,46 +138,111 @@
 <p><img src="https://go.ym.dev/ymkit-ci-master" alt="Build Status — master">
 <img src="https://go.ym.dev/ymkit-ci-dev" alt="Build Status — dev"></p>
 
-<p><strong>YMKit</strong> is a collection of tools for quicker and easier development of iOS apps.</p>
+<p><strong>YMKit</strong> is a collection of tools that make development of iOS apps quicker and easier.</p>
 
-<p><strong>YMKit</strong> extends built-in types, such as <code>Date</code> or <code>UIColor</code>, with helpful new methods, and introduces new types, such as <code><a href="Enums/YMFormatter.html">YMFormatter</a></code>, for advanced functionality.</p>
+<p>The framework provides a set of small hacks, such as <code>UIColor</code> initialization from HEX values, string localization, date and number formatters, and more.</p>
+<h2 id='usage-examples' class='heading'>Usage Examples</h2>
+
+<p>Here&rsquo;s a few examples of how YMKit can make your development routine just a little easier.</p>
+<h3 id='localized-strings' class='heading'>Localized Strings</h3>
+
+<p>When you need to substitute a localizable string key with its localized value at runtime, you usually do something like that:</p>
+<pre class="highlight swift"><code><span class="c1">// Without arguments</span>
+<span class="k">let</span> <span class="nv">helloWorld</span> <span class="o">=</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"HelloWorldKey"</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+
+<span class="c1">// With arguments</span>
+<span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="s">"LocalizableGreetingKey"</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">),</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span><span class="p">)</span>
+</code></pre>
+
+<p>With YMKit, it&rsquo;s shorter and simpler:</p>
+<pre class="highlight swift"><code><span class="c1">// Without arguments</span>
+<span class="k">let</span> <span class="nv">helloWorld</span> <span class="o">=</span> <span class="s">"HelloWorldKey"</span><span class="o">.</span><span class="n">localized</span>
+
+<span class="c1">// With arguments</span>
+<span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="s">"LocalizableGreetingKey"</span><span class="o">.</span><span class="nf">localized</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span><span class="p">)</span>
+</code></pre>
+<h3 id='code-uicolor-code-from-hex' class='heading'><code>UIColor</code> from HEX</h3>
+
+<p>When you need to parse a HEX color string (such as <code>#ff4600</code>), things get so ugly I won&rsquo;t even demostrate them.</p>
+
+<p>However, with YMKit, all it takes to get a <code>UIColor</code> instance is one line of code:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">myColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">hexString</span><span class="p">:</span> <span class="s">"#ff4600"</span><span class="p">)</span>
+</code></pre>
+
+<p>This single initializer works with both three- (<code>#fff</code>) and six-digit (<code>#aeaeae</code>) codes; with or without the <code>#</code> character.</p>
+<h3 id='individual-rgb-channels-from-code-uicolor-code' class='heading'>Individual RGB Channels from <code>UIColor</code></h3>
+
+<p>If you&rsquo;ve ever needed to extract just one channel from <code>UIColor</code>, then you certainly know what a mess it is, with variables used only once, in-out parameters, and so on.</p>
+
+<p>YMKit will make your life easier—much easier:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">green</span> <span class="o">=</span> <span class="n">myColor</span><span class="o">.</span><span class="nf">getRGBComponent</span><span class="p">(</span><span class="o">.</span><span class="n">green</span><span class="p">)</span>
+</code></pre>
+
+<p><em>CMYK support is coming later.</em></p>
+<h3 id='number-formatting' class='heading'>Number Formatting</h3>
+
+<p>Formatting numbers (prices, for examples) for different locales is no easy task. Fortunately, you don&rsquo;t have to remember formats for all countries—Foundation&rsquo;s <code>NumberFormatter</code> will take care of it. Unfortunately, using it quickly gets overwhelmingly verbose.</p>
+
+<p>YMKit takes another, more declarative approach.</p>
+
+<p>Let&rsquo;s say you need to display a price in euros that&rsquo;s formatted according to the user&rsquo;s locale and has up to two decimal digits. Here&rsquo;s how you do it with <code>NumberFormatter</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">numberFormatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+<span class="n">numberFormatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">currency</span>
+<span class="n">numberFormatter</span><span class="o">.</span><span class="n">locale</span> <span class="o">=</span> <span class="o">.</span><span class="n">current</span>
+<span class="n">numberFormatter</span><span class="o">.</span><span class="n">currencyCode</span> <span class="o">=</span> <span class="n">currencyCode</span>
+<span class="n">numberFormatter</span><span class="o">.</span><span class="n">minimumIntegerDigits</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">numberFormatter</span><span class="o">.</span><span class="n">minimumFractionDigits</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">numberFormatter</span><span class="o">.</span><span class="n">maximumFractionDigits</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">let</span> <span class="nv">priceString</span> <span class="o">=</span> <span class="n">numberFormatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="n">myItem</span><span class="o">.</span><span class="n">price</span><span class="p">))</span>
+</code></pre>
+
+<p>And here&rsquo;s YMKit:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">priceString</span> <span class="o">=</span> <span class="n">myItem</span><span class="o">.</span><span class="n">price</span><span class="o">.</span><span class="nf">getBasicPriceString</span><span class="p">(</span><span class="nv">maxFractionDigits</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">currencyCode</span><span class="p">:</span> <span class="n">myItem</span><span class="o">.</span><span class="n">currencyCode</span><span class="p">)</span>
+</code></pre>
+
+<p>Of course there&rsquo;s many options for further customization: &ldquo;significant digits,&rdquo; grouping sepator, and currency symbol literal are just a few examples. If they&rsquo;re still not enough, you can even have a closure and set the remaining properties manually (as in the first example above): it will still be nicer to use because you don&rsquo;t have to worry about creating and managing lifecycle of the <code>NumberFormatter</code> object manually.</p>
 <h2 id='installation' class='heading'>Installation</h2>
 
-<p>There are multiple ways to install <strong>YMKit</strong> and keep it up to date.</p>
+<p>There are multiple ways to install YMKit and keep it up to date.</p>
 <h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
 
-<p>To install <strong>YMKit</strong> into your app with Swift Package Manager, use the built-in SPM client. In Xcode, click <em>File</em> → <em>Swift Packages</em> → <em>Add Package Dependency…</em>, paste <strong>YMKit</strong> repository URL (<code>https://github.com/yakovmanshin/YMKit</code>) into the search field, and select preferred version mode (we recommend selecting <em>Up to Next Major</em>).</p>
+<p>The easiest way to add YMKit to your project is with Swift Package Manager (SPM). Xcode 11 has an SPM client built right in, so you can use the GUI. Click <em>File</em> → <em>Swift Packages</em> → <em>Add Package Dependency…</em>, paste YMKit repository URL (<code>https://github.com/yakovmanshin/YMKit</code>) into the search field, and select preferred update policy (<em>Up to Next Major</em> should be fine for most uses).</p>
 
-<p>If you need to use <strong>YMKit</strong> as a dependency in a Swift package of your own, add the following entry to the <code>dependencies</code> array in the <code>Package.swift</code> file:</p>
-<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/yakovmanshin/YMKit.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"2.0.0"</span><span class="p">)</span>
+<p>Xcode will check for newer versions that comply with the specified update policy from time to time. You can always check for updates manually: <em>File</em> → <em>Swift Packages</em> → <em>Update to Latest Package Versions</em>.</p>
+
+<p>If you prefer working with the <code>Package.swift</code> file manually, or need to use YMKit as a dependency in a Swift package of your own, add the following entry to the <code>dependencies</code> array in the <code>Package.swift</code> file:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/yakovmanshin/YMKit.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"3.0.0"</span><span class="p">)</span>
 </code></pre>
 
 <p>Should you like to learn more about Swift packages and SPM, there&rsquo;s <a href="https://fwd2.net/33lDCqq">a WWDC session</a> on that.</p>
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
-<p>Use <a href="https://fwd2.net/cocoapods">CocoaPods</a> to install <strong>YMKit</strong>. If you’ve never worked with CocoaPods before, watch this detailed (and funny) <a href="https://fwd2.net/cocoapods-tutorial">video from Google</a> on how to install and use CocoaPods.</p>
+<p>Alternatively, you can use <a href="https://fwd2.net/cocoapods">CocoaPods</a> to install YMKit. If you’ve never worked with CocoaPods before, watch this detailed (and funny) <a href="https://fwd2.net/cocoapods-tutorial">video from Google</a> on how to install and use the tool.</p>
 
-<p>To install <strong>YMKit</strong>, add the pod to your Podfile:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'YMKit'</span><span class="p">,</span> <span class="s1">'~&gt;2.0'</span>
+<p>To install YMKit, add the following to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'YMKit'</span><span class="p">,</span> <span class="s1">'~&gt;3.0'</span>
 </code></pre>
 
 <p>Run the following command in your project directory to install the newly-added pod:</p>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="n">install</span>
 </code></pre>
 
-<p>From now on, use the created / updated <em>workspace</em> (not the project).</p>
+<p>From now on, use the created / updated <code>.xcworkspace</code> (not <code>.xcodeproj</code>) to work on your app.</p>
 <h3 id='binary-code-xcframework-code' class='heading'>Binary <code>XCFramework</code></h3>
 
 <p><code>XCFramework</code> is a binary format for framework distribution, which solves the most annoying problem of binary frameworks: architecture incompatibility. One bundle contains versions for all supported architectures: physical devices (<code>armv7</code> and <code>arm64</code>) and simulators (<code>i386</code> and <code>x86_64</code>). Learn more about binary frameworks and <code>XCFramework</code> in <a href="https://fwd2.net/32jBVIz">this WWDC session</a>.</p>
 
-<p>On the <a href="https://github.com/yakovmanshin/YMKit/releases">releases page</a>, you will find binary <code>XCFramework</code> files attached to <strong>YMKit</strong> releases starting with v2.0.0. To use on of those files, just unzip it and drag the <code>XCFramework</code> bundle to the <em>Frameworks, Libraries, and Embedded Content</em> section in your target&rsquo;s <em>General</em> settings.</p>
+<p>On the <a href="https://github.com/yakovmanshin/YMKit/releases">releases page</a>, you will find binary <code>XCFramework</code> files attached to YMKit releases starting with v2.0.0. To use on of those files, just unzip it and drag the <code>XCFramework</code> bundle to the <em>Frameworks, Libraries, and Embedded Content</em> section in your target&rsquo;s <em>General</em> settings.</p>
 
 <p>Keep in mind there&rsquo;s no auto-update feature for <code>XCFramework</code>s at this time. You have to repeat the steps above every time a new version is released.</p>
-<h2 id='usage' class='heading'>Usage</h2>
+<h2 id='general-usage-tips' class='heading'>General Usage Tips</h2>
 
-<p>To use <strong>YMKit</strong>, you’ll need to import the framework.</p>
+<p>Just as with all frameworks, you need to import YMKit in files you&rsquo;d like to use its methods in. You&rsquo;ve most likely done it before: the most trivial example is UIKit. It&rsquo;s recommended to put all import statements at the top of your code files, but you can do it anywhere, in fact. Anyway, just add the following to your <code>.swift</code> file:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">YMKit</span>
+</code></pre>
 
-<p>To activate extensions of built-in types (such as <code>Date</code>, <code>UIColor</code>, <code>String</code>, etc.), you only need to import <strong>YMKit</strong> once. Open <code>AppDelegate.swift</code> in project navigator and import the framework:</p>
+<p>Here&rsquo;s a pro tip. You can activate extensions of all built-in types (such as <code>Date</code>, <code>UIColor</code>, <code>String</code>, etc.) for your entire project at once—to do it, import YMKit in <code>AppDelegate.swift</code>.</p>
 <pre class="highlight swift"><code><span class="c1">// AppDelegate.swift</span>
 
 <span class="kd">import</span> <span class="kt">UIKit</span>
@@ -189,18 +257,20 @@
 <span class="c1">// ...</span>
 </code></pre>
 
-<p>To use new types declared in <strong>YMKit</strong> (such as <code><a href="Enums/YMFormatter.html">YMFormatter</a></code>), you’ll need to import <strong>YMKit</strong> in every file you want to use the types in.</p>
-<h2 id='documentation' class='heading'>Documentation</h2>
+<p>This hack won&rsquo;t work with types declared in YMKit, such as <code><a href="Enums/YMFormatter.html">YMFormatter</a></code>: to use them, you&rsquo;ll still need to import YMKit in individual code files.</p>
+<h2 id='in-depth-documentation' class='heading'>In-Depth Documentation</h2>
 
-<p>Most variables and methods are documented in code.</p>
+<p>My ultimate goal is to cover 100% of types, properties, and methods with accurate, detailed, and extensive documentation. At the moment, the rate is near 90%.</p>
 
-<p>For a nicer look, see <a href="https://kit.ym.dev/">YMKit Docs</a>.</p>
+<p>To view documentation for a given type, property, or method, just Option-click its name, and the [likely] familiar pop-up will appear. You can browse source files as well, of course.</p>
+
+<p>Thanks to <a href="https://github.com/realm/jazzy">Jazzy</a>, documentation for YMKit is also available on the web at <a href="https://kit.ym.dev/">kit.ym.dev</a>. However, it is only valid for the most recent release version.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>© 2019 <a class="link" href="https://www.ym.dev/" target="_blank" rel="external">Yakov Manshin</a>. Available under <a class="link" href="https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE" target="_blank" rel="external">Apache License, version 2.0</a>.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2020 <a class="link" href="https://www.ym.dev/" target="_blank" rel="external">Yakov Manshin</a>. Available under <a class="link" href="https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE" target="_blank" rel="external">Apache License, version 2.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
