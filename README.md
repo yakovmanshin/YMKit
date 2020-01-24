@@ -126,8 +126,6 @@ pod install
 From now on, use the created / updated `.xcworkspace` (not `.xcodeproj`) to work on your app.
 
 ### Binary `XCFramework`
-*This option will probably go away in v3.0.0.*
-
 `XCFramework` is a binary format for framework distribution, which solves the most annoying problem of binary frameworks: architecture incompatibility. One bundle contains versions for all supported architectures: physical devices (`armv7` and `arm64`) and simulators (`i386` and `x86_64`). Learn more about binary frameworks and `XCFramework` in [this WWDC session](https://fwd2.net/32jBVIz).
 
 On the [releases page](https://github.com/yakovmanshin/YMKit/releases), you will find binary `XCFramework` files attached to YMKit releases starting with v2.0.0. To use on of those files, just unzip it and drag the `XCFramework` bundle to the *Frameworks, Libraries, and Embedded Content* section in your target's *General* settings.
