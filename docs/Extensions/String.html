@@ -7,14 +7,14 @@
     <meta charset='utf-8'>
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
-    <meta name"robots" content="noarchive">
+    <meta name="robots" content="noarchive">
   </head>
   <body>
     <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
     <a title="String Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">YMKit Docs</a> (90% documented)</p>
+        <p><a href="../index.html">YMKit Docs</a> (89% documented)</p>
         <p class="header-right"><a href="https://github.com/yakovmanshin/YMKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -79,6 +79,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/NSNumber.html">NSNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/String.html">String</a>
@@ -155,7 +158,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Substitute the specified key with the corresponding localized string.</p>
+                        <p>Returns a localized string pulled from <code>Localizable.strings</code> by its key.</p>
 
                       </div>
                       <div class="declaration">
@@ -176,9 +179,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:SS5YMKitE9localized14withParametersSSs7CVarArg_pd_tF"></a>
-                    <a name="//apple_ref/swift/Method/localized(withParameters:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:SS5YMKitE9localized14withParametersSSs7CVarArg_pd_tF">localized(withParameters:)</a>
+                    <a name="/s:SS5YMKitE9localized4withSSs7CVarArg_pd_tF"></a>
+                    <a name="//apple_ref/swift/Method/localized(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS5YMKitE9localized4withSSs7CVarArg_pd_tF">localized(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -186,10 +189,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Substitute the specified key with the corresponding localized string, substituting additional parameters.</p>
+                        <p>Returns a string by pulling a format string from the <code>Localizable.strings</code> file by the key (the string you call this method on), and replacing placeholders with the arguments.</p>
 
 <ul>
-<li>The number and types of parameters in function call must match the number and types of parameters in the localized string, or a runtime error will occur.</li>
+<li>Pass any number of arguments, separated by comma (this is called variadic parameter).</li>
+<li>The number and types of arguments in call must match the number and types of placeholders in the format string. Otherwise a runtime error will occur.</li>
+<li>It&rsquo;s a good idea to have at least a rough understanding of how the localization process works. See <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/introStrings.html">Introduction to String Programming Guide</a> and, specifically, <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/FormatStrings.html">Formatting String Objects</a>.</li>
+<li><p>For a table of available placeholder keys and corresponding data types, see <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html">String Format Specifiers</a>.</p></li>
 </ul>
 
                       </div>
@@ -198,12 +204,31 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">localized</span><span class="p">(</span><span class="n">withParameters</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">localized</span><span class="p">(</span><span class="n">with</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arguments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><em>Required.</em> Arguments to interpolate in the format string.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L26-L28">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L40-L42">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -211,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:SS5YMKitE9localized14withParameters2inSSSays7CVarArg_pG_10Foundation6LocaleVSgtF"></a>
-                    <a name="//apple_ref/swift/Method/localized(withParameters:in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:SS5YMKitE9localized14withParameters2inSSSays7CVarArg_pG_10Foundation6LocaleVSgtF">localized(withParameters:in:)</a>
+                    <a name="/s:SS5YMKitE9localized9arguments6localeSSSays7CVarArg_pG_10Foundation6LocaleVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/localized(arguments:locale:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS5YMKitE9localized9arguments6localeSSSays7CVarArg_pG_10Foundation6LocaleVSgtF">localized(arguments:locale:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -221,10 +246,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Produces a localized string by interpolating <code>parameters</code> in the localizable string template accessed by the key (<code>self</code>).</p>
+                        <p>Returns a string by pulling a format string from the <code>Localizable.strings</code> file by the key (the string you call this method on), and replacing placeholders with the arguments.</p>
 
 <ul>
-<li><p>Make sure the number and value types of <code>parameters</code> match the localizable string template. Otherwise, a runtime error will occur.</p></li>
+<li>The number and types of arguments in call must match the number and types of placeholders in the format string. Otherwise a runtime error will occur.</li>
+<li>It&rsquo;s a good idea to have at least a rough understanding of how the localization process works. See <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/introStrings.html">Introduction to String Programming Guide</a> and, specifically, <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/FormatStrings.html">Formatting String Objects</a>.</li>
+<li><p>For a table of available placeholder keys and corresponding data types, see <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html">String Format Specifiers</a>.</p></li>
 </ul>
 
                       </div>
@@ -232,10 +259,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">localized</span><span class="p">(</span>
-    <span class="n">withParameters</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">CVarArg</span><span class="p">],</span>
-    <span class="k">in</span> <span class="nv">locale</span><span class="p">:</span> <span class="kt">Locale</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">localized</span><span class="p">(</span>
+    <span class="nv">arguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">CVarArg</span><span class="p">],</span>
+    <span class="nv">locale</span><span class="p">:</span> <span class="kt">Locale</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
@@ -247,12 +273,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>parameters</em>
+                                <em>arguments</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p><em>Required.</em> The parameters to interpolate.</p>
+                                  <p><em>Required.</em> An array of arguments to interpolate in the format string.</p>
                                 </div>
                               </td>
                             </tr>
@@ -264,7 +290,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p><em>Optional.</em> A <code>Locale</code> object specifying the locale to use. To use the current locale (specified by user preferences), pass <code>.current</code>. To use the system locale, pass <code>nil</code>.</p>
+                                  <p><em>Optional.</em> The locale in which to render the localized string. Default is <code>nil</code>, which corresponds to the system locale.</p>
                                 </div>
                               </td>
                             </tr>
@@ -272,76 +298,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L37-L46">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:SS5YMKitE9localized13withParameter2inSSs7CVarArg_p_10Foundation6LocaleVSgtF"></a>
-                    <a name="//apple_ref/swift/Method/localized(withParameter:in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:SS5YMKitE9localized13withParameter2inSSs7CVarArg_p_10Foundation6LocaleVSgtF">localized(withParameter:in:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Produces a localized string by interpolating <code>parameter</code> in the localizable string template accessed by the key (<code>self</code>).</p>
-
-<ul>
-<li><p>Make sure the value type of <code>parameter</code> matches the localizable string template. Otherwise, a runtime error will occur.</p></li>
-</ul>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">localized</span><span class="p">(</span>
-    <span class="n">withParameter</span> <span class="nv">parameter</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="p">,</span>
-    <span class="k">in</span> <span class="nv">locale</span><span class="p">:</span> <span class="kt">Locale</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>parameter</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><em>Required.</em> The parameter to interpolate.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>locale</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><em>Optional.</em> A <code>Locale</code> object specifying the locale to use. To use the current locale (specified by user preferences), pass <code>.current</code>. To use the system locale, pass <code>nil</code>.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L55-L60">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L71-L76">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -349,6 +306,15 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Transformation"></a>
+                <a name="//apple_ref/swift/Section/Transformation" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Transformation"></a>
+                  <h3 class="section-name"><p>Transformation</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -381,7 +347,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L74-L82">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L90-L98">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -389,6 +355,15 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Comparison"></a>
+                <a name="//apple_ref/swift/Section/Comparison" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Comparison"></a>
+                  <h3 class="section-name"><p>Comparison</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -424,7 +399,7 @@
                         <p>A string created by calling <code>folding(options:locale:)</code> with options <code>caseInsensitive</code>, <code>diacriticInsensitive</code>, and <code>numeric</code> on the string.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L96-L98">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L112-L114">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -432,6 +407,15 @@
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Matching%20Against%20Regular%20Expressions"></a>
+                <a name="//apple_ref/swift/Section/Matching Against Regular Expressions" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Matching%20Against%20Regular%20Expressions"></a>
+                  <h3 class="section-name"><p>Matching Against Regular Expressions</p>
+</h3>
+                </div>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -496,37 +480,7 @@
                         <p><code>Bool</code>. Matching result.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L112-L121">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:SS5YMKitE24matchesRegularExpressionySbSo09NSRegularD0CF"></a>
-                    <a name="//apple_ref/swift/Method/matchesRegularExpression(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:SS5YMKitE24matchesRegularExpressionySbSo09NSRegularD0CF">matchesRegularExpression(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Documentation Coming Soon…</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">matchesRegularExpression</span><span class="p">(</span><span class="n">_</span> <span class="nv">regularExpression</span><span class="p">:</span> <span class="kt">NSRegularExpression</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L124-L126">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L128-L137">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -590,7 +544,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L132-L142">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L143-L153">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -658,7 +612,7 @@
                         <p><code>Bool?</code>. Matching result, if regular expression initialized successfully; otherwise, <code>nil</code>.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L150-L158">Show on GitHub</a>
+                        <a href="https://github.com/yakovmanshin/YMKit/tree/master/YMKit/Extensions/Standard Library/String+Extensions.swift#L161-L169">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -668,8 +622,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>© 2019 <a class="link" href="https://www.ym.dev/" target="_blank" rel="external">Yakov Manshin</a>. Available under <a class="link" href="https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE" target="_blank" rel="external">Apache License, version 2.0</a>.</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2020 <a class="link" href="https://www.ym.dev/" target="_blank" rel="external">Yakov Manshin</a>. Available under <a class="link" href="https://github.com/yakovmanshin/YMKit/blob/dev/LICENSE" target="_blank" rel="external">Apache License, version 2.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
