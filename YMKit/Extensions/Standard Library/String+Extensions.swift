@@ -33,6 +33,11 @@ extension String {
     ///
     /// - Parameter parameters: *Required.* The parameters to interpolate.
     /// - Parameter locale: *Optional.* A `Locale` object specifying the locale to use. To use the current locale (specified by user preferences), pass `.current`. To use the system locale, pass `nil`.
+    ///
+    /// - Important: This method contains a bug that cannot be fixed in a backward-compatible manner. Upgrade to YMKit v3.x.x as soon as possible.
+    /// If you cannot upgrade and absolutely have to use this method, don't omit the second argument in call: i.e. instead
+    /// of `localized(withParameters: ["John", "Smith"])`, use `localized(withParameters: ["John", "Smith"], in: nil)`.
+    @available(*, deprecated, message: "This method contains a bug. See documentation for details.")
     @inlinable
     public func localized(
         withParameters parameters: [CVarArg],
