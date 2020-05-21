@@ -70,7 +70,7 @@ jobs:
           - destination: 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=13.4'
             xcode_app: 'Xcode_11.4.1.app'
             sdk: 'iphonesimulator13.4'
-            simulator_to_install: ''
+            simulator_to_install: 'iOS 13.4'
           - destination: 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.0'
             xcode_app: 'Xcode_11.app'
             sdk: 'iphonesimulator13.0'
