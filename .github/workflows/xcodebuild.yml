@@ -56,7 +56,6 @@ jobs:
       matrix:
         destination: [
           'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.5',
-          'platform=iOS Simulator,name=iPhone 11,OS=13.4',
           'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.0',
           'platform=iOS Simulator,name=iPhone XS Max,OS=12.4',
           'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4',
@@ -67,10 +66,6 @@ jobs:
             sdk: 'iphonesimulator13.5'
             simulator_to_install: ''
             xcode_app: 'Xcode_11.5.app'
-          - destination: 'platform=iOS Simulator,name=iPhone 11,OS=13.4'
-            sdk: 'iphonesimulator13.4'
-            simulator_to_install: 'iOS 13.4'
-            xcode_app: 'Xcode_11.4.1.app'
           - destination: 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.0'
             sdk: 'iphonesimulator13.0'
             simulator_to_install: ''
