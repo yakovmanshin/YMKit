@@ -14,17 +14,20 @@ jobs:
     strategy:
       matrix:
         sdk: [
+          'iphonesimulator13.5',
+          'iphonesimulator13.4',
           'iphonesimulator13.2',
-          'iphonesimulator13.1',
           'iphonesimulator13.0',
         ]
         include:
-          - xcode_app: 'Xcode_11.2.app'
-            sdk: 'iphonesimulator13.2'
-          - xcode_app: 'Xcode_11.1.app'
-            sdk: 'iphonesimulator13.1'
-          - xcode_app: 'Xcode_11.app'
-            sdk: 'iphonesimulator13.0'
+          - sdk: 'iphonesimulator13.5'
+            xcode_app: 'Xcode_11.5.app'
+          - sdk: 'iphonesimulator13.4'
+            xcode_app: 'Xcode_11.4.1.app'
+          - sdk: 'iphonesimulator13.2'
+            xcode_app: 'Xcode_11.3.1.app'
+          - sdk: 'iphonesimulator13.0'
+            xcode_app: 'Xcode_11.app'
     steps:
       - uses: actions/checkout@master
       - name: Switch Xcode version
@@ -34,9 +37,9 @@ jobs:
           swift -version
         env:
           xcode_app: ${{ matrix.xcode_app }}
-      - name: Generate xcodeproj
+      - name: Generate Xcode project
         run: swift package generate-xcodeproj
-      - name: Build xcodeproj
+      - name: Build Xcode project
         run: |
           xcodebuild \
           -project YMKit.xcodeproj \
@@ -52,36 +55,36 @@ jobs:
     strategy:
       matrix:
         destination: [
-          'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2',
-          'platform=iOS Simulator,name=iPhone 11,OS=13.1',
+          'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.5',
+          'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.0',
           'platform=iOS Simulator,name=iPhone XS Max,OS=12.4',
           'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4',
           'platform=iOS Simulator,name=iPhone SE,OS=10.3.1',
         ]
         include:
-          - destination: 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2'
-            xcode_app: 'Xcode_11.2.app'
-            sdk: 'iphonesimulator13.2'
+          - destination: 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.5'
+            sdk: 'iphonesimulator13.5'
             simulator_to_install: ''
-          - destination: 'platform=iOS Simulator,name=iPhone 11,OS=13.1'
-            xcode_app: 'Xcode_11.1.app'
-            sdk: 'iphonesimulator13.1'
+            xcode_app: 'Xcode_11.5.app'
+          - destination: 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.0'
+            sdk: 'iphonesimulator13.0'
             simulator_to_install: ''
-          - destination: 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4'
             xcode_app: 'Xcode_11.app'
+          - destination: 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4'
             sdk: 'iphonesimulator13.0'
             simulator_to_install: 'iOS 12.4'
-          - destination: 'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4'
             xcode_app: 'Xcode_11.app'
+          - destination: 'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4'
             sdk: 'iphonesimulator13.0'
             simulator_to_install: 'iOS 11.4'
-          - destination: 'platform=iOS Simulator,name=iPhone SE,OS=10.3.1'
             xcode_app: 'Xcode_11.app'
+          - destination: 'platform=iOS Simulator,name=iPhone SE,OS=10.3.1'
             sdk: 'iphonesimulator13.0'
             simulator_to_install: 'iOS 10.3.1'
+            xcode_app: 'Xcode_11.app'
     steps:
       - uses: actions/checkout@master
-      - name: Install Simulator
+      - name: Install simulator if needed
         run: |
           if [ "${simulator_to_install}" != "" ]
           then
@@ -97,9 +100,9 @@ jobs:
           swift -version
         env:
           xcode_app: ${{ matrix.xcode_app }}
-      - name: Generate xcodeproj
+      - name: Generate Xcode project
         run: swift package generate-xcodeproj
-      - name: Test xcodeproj
+      - name: Test Xcode project
         run: |
           xcodebuild clean test \
           -project YMKit.xcodeproj \

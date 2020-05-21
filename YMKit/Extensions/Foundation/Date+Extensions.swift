@@ -50,19 +50,37 @@ extension Date {
     
     // MARK: Custom Format
     
-    /// Initialize a `Date` value from a strings in the specified format.
-    public init?(string dateTimeString: String, format formatString: String) {
+    /// Initialize a `Date` value from a string in the specified format.
+    ///
+    /// - Parameters:
+    ///   - dateTimeString: *Required.* The input string to parse.
+    ///   - formatString: *Required.* The format string in which `dateTimeString` is supplied.
+    ///   - locale: *Optional.* The `Locale` to use when parsing `dateTimeString`. Default is `en_US_POSIX`.
+    public init?(
+        string dateTimeString: String,
+        format formatString: String,
+        locale: Locale = .init(identifier: "en_US_POSIX")
+    ) {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = locale
         dateFormatter.dateFormat = formatString
         guard let date = dateFormatter.date(from: dateTimeString) else { return nil }
         self = date
     }
     
     /// Convert the `Date` value to a string in the specified format.
-    public func getDateTimeString(withFormat formatString: String) -> String {
+    ///
+    /// - Parameters:
+    ///   - formatString: *Required.* The format string in which a string should be returned.
+    ///   - locale: *Optional.* The `Locale` to use when formatting date string. Default is `en_US_POSIX`.
+    ///   
+    /// - Returns: `String`. The string representation of the date.
+    public func getDateTimeString(
+        withFormat formatString: String,
+        in locale: Locale = .init(identifier: "en_US_POSIX")
+    ) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = locale
         dateFormatter.dateFormat = formatString
         return dateFormatter.string(from: self)
     }
