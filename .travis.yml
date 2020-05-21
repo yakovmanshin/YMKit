@@ -8,15 +8,12 @@ xcode_project: YMKit.xcodeproj
 
 jobs:
     include:
-        - name: Xcode 11.3 / iOS 13.3
+        - name: Xcode 11.4.1 / iOS 13.4
+          osx_image: xcode11.4
+          xcode_sdk: iphonesimulator13.4
+        - name: Xcode 11.3.1 / iOS 13.3
           osx_image: xcode11.3
           xcode_sdk: iphonesimulator13.3
-        - name: Xcode 11.2 / iOS 13.2
-          osx_image: xcode11.2
-          xcode_sdk: iphonesimulator13.2
-        - name: Xcode 11.1 / iOS 13.1
-          osx_image: xcode11.1
-          xcode_sdk: iphonesimulator13.1
         - name: Xcode 11 / iOS 13
           osx_image: xcode11
           xcode_sdk: iphonesimulator13.0
