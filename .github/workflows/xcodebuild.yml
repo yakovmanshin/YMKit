@@ -14,15 +14,18 @@ jobs:
     strategy:
       matrix:
         sdk: [
+          'iphonesimulator13.5',
+          'iphonesimulator13.4',
           'iphonesimulator13.2',
-          'iphonesimulator13.1',
           'iphonesimulator13.0',
         ]
         include:
-          - xcode_app: 'Xcode_11.2.app'
+          - xcode_app: 'Xcode_11.5.app'
+            sdk: 'iphonesimulator13.5'
+          - xcode_app: 'Xcode_11.4.1.app'
+            sdk: 'iphonesimulator13.4'
+          - xcode_app: 'Xcode_11.3.1.app'
             sdk: 'iphonesimulator13.2'
-          - xcode_app: 'Xcode_11.1.app'
-            sdk: 'iphonesimulator13.1'
           - xcode_app: 'Xcode_11.app'
             sdk: 'iphonesimulator13.0'
     steps:
