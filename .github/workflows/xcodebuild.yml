@@ -68,7 +68,7 @@ jobs:
             sdk: 'iphonesimulator13.5'
             simulator_to_install: ''
           - destination: 'platform=iOS Simulator,name=iPhone 11,OS=13.4'
-            xcode_app: 'Xcode_11.4.app'
+            xcode_app: 'Xcode_11.4.1.app'
             sdk: 'iphonesimulator13.4'
             simulator_to_install: ''
           - destination: 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.0'
