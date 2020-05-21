@@ -37,9 +37,9 @@ jobs:
           swift -version
         env:
           xcode_app: ${{ matrix.xcode_app }}
-      - name: Generate xcodeproj
+      - name: Generate Xcode project
         run: swift package generate-xcodeproj
-      - name: Build xcodeproj
+      - name: Build Xcode project
         run: |
           xcodebuild \
           -project YMKit.xcodeproj \
@@ -89,7 +89,7 @@ jobs:
             simulator_to_install: 'iOS 10.3.1'
     steps:
       - uses: actions/checkout@master
-      - name: Install Simulator
+      - name: Install simulator if needed
         run: |
           if [ "${simulator_to_install}" != "" ]
           then
@@ -105,9 +105,9 @@ jobs:
           swift -version
         env:
           xcode_app: ${{ matrix.xcode_app }}
-      - name: Generate xcodeproj
+      - name: Generate Xcode project
         run: swift package generate-xcodeproj
-      - name: Test xcodeproj
+      - name: Test Xcode project
         run: |
           xcodebuild clean test \
           -project YMKit.xcodeproj \
