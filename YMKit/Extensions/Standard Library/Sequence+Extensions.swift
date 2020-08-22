@@ -8,6 +8,15 @@
 
 extension Sequence {
     
+    /// Returns a sequence filtered using the property accessed by the key path.
+    ///
+    /// - Parameter keyPath: *Required.* The key path to a property of type `Bool`.
+    public func filtered(
+        by keyPath: KeyPath<Element, Bool>
+    ) -> [Self.Element] {
+        self.filter({ $0[keyPath: keyPath] })
+    }
+    
     /// Returns an array of the sequence's elements sorted by the specified key path.
     ///
     /// - Parameters:
@@ -17,9 +26,17 @@ extension Sequence {
         by keyPath: KeyPath<Element, T>,
         reversed: Bool = false
     ) -> [Self.Element] {
-        self.sorted {
-            let lhs = !reversed ? $0 : $1
-            let rhs = !reversed ? $1 : $0
+        self.sorted { element1, element2 -> Bool in
+            let lhs: Element
+            let rhs: Element
+            
+            if !reversed {
+                lhs = element1
+                rhs = element2
+            } else {
+                lhs = element2
+                rhs = element1
+            }
             
             return lhs[keyPath: keyPath] < rhs[keyPath: keyPath]
         }
