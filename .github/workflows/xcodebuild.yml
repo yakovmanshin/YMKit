@@ -64,6 +64,7 @@ jobs:
       - name: Test Xcode project
         run: |
           xcodebuild clean test \
+          -showBuildTimingSummary \
           -project YMKit.xcodeproj \
           -scheme YMKit-Package \
           -sdk "${sdk}" \
