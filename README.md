@@ -1,7 +1,7 @@
 # YMKit
 
-![Build Status — master](https://go.ym.dev/ymkit-ci-master)
-![Build Status — dev](https://go.ym.dev/ymkit-ci-dev)
+![Build Status — master](https://fwd2.net/kIOng)
+![Build Status — dev](https://fwd2.net/chekq)
 
 **YMKit** is a collection of tools that make development of iOS apps quicker and easier.
 
