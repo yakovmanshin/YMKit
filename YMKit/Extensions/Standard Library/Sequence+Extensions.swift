@@ -8,15 +8,6 @@
 
 extension Sequence {
     
-    /// Returns a sequence filtered using the property accessed by the key path.
-    ///
-    /// - Parameter keyPath: *Required.* The key path to a property of type `Bool`.
-    public func filtered(
-        by keyPath: KeyPath<Element, Bool>
-    ) -> [Self.Element] {
-        self.filter({ $0[keyPath: keyPath] })
-    }
-    
     /// Returns an array of the sequence's elements sorted by the specified key path.
     ///
     /// - Parameters:
@@ -40,13 +31,6 @@ extension Sequence {
             
             return lhs[keyPath: keyPath] < rhs[keyPath: keyPath]
         }
-    }
-    
-    /// Returns an array of elements
-    ///
-    /// - Parameter keyPath: *Required.* The key path to a property on the sequence's element.
-    public func map<T>(_ keyPath: KeyPath<Element, T>) -> [T] {
-        self.map({ $0[keyPath: keyPath] })
     }
     
 }
