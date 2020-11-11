@@ -15,13 +15,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "YMKit",
-            path: "YMKit"
+            name: "YMKit"
         ),
         .testTarget(
             name: "YMKitTests",
-            dependencies: ["YMKit"],
-            path: "YMKitTests"
+            dependencies: ["YMKit"]
         )
     ],
     swiftLanguageVersions: [.v5]
