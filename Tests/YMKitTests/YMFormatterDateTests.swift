@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import YMFormatter
 @testable import YMKit
 
 // MARK: - Core Declaration

@@ -15,8 +15,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "YMKit"
+            name: "YMKit",
+            dependencies: ["YMFormatter"]
         ),
+        .target(name: "YMFormatter"),
         .testTarget(
             name: "YMKitTests",
             dependencies: ["YMKit"]

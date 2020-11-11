@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import YMFormatter
 @testable import YMKit
 
 @available(iOS, introduced: 9)
