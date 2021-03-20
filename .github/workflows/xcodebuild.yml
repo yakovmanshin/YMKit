@@ -4,13 +4,13 @@ on: [push]
 
 jobs:
   validate-podspec:
-    runs-on: macos-latest
+    runs-on: macos-11.0
     steps:
       - uses: actions/checkout@master
       - name: Lint Podspec
         run: pod lib lint YMKit.podspec
   xcode-test:
-    runs-on: macos-latest
+    runs-on: macos-11.0
     strategy:
       matrix:
         destination: [
