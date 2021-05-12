@@ -16,9 +16,9 @@ jobs:
         destination: [
           'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.5',
           'platform=iOS Simulator,name=iPhone 12 mini,OS=14.4',
-          'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.7',
-          'platform=iOS Simulator,name=iPhone XS Max,OS=12.4',
-          'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4',
+          # 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.7',
+          # 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4',
+          # 'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4',
         ]
         include:
           - destination: 'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.5'
@@ -29,18 +29,18 @@ jobs:
             sdk: 'iphonesimulator14.4'
             simulator_to_install: ''
             xcode_app: 'Xcode_12.4.app'
-          - destination: 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.7'
-            sdk: 'iphonesimulator14.5'
-            simulator_to_install: 'iOS 13.7'
-            xcode_app: 'Xcode_12.5.app'
-          - destination: 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4'
-            sdk: 'iphonesimulator14.5'
-            simulator_to_install: 'iOS 12.4'
-            xcode_app: 'Xcode_12.5.app'
-          - destination: 'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4'
-            sdk: 'iphonesimulator14.5'
-            simulator_to_install: 'iOS 11.4'
-            xcode_app: 'Xcode_12.5.app'
+          # - destination: 'platform=iOS Simulator,name=iPad Air (3rd generation),OS=13.7'
+          #   sdk: 'iphonesimulator14.5'
+          #   simulator_to_install: 'iOS 13.7'
+          #   xcode_app: 'Xcode_12.5.app'
+          # - destination: 'platform=iOS Simulator,name=iPhone XS Max,OS=12.4'
+          #   sdk: 'iphonesimulator14.5'
+          #   simulator_to_install: 'iOS 12.4'
+          #   xcode_app: 'Xcode_12.5.app'
+          # - destination: 'platform=iOS Simulator,name=iPhone 8 Plus,OS=11.4'
+          #   sdk: 'iphonesimulator14.5'
+          #   simulator_to_install: 'iOS 11.4'
+          #   xcode_app: 'Xcode_12.5.app'
     steps:
       - uses: actions/checkout@master
       - name: Install simulator if needed
