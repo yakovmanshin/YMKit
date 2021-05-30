@@ -16,10 +16,11 @@ let package = Package(
     targets: [
         .target(
             name: "YMKit",
-            dependencies: ["YMFormatter", "YMKitInfo"]
+            dependencies: ["YMFormatter", "YMKitInfo", "YMKitNetworking"]
         ),
         .target(name: "YMFormatter"),
         .target(name: "YMKitInfo"),
+        .target(name: "YMKitNetworking"),
         .testTarget(
             name: "YMKitTests",
             dependencies: ["YMKit"]
