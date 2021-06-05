@@ -44,11 +44,6 @@ extension JSONDataDecodable {
 
 public protocol JSONDataEncodable: Encodable {
     
-    /// Encodes the value to JSON `Data` using `JSONEncoder`.
-    ///
-    /// + If something goes wrong, the method `throws`.
-    func getJSONData() throws -> Data
-    
     /// Encodes the value to optional JSON `Data` using `JSONEncoder`.
     ///
     /// + If something goes wrong, `nil` is returned.
@@ -58,12 +53,8 @@ public protocol JSONDataEncodable: Encodable {
 
 extension JSONDataEncodable {
     
-    public func getJSONData() throws -> Data {
-        return try JSONEncoder().encode(self)
-    }
-    
     public var jsonData: Data? {
-        return try? self.getJSONData()
+        try? JSONEncoder().encode(self)
     }
     
 }
