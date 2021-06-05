@@ -20,11 +20,6 @@ public protocol JSONDataDecodable: Decodable {
     
     /// Initializes a value from JSON `Data` using `JSONDecoder`.
     ///
-    /// - Parameter jsonData: *Required.* The object's JSON representation (as `Data`).
-    init(throwingWithJSONData jsonData: Data) throws
-    
-    /// Initializes a value from JSON `Data` using `JSONDecoder`.
-    ///
     /// + If something goes wrong, `nil` is returned.
     ///
     /// - Parameter jsonData: *Required.* JSON `Data`.
@@ -35,25 +30,12 @@ public protocol JSONDataDecodable: Decodable {
 /// A protocol that facilitates faster and easier value encoding into JSON.
 extension JSONDataDecodable {
     
-    public init(throwingWithJSONData jsonData: Data) throws {
-        self = try Self.initialize(with: jsonData)
-    }
-    
-    public init(throwingJSONData jsonData: Data) throws {
-        try self.init(throwingWithJSONData: jsonData)
-    }
-    
     public init?(jsonData: Data) {
         do {
-            self = try Self(throwingWithJSONData: jsonData)
+            self = try JSONDecoder().decode(Self.self, from: jsonData)
         } catch {
-            print(error)
             return nil
         }
-    }
-    
-    private static func initialize(with jsonData: Data) throws -> Self {
-        return try JSONDecoder().decode(Self.self, from: jsonData)
     }
     
 }
