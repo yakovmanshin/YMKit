@@ -1,6 +1,6 @@
 //
-//  YMJSONDataCodable.swift
-//  YMKit
+//  JSONDataCodable.swift
+//  YMKitNetworking
 //
 //  Created by Yakov Manshin on 6/1/19.
 //  Copyright © 2019 Yakov Manshin. All rights reserved.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-// MARK: - YMJSONDataCodable
+// MARK: - JSONDataCodable
 
-/// A combination of `YMJSONDataDecodable` and `YMJSONDataEncodable`.
-public typealias YMJSONDataCodable = YMJSONDataDecodable & YMJSONDataEncodable
+/// A combination of `JSONDataDecodable` and `JSONDataEncodable`.
+public typealias JSONDataCodable = JSONDataDecodable & JSONDataEncodable
 
-// MARK: - YMJSONDataDecodable
+// MARK: - JSONDataDecodable
 
 /// A protocol that facilitates faster and easier decoding of JSON.
-public protocol YMJSONDataDecodable: Decodable {
+public protocol JSONDataDecodable: Decodable {
     
     /// Initializes a value from JSON `Data` using `JSONDecoder`.
     ///
@@ -33,7 +33,7 @@ public protocol YMJSONDataDecodable: Decodable {
 }
 
 /// A protocol that facilitates faster and easier value encoding into JSON.
-extension YMJSONDataDecodable {
+extension JSONDataDecodable {
     
     public init(throwingWithJSONData jsonData: Data) throws {
         self = try Self.initialize(with: jsonData)
@@ -58,9 +58,9 @@ extension YMJSONDataDecodable {
     
 }
 
-// MARK: - YMJSONDataEncodable
+// MARK: - JSONDataEncodable
 
-public protocol YMJSONDataEncodable: Encodable {
+public protocol JSONDataEncodable: Encodable {
     
     /// Encodes the value to JSON `Data` using `JSONEncoder`.
     ///
@@ -74,7 +74,7 @@ public protocol YMJSONDataEncodable: Encodable {
     
 }
 
-extension YMJSONDataEncodable {
+extension JSONDataEncodable {
     
     public func getJSONData() throws -> Data {
         return try JSONEncoder().encode(self)
